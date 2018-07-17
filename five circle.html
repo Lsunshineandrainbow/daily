@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>奥运五环</title>
+    <style>
+        .five{
+            width: 200px;
+            height: 200px;
+            border: 10px solid;
+            border-radius:50% ;
+        }
+
+        .bule{
+            border-color: blue;
+            position: absolute;
+
+        }
+        .pink{
+            border-color: pink;
+            position: absolute;
+            left: 240px;
+        }
+        .red{
+            border-color: red;
+            position: absolute;
+            left: 470px;
+        }
+        .green{
+            border-color: green;
+            position: absolute;
+            left:140px;
+            top:110px ;
+
+        }
+        .back{
+            border-color:  black;
+            position: absolute;
+            left: 370px;
+            top: 110px;
+            border-right: transparent;
+
+
+        }
+        .five:after{
+            content:"" ;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 10px solid;
+            border-radius:50% ;
+            top: -10px;
+            left: -10px;
+        }
+        .bule:after{
+            border-color:blue;
+        z-index: 3;
+            border-bottom: transparent;
+        }
+        .pink:after{
+            border-color: pink;
+            z-index: 1;
+            border-left: transparent;
+
+        }
+
+
+.back:after{
+    border-color: black;
+z-index: 3;
+    border-top: transparent;
+    border-right: transparent;
+}
+
+        .red:after{
+            border-color: red;
+        }
+.green:after{
+    border-color: green;
+
+}
+
+    </style>
+</head>
+<body>
+<div class="five bule">
+
+</div>
+<div class="five pink">
+
+</div>
+
+<div class="five red">
+
+</div>
+
+<div class="five green">
+
+</div>
+
+<div class="five back">
+
+</div>
+
+
+
+</body>
+</html>
