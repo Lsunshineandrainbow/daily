@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+ <style>
+     .div div{
+         width: 100px;
+         height: 150px;
+         background: rgba(111,334,875,.4);
+         position: absolute;
+     }
+     body{
+         background: white;
+         perspective: 800px;
+     }
+ .div{
+     width: 500px;
+     height: 500px;
+     margin: 200px auto;
+     transform-style: preserve-3d;
+     animation:xxx 2s linear infinite ;
+ }
+ @keyframes  xxx{
+     0%{
+
+     }
+     100%{
+         transform: rotateZ(360deg);
+     }
+
+ }
+     #1-line1{
+         background: black;
+         transform: translateZ(-500px);
+     }
+     #2-line2{
+         transform: rotateY(108deg) translateZ(500px);
+     }
+     #3-lin3{
+         transform: rotateY(-108deg) translateZ(500px);
+     }
+     #4-lin4{
+         transform: rotateY(108deg) translateZ(500px) rotateY(72deg) translateZ(-500px);
+     }
+     #5-lin5{
+         transform: rotateY(-108deg) translateZ(500px) rotateY(-72deg) translateZ(-500PX) ;
+     }
+     #6-lin6{
+         transform: translateZ(500px);
+     }
+
+
+
+ </style>
+<body>
+
+
+
+<div class="div">
+
+
+        <div id="1-line1"></div>
+        <div id="2-line2"></div>
+        <div id="3-lin3"></div>
+        <div id="4-lin4"></div>
+        <div id="5-lin5"></div>
+        <div id="6-lin6"></div>
+
+
+</div>
+
+</body>
+</html>
