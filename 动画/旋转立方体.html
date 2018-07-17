@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转立方体</title>
+    <style>
+        body{
+            background: black;
+            perspective: 800px;
+        }
+        #contain div{
+            width: 200px;
+            height: 200px;
+            background: rgba(250,250,250,.5);
+            position: absolute;
+            text-align: center;
+            line-height:200px;
+            border-radius: 10px;
+        }
+        #contain{
+            width: 100px;
+            height: 200px;
+            margin: 0 auto;
+            margin-top:100px;
+
+            transform-style: preserve-3d;
+            animation: xxx 3s infinite linear ;
+        }
+
+         @keyframes xxx {
+             from{
+
+             }
+             to{
+                 transform: rotateY(360deg);
+             }
+         }
+
+        #div1{
+            transform:translateZ(100px);
+        }
+         #div2{
+             transform:rotateY(-180deg)      translateZ(100px);
+         }
+        #div3{
+            transform: rotateX(-90deg) translateZ(-100px);
+        }
+         #div4{
+          transform: rotateX(-90deg) translateZ(100px);
+         }
+        #div5{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        #div6{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+    </style>
+</head>
+<body>
+<div id="contain">
+    <!--div#div$*6-->
+    <div id="div1" >孟美岐</div>
+    <div id="div2">南柱赫</div>
+    <div id="div3">双宋cp</div>
+    <div id="div4">郑爽</div>
+    <div id="div5">李圣经</div>
+    <div id="div6">鹿晗</div>
+</div>
+</body>
+</html>
