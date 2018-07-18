@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            perspective: 800px;
+        }
+      #all div{
+          position: absolute;
+          top: 400px;
+          left: 400px;
+
+        }
+        #all{
+            width: 1000px;
+            height: 800px;
+            border:2px solid lemonchiffon ;
+            box-shadow: 4px 4px 4px 4px;
+            border-radius: 10%;
+            margin: 300px auto;
+            transform-style: preserve-3d;
+            position: center;
+
+        }
+        #img1{
+            animation:xxx1 3s infinite linear ;
+
+
+        }
+        #img2{
+            animation:xxx2 3s infinite linear ;
+
+        }
+        #img3{
+            animation:xxx3 3s infinite linear ;
+
+        }
+        #img4{
+            animation:xxx4 3s infinite linear ;
+
+        }
+        #img5{
+            animation:xxx5 3s infinite linear ;
+
+        }
+
+
+        @keyframes xxx1 {
+            0% {
+
+            }
+            100% {
+                transform: translateY(400px) rotateY(360deg);
+            }
+            
+        }
+        @keyframes  xxx2{
+            0%{}
+            100%{  transform: translateY(-400px)  rotateY(360deg) }
+
+
+        }
+        @keyframes  xxx3{
+            0%{}
+            100%{    transform: translateX(400px) rotateY(360deg); }
+
+
+        }  @keyframes  xxx4{
+               0%{}
+               100%{    transform: translateX(-400px) rotateY(360deg);}
+
+
+           }  @keyframes  xxx5{
+                  0%{}
+                  100%{transform: rotateY(360deg);}
+
+
+              }
+
+
+#all div img{
+    width: 200px;
+    height:200px ;
+}
+
+
+
+    </style>
+</head>
+<body>
+<div id="all">
+
+
+<div id="img1"><img src="image/美岐2.jpg" alt=""></div>
+<div id="img2"><img src="image/美岐3.jpg" alt=""></div>
+<div id="img3"><img src="image/美岐4.jpg" alt=""></div>
+<div id="img4"><img src="image/美岐5.jpg" alt=""></div>
+<div id="img5"><img src="image/美岐5%20-%20副本.jpg" alt=""></div>
+</div>
+</body>
+</html>
