@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 35px;
+            height: 74px;
+            background:url("image/rool.jpeg") -20px;
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+        }
+        div:hover{
+            background-position: -112px;
+        }
+        body{
+            height: 3000px;
+            width:1400px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+
+</div>
+</body>
+<script>
+ var distance=document.getElementById('div1')
+ distance.onclick=function () {
+     var top=document.documentElement.scrollTop||document.body.scrollTop;
+     var Timer =setInterval(function () {
+         scrollTo(0,top*=0.6)
+         if(top<=1){
+             clearInterval(Timer);
+             scrollTo(0,0)
+         }
+
+
+     } ,500)
+
+ }
+ distance.onmousedown=function () {
+     distance.style.backgroundPosition='-200px';
+     var top=document.documentElement.scrollTop||document.body.scrollTop;
+     var Timer=setInterval(function () {
+         scrollTo(0,top*=1.4);
+         if(top>3000){
+             clearInterval(Timer)
+         }
+
+     },500)
+ }
+</script>
+</html>
