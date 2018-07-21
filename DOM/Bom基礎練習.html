@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        ul{
+            width: 100px;
+            height: 100px;
+        }
+        div{
+            height: 100px;
+            width: 100px;
+            position: absolute;
+        }
+        #div1{
+            background: #63a35c;
+            transform: rotateY(90deg) translateZ(-50px) ;
+             animation:d111 2s infinite ;
+        }
+        @keyframes d111 {
+        0%{}
+          100%{ transform: rotateY(-360deg);
+          }
+        }
+        #div2{
+            background: #67ccea;
+            animation:d222 2s linear ;
+        }
+        @keyframes d222{
+            form{}
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<ul id="active">
+    hhhhhhhh
+</ul>
+<div id="div1">
+
+</div>
+<div id="div2">
+
+</div>
+<script>
+    document.write('積極生活')
+    var a=document.getElementById('active')
+    // console.log(innerWidth)
+   var f= open(url='https://www.baidu.com/?tn=98012088_5_dg&ch=12' ,'',    //屬性沒有也要寫 ''
+       'height=400px','width=400px')
+    // console.log(innerHeight)
+  // f.moveTo(300,200)
+  f.moveBy(100,100)
+    var obj=document.getElementById('div1')
+    var Timer=setInterval(function () {
+obj.style.background='#ccc'
+
+        },5000
+    )
+
+
+
+</script>
+</body>
+</html>

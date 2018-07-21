@@ -1,0 +1,151 @@
+#c-stree{
+    background: rgb(204,173,206);
+}
+#c-stree .warpper>a img{
+    width: 1190px;
+    height: 80px;
+}
+#c-stree .warpper{
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+}
+#header-menu{
+    height: 31px;
+    background: #e3e4e5;
+}
+#header-menu .warpper #header-ul {
+    font-size: 12px;
+    font-weight: 400;
+    float: right;
+
+}
+#header-menu .warpper #header-ul>li{
+    float: left;
+    height: 31px;
+    padding-right: 0px;
+    margin-right: 4px;;
+
+}
+#header-ul li #free{
+    color: red;
+    margin-left: 5px;
+}
+#header-ul li a{
+    color:#999999;
+
+
+}
+#header-menu .warpper span{
+    font-size: 12px;
+    font-weight: 400;
+    color:#999999;
+    float: left;
+    position: relative;
+    left: 230px;
+    margin: 7px 7px;
+}
+#header-menu .warpper .head-menu-sc i{
+    font-size: 10px;
+    color: #99999999;
+    margin-left: 0px;
+    position: relative;
+    top: 5px;
+    left: -24px;
+
+}
+#header-ul >li >a:hover{
+    color: red;
+    /*text-decoration: underline;*/
+}
+#header-ul li a:hover i{
+    transition: transform 2s linear;            //怎麽讓圖標三角形轉
+    transform: rotate(180deg) ;
+}
+#my\ JD ul{
+    float: left;
+    padding: 7px 0;
+}
+#header-ul .head-menu-sc:hover{
+    background: white;
+}
+#header-ul>li> a:not(#nihao){
+    border: 1px solid transparent;
+    border-right-color: #999999;
+    padding-right: 21px;
+    margin-top: 5px;
+}
+#header-ul>li> a{
+    float: left;
+    margin: 5px
+}
+#header-ul .head-menu-sc{
+    position: relative;
+}
+#header-ul .head-menu-sc #my\ JD{
+    position: absolute;
+    left: 5.99px;
+    top: 31px;
+    width: 278px;
+    height: 163px;
+    background: white;
+    display: none;
+}
+.fd{
+    overflow: hidden;
+}
+.fd li{
+    width: 120px;
+    height: 24px;
+}
+#my\ JD .order{
+    border-bottom: 1px dotted #cccccc;
+}
+#header-ul .head-menu-sc.my:hover #my\ JD{
+    display: block;
+}
+#enterprise ul{
+    width: 70px;
+    float: left;
+}
+#enterprise{
+    position: absolute;
+    top: 31px;
+    left: 5.99px;
+    width: 170px;
+    background:white ;
+    display: none;
+}
+#enterprise ul li{;
+    height: 49px;
+    width: 60px;
+    margin-top: 8px
+;
+}.head-menu-sc#enter:hover #enterprise{
+    display: block;
+ }
+ .head-menu-sc #client ul{
+     height: 70px;
+     width: 72px;
+ }
+ .head-menu-sc #client{
+     position: absolute;
+     left: 5.99px;
+     top: 31px;
+     width: 150px;
+     display: none;
+ }
+  #cl:hover #client{
+     display: block;
+ }
+   .head-menu-sc #client ul{
+       height: 70px;
+       width: 75px;
+       float: left;
+   }
+   .head-menu-sc #client ul li{
+       width: 72px;
+   }
+ #client-1,#client ul{
+     margin-top: 5px;
+ }
