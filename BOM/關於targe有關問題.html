@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+    <button>
+      背景顔色改變
+    </button>
+<p id="p1">文字顔色改變
+<h>lll</h>
+</p>
+</div>
+   <div id="div">
+       <h>
+           123455
+       </h>
+
+
+       <p>
+           我是P
+       </p>
+       <ul>
+           <li>li1</li>
+           <li>li2</li>
+           <li>li3</li>
+           <li>li4</li>
+       </ul>
+
+
+   </div>
+ <script>
+   var div1=document.getElementById('div');
+     div1.onclick=function (e) {
+         console.log(e.target);
+     }
+     div1.onmouseover=function (e) {
+         console.log(e.currentTarget)
+     }
+
+
+ </script>
+</body>
+</html>

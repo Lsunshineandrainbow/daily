@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右側菜單</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+            border-bottom: 1px solid #ccc;
+            width: 50px;
+            height: 30px;
+            text-align:center ;
+        }
+        ul li:last-child{
+            border-bottom: 0;
+        }
+        ul{
+            border: 1px solid black;
+            display: none;
+            width:50px;
+            text-align: center;
+            height: 150px;
+            position: absolute;
+
+        }
+    </style>
+</head>
+<body>
+<ul id="ul">
+    <li>複製</li>
+    <li>黏貼</li>
+    <li>刪除</li>
+    <li>字體</li>
+</ul>
+<script>
+    var ul1=document.getElementById('ul');
+    document.oncontextmenu = function(e){
+        ul1.style.display='block';
+        var bw = document.documentElement.offsetWidth;
+        var uw = ul1.offsetWidth;
+        if((bw-uw)<e.clientX){
+            ul1.style.left=(bw-uw)+'px';
+            ul1.style.top=e.clientY+'px';
+        }
+        else{
+            ul1.style.left=e.clientX+'px';
+            ul1.style.top=e.clientY+'px';
+        }
+        var bh=document.documentElement.offsetHeight;
+        var uh=ul1.offsetHeight;
+        if((bh-uh)<e.clientY){
+            ul1.style.top=(bh-uh)+'px';
+            ul1.style.left=e.clientX+'px';
+        }
+        else{
+            ul1.style.left=e.clientX+'px';
+            ul1.style.top=e.clientY+'px';
+        }
+
+
+
+        return false;
+    }
+    var aL=document.getElementsByTagName('li')
+    for(var i=0;i<aL.length;i++) {
+        aL[i].onmouseover = function () {
+          this.style.background="#ccc" ;
+        };
+        aL[i].onmouseout = function () {
+            this.style.background='';
+
+        }
+    }
+    document.onclick=function () {
+        ul1.style.display='none';
+    }
+
+</script>
+</body>
+</html>
