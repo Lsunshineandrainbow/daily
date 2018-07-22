@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+    <button>
+      背景顔色改變
+    </button>
+<p id="p1">文字顔色改變
+<h>lll</h>
+</p>
+</div>
+   <div id="div">
+       <h>
+           123455
+       </h>
+
+
+       <p>
+           我是P
+       </p>
+       <ul>
+           <li>li1</li>
+           <li>li2</li>
+           <li>li3</li>
+           <li>li4</li>
+       </ul>
+
+
+   </div>
+
+
+
+
+
+<script>
+    // var but=document.getElementsByTagName('p');   //得到一個數組
+    // but[0].onclick=function(e){
+    //     but[0].style.background='green';
+    //     but[0].style.color='red';
+    //     // console.log(e.target)
+    //     // console.log('111');
+    //     console.log(e.target);
+    //     // console.log(e.currentTarget)
+    // }
+   var div1=document.getElementById('div')
+    div1.onclick=function (e) {
+         console.log(e.target)
+    }
+
+
+</script>
+</body>
+</html>

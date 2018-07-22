@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="input1">姓名：</label><input type="text" id="input1">
+<label for="input2">年齡：</label><input type="password" id="input2">
+<button type="button" id="but1">下一步</button>
+<button id="but2">上一步</button>
+<button id="but3">跳轉</button>
+
+<script>
+ var bu1=document.getElementById('but1')
+    bu1.onclick=function () {
+        console.log(navigator.appName);
+        console.log(navigator.appVersion);
+        console.log(navigator.userAgent);
+        if(navigator.userAgent.indexOf('iPad')>-1){
+            location.href='https://www.hua.com/?sid=bddj144123469&utm_source=baidu&utm_medium=cpc&utm_term=PC-88090249175-D144-%E9%B2%9C%E8%8A%B1%E7%BD%91'
+
+        }
+        else {
+            location.href='https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&ch=12&tn=98012088_5_dg&wd=xianhuawang&oq=%25E5%2580%258B%25E4%25BA%25BA%25E7%25'
+        }
+    };
+    var bu3=document.getElementById('but3')
+    bu3.onclick=function () {
+        location.href='Bom基礎練習.html'
+    };
+    var  bu2=document.getElementById('but2')
+    bu2.onclick=function () {
+        history.forward()
+    }
+
+</script>
+</body>
+</html>

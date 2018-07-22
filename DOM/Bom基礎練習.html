@@ -20,7 +20,7 @@
         #div1{
             background: #63a35c;
             transform: rotateY(90deg) translateZ(-50px) ;
-             animation:d111 2s infinite ;
+             animation:d111 1s infinite ;
         }
         @keyframes d111 {
         0%{}
@@ -29,7 +29,7 @@
         }
         #div2{
             background: #67ccea;
-            animation:d222 2s linear ;
+            animation:d222 2s infinite ;
         }
         @keyframes d222{
             form{}
@@ -49,6 +49,7 @@
 <div id="div2">
 
 </div>
+<button id="go">回去啦</button>
 <script>
     document.write('積極生活')
     var a=document.getElementById('active')
@@ -58,12 +59,20 @@
     // console.log(innerHeight)
   // f.moveTo(300,200)
   f.moveBy(100,100)
-    var obj=document.getElementById('div1')
-    var Timer=setInterval(function () {
-obj.style.background='#ccc'
 
-        },5000
-    )
+    var obj=document.getElementById('div2')
+    obj.onclick=function () {
+        var Timer=setInterval(function () {
+                obj.style.background='#ccc'
+
+            },2000
+        )
+
+    }
+ var next=document.getElementById('go')
+    next.onmousedown=function () {
+        history.back()
+    }
 
 
 

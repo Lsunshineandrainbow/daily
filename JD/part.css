@@ -149,3 +149,20 @@
  #client-1,#client ul{
      margin-top: 5px;
  }
+ .web .web-1{
+     float: left;
+ }
+ .web{
+     position: absolute;
+     right: 0px;
+     top: 31px;
+     width: 800px;
+     height: 200px;
+ }
+ .web .web-1 ul{
+     float: left;
+ }
+ .web .web-1 h6{
+     width: 100px;
+     height: 30px;
+ }

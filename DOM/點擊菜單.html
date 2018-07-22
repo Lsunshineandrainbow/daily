@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #mean{
+            width: 70px;
+            position: absolute;
+            border: 1px solid #000000;
+            text-align: center;
+             display: none;
+        }
+        li{
+            height: 30px;
+            list-style: none;
+            line-height: 30px;
+       border-bottom: 1px solid #ccc;
+
+        }
+   #mean li:last-child{
+       border-bottom: 0px;
+   }
+        /*li:hover{*/
+            /*background: #cccccc;*/
+        /*}*/
+        html,body{
+                  width:100%;
+                  height:100%;
+              }
+    </style>
+</head>
+
+<body>
+<ul id="mean">
+    <li >打開</li>
+    <li>複製</li>
+    <li>黏貼</li>
+    <li>刪除</li>
+</ul>
+<script>
+var abc=document.getElementById('mean');
+
+    document.oncontextmenu=function (e) {
+
+
+    abc.style.display='block';
+
+        // e.returnValue=false;  //ie取消默認值
+        // e.preventDefault();   //標準取消默認值
+        var mw = abc.offsetWidth;
+        var dw = document.documentElement.offsetWidth;
+        if((dw-mw)<e.clientX) {
+            abc.style.left=(dw-mw)+'px';
+            // abc.style.top=e.clientY+'px;'
+        } else {
+            abc.style.left=e.clientX+'px';
+        }
+        var mh=abc.offsetHeight;
+        var dh=document.documentElement.offsetHeight;
+        console.log(dh);
+        console.log(mh);
+        if((dh-mh)<e.clientY){
+            abc.style.top=(dh-mh)+'px';
+            // abc.style.left=e.clientX+'px';
+        }
+        else{
+            abc.style.top=e.clientY +'px';
+        }
+        return false;
+    }
+    var al=document.getElementsByTagName('li');
+    for(var i=0;i<al.length;i++){
+        al[i].onmouseover=function () {
+            this.style.background='#ccc';
+        };
+        al[i].onmouseout=function () {
+            this.style.background=''  ;
+        };
+        al[i].onclick=function (e) {
+              // alert(this.innerHTML);
+            alert(e.target)
+
+        }
+    }
+    document.onclick=function () {
+        abc.style.display='none';
+    }
+
+
+
+</script>
+</body>
+</html>
