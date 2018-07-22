@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+             <div>
+                 <p id="p1">
+                     我是P1
+                 </p>
+                 <P>
+                     我是P2
+                 </P>
+                 <h2>
+                     我是h2
+                 </h2>
+                 <span>
+                     hello
+                 </span>
+                 <input type="text" name="username" placeholder="abcdell">abcde</div>
+
+             </div>
+</body>
+  <script>
+      var P=document.getElementById('p1')
+      P.onmouseover=function () {
+          P.style.background='#334499';
+          alert(P.innerHTML);
+      }
+      var aP=document.getElementsByTagName('p')   //獲得的是一個數組
+       aP[0].onclick=function () {
+           P.style.color="#904094";
+           console.log(P.innerText.indexOf('abc'))   //查詢P標簽中的文字内容中是否有abc
+       }
+       for(var i=0;i<aP.length;i++) {
+           aP[i].onmouseover=function () {
+               this.style.background='#103030';    //this的使用
+           }
+       }
+       var iN=document.getElementsByName('username');
+      iN.click=function () {
+          iN.style.indexOf('abc');
+          console.log(iN.indexOf('abc'));
+      }
+
+  </script>
+</html>
