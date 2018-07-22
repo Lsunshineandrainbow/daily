@@ -151,18 +151,33 @@
  }
  .web .web-1{
      float: left;
+     margin-left: 22px;
+     border-right:1px dotted #cccccc ;
+     margin-top: 10px;
  }
+ .web >ul:last-child{
+     border-right:0px ;
+ }
+
  .web{
      position: absolute;
      right: 0px;
      top: 31px;
-     width: 800px;
+     width: 967px;
      height: 200px;
+     display: none;
  }
  .web .web-1 ul{
      float: left;
  }
  .web .web-1 h6{
      width: 100px;
-     height: 30px;
+     height: 24px;
+     padding-top: 5px;
  }
+.web .web-1 li{
+    margin: 5px 6px;
+}
+#web-per:hover .web{
+    display: block;
+}
