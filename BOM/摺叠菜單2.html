@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+         margin: 0;
+        padding: 0;
+    }
+    .menu-2{
+        display: none;
+    }
+    #menu-all{
+        width: 197px;
+        border: 1px solid #000;
+        margin: 200px auto;
+    }
+
+    #menu-all .menu-1 a{
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        background: #000;
+        color: white;
+    }
+    #menu-all .menu-1 ul li{
+        color: black;
+        text-align: center;
+    }
+ li{
+     list-style: none;
+ }
+</style>
+<body>
+ <ul id="menu-all">
+     <li class="menu-1"><a href="">come on</a>
+     <ul class="menu-2">
+         <li>a</li>
+         <li>b</li>
+         <li>c</li>
+     </ul>
+     </li>
+     <li class="menu-1"><a href="">！！！</a>
+         <ul class="menu-2">
+                 <li>b</li>
+                 <li>c</li>
+                 <li>d</li>
+         </ul>
+     </li>
+ </ul>
+ <script>
+    var aM = document.getElementsByTagName('a') ;
+    var aE=document.getElementsByClassName('menu-2');
+         for(var i=0;i<aM.length;i++){
+        aM[i].xx=i;
+        aM[i].onclick = function () {
+            // aE[this.xx].style.display='block';
+            // return false;
+            if(getStyle(aE[this.xx],'display')=='block'){
+                aE[this.xx].style.display='none';
+            }
+            else{
+                aE[this.xx].style.display='block';
+            }
+            return false;
+        }
+
+         }
+          function getStyle(elem,prop) {
+              if(elem.currentStyle){
+                  return elem.currentStyle;
+              }
+              else{
+                  return getComputedStyle(elem,false)[prop]
+              }
+          }
+
+ </script>
+</body>
+</html>
