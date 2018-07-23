@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>摺叠菜單  </title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #menu{
+            width: 200px;
+            margin: 200px auto;
+            border: 1px solid #000;
+        }
+        a{
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+            color:white;
+            background: black;
+        }
+
+        li{
+            list-style: none;
+            text-align: center;
+        }
+        .sub-menu{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+ <ul id="menu">
+     <li><a href="">管理區</a>
+         <ul class="sub-menu">
+             <li>001</li>
+             <li>002</li>
+             <li>003</li>
+         </ul>
+     </li>
+     <li><a href="">交流區</a>
+         <ul class="sub-menu">
+             <li>001</li>
+             <li>002</li>
+             <li>003</li>
+         </ul>
+     </li>
+ </ul>
+  <script>
+      var aA = document.getElementsByTagName('a');
+      var aS = document.getElementsByClassName('sub-menu');
+      for(var i=0;i<aA.length;i++){
+          aA[i].xx=i;
+      aA[i].onclick = function () {
+          // aS[this.xx].style.display='none';
+          // if(aS[this.xx].style.display == 'block' ){      //if裏面判斷必須是 ‘= =’
+          //     aS[this.xx].style.display='none';
+          // }
+          // else {
+          //     aS[this.xx].style.display='block';
+          // }
+          if(getStyle(aS[this.xx],'display')=='none'){
+              aS[this.xx].style.display ='block';
+          }
+          else {
+              aS[this.xx].style.display='none';
+          }
+          return false;
+          }
+      }
+      function getStyle(elem,prop) {
+          if(elem.currentStyle){
+              return elem.currentStyle;
+          }
+          else {
+              return getComputedStyle(elem,false)[prop]
+          }
+
+      }
+  </script>
+</body>
+</html>

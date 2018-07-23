@@ -181,3 +181,24 @@
 #web-per:hover .web{
     display: block;
 }
+#search{
+    height: 140px;
+}
+#search-ib{
+    height: 60px;
+    text-align:center;
+}
+.wrapper #search-all li{
+    float: left;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+.wrapper #search-all li a{
+    color: #a9b9c7;
+}
+#search-all{
+    height: 20px;
+    width: 552px;
+
+}

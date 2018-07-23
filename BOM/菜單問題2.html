@@ -17,6 +17,8 @@
         }
         ul li:last-child{
             border-bottom: 0;
+            width: 50px;
+            height: 30px;
         }
         ul{
             border: 1px solid black;
@@ -44,20 +46,19 @@
         var uw = ul1.offsetWidth;
         if((bw-uw)<e.clientX){
             ul1.style.left=(bw-uw)+'px';
-            ul1.style.top=e.clientY+'px';
         }
         else{
             ul1.style.left=e.clientX+'px';
-            ul1.style.top=e.clientY+'px';
         }
-        var bh=document.documentElement.offsetHeight;
+        var bh=window.innerHeight;
         var uh=ul1.offsetHeight;
+        console.log(bh);
+        console.log(uh);
         if((bh-uh)<e.clientY){
+            console.log(bh-uh);
             ul1.style.top=(bh-uh)+'px';
-            ul1.style.left=e.clientX+'px';
         }
         else{
-            ul1.style.left=e.clientX+'px';
             ul1.style.top=e.clientY+'px';
         }
 
@@ -65,7 +66,7 @@
 
         return false;
     }
-    var aL=document.getElementsByTagName('li')
+    var aL=document.getElementsByTagName('li');
     for(var i=0;i<aL.length;i++) {
         aL[i].onmouseover = function () {
           this.style.background="#ccc" ;
