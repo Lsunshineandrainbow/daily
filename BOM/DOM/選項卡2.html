@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>選項卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{margin: 200px auto;
+            width: 350px;
+            height: 30px;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        li{margin-right: 10px;
+            border: 1px solid black;
+            list-style: none;
+            text-align: center;
+            float: left;
+            width: 100px;
+            background: white;
+        }
+      #index div{
+            width: 324px;
+            height: 300px;
+            position: absolute;
+            top: 223px;
+            left: 439px;
+            border: 1px solid #000;
+            display: none;
+
+        }
+        #index .selected{
+            background: #ccc;
+        }
+       #index .dis{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+     <div id="index">
+    <ul>
+        <li class="selected"><a href="">A</a>
+        </li>
+        <li><a href="">B</a>
+        </li>
+        <li><a href="">C</a>
+        </li>
+    </ul>
+   <div class='dis'>333</div>
+    <div>222</div>
+    <div>1111</div>
+     </div>
+<script>
+    var aL = document.getElementsByTagName('li');
+    var  iD=document.getElementById('index');
+    var aS= iD.getElementsByTagName('div');
+    for(var i=0;i<aL.length;i++){
+        aL[i].xx=i;
+        aL[i].onclick = function () {
+            for(var j=0;j<aL.length;j++){
+               aL[j].className = '';
+                aS[j].className = '';
+            }
+             this.className = 'selected';
+            aS[this.xx].className = 'dis';
+            return false;
+        }
+
+    }
+</script>
+</body>
+</html>
