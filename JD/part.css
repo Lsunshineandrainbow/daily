@@ -59,7 +59,7 @@
     /*text-decoration: underline;*/
 }
 #header-ul li a:hover i{
-    transition: transform 2s linear;            //怎麽讓圖標三角形轉
+    /*transition: transform 2s linear;            //怎麽讓圖標三角形轉      i不能轉*/
     transform: rotate(180deg) ;
 }
 #my\ JD ul{
@@ -183,16 +183,19 @@
 }
 #search{
     height: 140px;
+    background: #f0f3ef;
+    overflow: hidden;
 }
 #search-ib{
     height: 60px;
     text-align:center;
+    overflow: hidden;
 }
 .wrapper #search-all li{
     float: left;
     font-size: 12px;
     font-weight: 400;
-
+    margin-right: 9px;
 }
 .wrapper #search-all li a{
     color: #a9b9c7;
@@ -200,5 +203,9 @@
 #search-all{
     height: 20px;
     width: 552px;
-
+    margin: 6px 387px;
+}
+#search-ib #search-i {
+    width: 500px;
+    margin: 30px  auto;
 }
