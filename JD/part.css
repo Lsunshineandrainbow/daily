@@ -90,6 +90,7 @@
     height: 163px;
     background: white;
     display: none;
+    z-index: 1;
 }
 .fd{
     overflow: hidden;
@@ -115,6 +116,7 @@
     width: 170px;
     background:white ;
     display: none;
+    z-index: 1;
 }
 #enterprise ul li{;
     height: 49px;
@@ -134,9 +136,11 @@
      top: 31px;
      width: 150px;
      display: none;
+     z-index: 1;
  }
   #cl:hover #client{
      display: block;
+      background: white;
  }
    .head-menu-sc #client ul{
        height: 70px;
@@ -166,6 +170,9 @@
      width: 967px;
      height: 200px;
      display: none;
+     z-index: 1;
+     background: white;
+
  }
  .web .web-1 ul{
      float: left;
@@ -184,12 +191,14 @@
 #search{
     height: 140px;
     background: #f0f3ef;
-    overflow: hidden;
+
 }
 #search-ib{
+    width: 100%;
     height: 60px;
-    text-align:center;
+    text-align: center;
     overflow: hidden;
+    display: flex;
 }
 .wrapper #search-all li{
     float: left;
@@ -203,9 +212,58 @@
 #search-all{
     height: 20px;
     width: 552px;
-    margin: 6px 387px;
+    margin: 8px 387px;
 }
 #search-ib #search-i {
     width: 500px;
-    margin: 30px  auto;
+    height: 35px;
+    /* margin: 1px 382px; */
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-top: 20px;
+    margin-left: 382px;
+    line-height: 35px;
+    position: relative;
 }
+input{
+    width: 450px;
+    height: 25px;
+    background: white;
+    border: none;
+    position: absolute;
+    top: 5px;
+    left: 0px;
+}
+button{
+    width: 50px;
+    height: 37px;
+    background: #e62f2f;
+    border: none;
+    margin: 20px -1px
+}
+#search-2 ul{
+    float: left;
+    margin-left: 10px;
+}
+#search-2 ul li{
+    float: left;
+    margin-left: 30px;
+}
+#search-2 ul li a{
+    font-size: 14px;
+    color: #333;
+}
+#search-2 {
+    width: 790px;
+    height: 45px;
+    margin-left: 240px;
+    margin-top: 10px;
+}
+ #adress{
+    color: #e62f2f;
+}
+#search-ib .icon-sousuo1{
+    font-size: 20px;
+    color: white;
+    font-weight: 900;
+    }
