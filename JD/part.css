@@ -84,13 +84,14 @@
 }
 #header-ul .head-menu-sc #my\ JD{
     position: absolute;
-    left: 5.99px;
+    left: -0.01px;
     top: 31px;
     width: 278px;
     height: 163px;
     background: white;
     display: none;
     z-index: 1;
+    padding-left: 15px;
 }
 .fd{
     overflow: hidden;
@@ -112,11 +113,12 @@
 #enterprise{
     position: absolute;
     top: 31px;
-    left: 5.99px;
+    left: -0.01px;
     width: 170px;
-    background:white ;
+    background: white;
     display: none;
     z-index: 1;
+    padding-left: 9px;
 }
 #enterprise ul li{;
     height: 49px;
@@ -132,11 +134,12 @@
  }
  .head-menu-sc #client{
      position: absolute;
-     left: 5.99px;
+     left: -0.01px;
      top: 31px;
      width: 150px;
      display: none;
      z-index: 1;
+     padding-left: 8px
  }
   #cl:hover #client{
      display: block;

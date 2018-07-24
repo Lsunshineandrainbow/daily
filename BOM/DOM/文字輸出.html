@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="clu" id="clu-1">
+    hello
+</div>
+
+</body>
+ <script>
+     // var oDiv = document.getElementById('clu');
+     // var s = oDiv.innerHTML;
+     // var p=0;
+     // // new  string();
+     // // string(s);
+     // document.write(s.sub(1,2))
+     // for(var i=0; i<s.length;i++){
+     //     setInterval(function () {
+     //         document.write(s.sub(p,p+1))
+     //     },5000)
+     //     p++;
+     // }
+     // // setInterval(function () {
+     // //     for(var i=0; i<s.length;i++){
+     // //     document.write(s.sub(p,1));
+     // //     p++;}
+     // //
+     // // },500)
+     var oCul = document.getElementById('clu')
+     var world = oCul.innerHTML;
+     var index=1;
+     function show(){
+         document.getElementById('clu-1').innerHTML = world.substring(0,index++)
+     }
+     setInterval(show,500)
+
+ </script>
+</html>

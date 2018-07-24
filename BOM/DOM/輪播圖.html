@@ -36,7 +36,9 @@
             float: left;
             margin-right: 5px;
             text-align: center;
-            line-height: 20px;.
+            line-height: 20px;
+            cursor: pointer;
+            z-index: 999999999;
         }
         #order{
             position: absolute;
@@ -77,12 +79,14 @@
        </ul>
    </div>
     <script>
+        var oD = document.getElementById('content')
       var aUl = document.getElementById('order');
       var aLi = aUl.getElementsByTagName('li');
       var aImg = document.getElementsByTagName('img');
       var oNext = document.getElementById('pre');
       var oPre = document.getElementById('next');
       var index = 0;
+      var zIndex=4;
       for (var i=0;i<aLi.length;i++){
           aLi[i].index = i;
           aLi[i].onmouseover = function () {
@@ -96,7 +100,9 @@
               // return false;
           // }
               Img(this.index);}
-      }
+            aLi[i].style.zIndex = aLi.length-i;
+           }
+
       oNext.onclick = function () {
           index--;
           // for(var j=0;j<aLi.length;j++){
@@ -131,6 +137,20 @@
           aLi[index].className ='organe';
           aImg[index].className = 'selected';
       }
+      // var Timer = setInterval(  oPre.onclick,500)
+         play();
+        function play(){
+          Timer = setInterval(function () {
+              oPre.onclick();
+          },500)
+        }
+        oD.onmouseover = function () {
+            clearInterval(Timer);
+        }
+        oD.onmouseout = function () {
+            play();
+        }
+
     </script>
 </body>
 </html>

@@ -46,10 +46,6 @@
         #li-im ul {
             position: absolute;
             top: 28px;
-            display: none;
-        }
-        #li-im .li-ul{
-            display: block;
         }
 
     </style>
@@ -88,8 +84,10 @@
     var aI = aL.getElementsByTagName('li');
     var aD = document.getElementById('li-im');
     var aU = aD.getElementsByTagName('ul');
+    var nowindex=0;
     for(var i=0; i<aI.length;i++){
         aI[i].index = i;
+        aI[i].zIndex = aI.length-i;
         aI[i].onclick = function (e) {
             for (var j=0;j<aI.length;j++) {
                 aI[j].className='';
@@ -97,10 +95,22 @@
             }
            this.className= 'selected';
             aU[this.index].className = 'li-ul';
+            aU[this.index].style.opacity = '0'
+            animate( ,opacity)
+
             e.preventDefault();
             return false;
         }
     }
+    setInterval(function () {
+        for(var i=0; i<aI.length;i++) {
+            for (var j = 0; j < aI.length; j++) {
+                aI[j].className = '';
+                aU[j].className = '';
+            }
+            aI[i].className = 'selected';
+            aU[i].className = 'li-ul';}
+        },5000)
 
             </script>
 </body>
