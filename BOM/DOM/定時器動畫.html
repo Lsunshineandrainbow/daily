@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #a71d5d;
+            border: 1px dotted #795da3;
+            margin: 100px auto;
+            opacity: 1;
+
+
+        }
+        h1{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #a71;
+            border: 1px dotted #795da3;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <h1></h1>
+</div>
+</body>
+ <script>
+    var oDiv = document.getElementById('div1');
+    var oH = document.getElementsByTagName('h1');
+
+  var timer =  setInterval(function () {
+        var o= getComputedStyle(oDiv,false).opacity;
+        // var c=e.getComputedStyle(oDiv[0],false).backgroundColor;
+
+      if(o>0.2){
+          oDiv.style.opacity=o*0.9;
+          console.log(o);
+      }
+      else{
+          clearInterval(timer);
+      }
+
+        oDiv.style.backgroundColor='#ccc'
+    },5000)
+
+ </script>
+</html>
