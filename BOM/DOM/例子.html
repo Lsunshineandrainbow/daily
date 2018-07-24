@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>美圖例子</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #contain>ul>li{
+            float: left;
+            width: 163px;
+        }
+        img{
+            width: 250px;
+            height: 200px;
+        }
+        #contain{
+            margin: 200px auto;
+            width: 500px;
+            position: relative;
+        }
+       #li-im li{
+           width: 250px;
+           float: left
+
+        }
+        a{
+            text-decoration: none;
+            color: #cccccc;
+            font-size: 20px;
+            font-weight: 900;
+        }
+        #food li a{
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+       .selected a{
+           color: #a71d5d;
+       }
+        #li-im ul {
+            position: absolute;
+            top: 28px;
+            display: none;
+        }
+        #li-im .li-ul{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+   <div id="contain">
+       <ul id="food">
+           <li class="selected"><a href="">美食</a></li>
+           <li><a href="">娛樂</a></li>
+           <li><a href="">文化</a></li>
+       </ul>
+       <div id="li-im">
+           <ul class="li-ul">
+               <li> <a href=""><img src="../image/drink.jpg" alt=""></a></li>
+               <li><a href=""><img src="../image/rice.jpg" alt=""></a></li>
+               <li><a href=""><img src="../image/west.jpg" alt=""></a></li>
+               <li><a href=""><img src="../image/noddle.jpg" alt=""></a></li>
+           </ul>
+           <ul>
+               <li> <a href=""><img src="../image/娛樂1.jpg" alt=""></a></li>
+               <li><a href=""><img src="../image/娛樂2.jpg" alt=""></a></li>
+               <li><a href=""><img src="../image/娛樂3.jpg" alt=""></a></li>
+               <li><a href=""><img src="../image/娛樂4.jpg" alt=""></a></li>
+           </ul>
+           <ul>
+               <li> <a href=""><img src="../image/book1.jpg" alt=""></a></li>
+               <li><a href=""><img src="../image/book2.jpg" alt=""></a></li>
+               <li><a href=""><img src="../image/book3jpg.jpg" alt=""></a></li>
+               <li><a href=""><img src="../image/book4.jpg" alt=""></a></li>
+           </ul>
+           
+       </div>
+   </div>
+   <script>
+    var aL = document.getElementById('food');
+    var aI = aL.getElementsByTagName('li');
+    var aD = document.getElementById('li-im');
+    var aU = aD.getElementsByTagName('ul');
+    for(var i=0; i<aI.length;i++){
+        aI[i].index = i;
+        aI[i].onclick = function (e) {
+            for (var j=0;j<aI.length;j++) {
+                aI[j].className='';
+                aU[j].className = '';
+            }
+           this.className= 'selected';
+            aU[this.index].className = 'li-ul';
+            e.preventDefault();
+            return false;
+        }
+    }
+
+            </script>
+</body>
+</html>
