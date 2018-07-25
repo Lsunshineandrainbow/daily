@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            width:30px;
+            height: 20px;
+            background:black;
+            color: white;
+            margin-right: 3px;
+            float: left;
+            list-style: none;
+            text-align: center;
+        }
+        div{
+            width:128px ;
+            height: 100px;
+            border: 1px solid black;
+            margin: 200px auto;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        #list{
+            height: 58px;
+            width: 264px;
+            position: absolute;
+            left: 0;
+        }
+        #left-right{
+            height: 35px;
+            width: 109px;
+            position: absolute;
+            bottom: -4px;
+            margin-left: 6px;
+        }
+        #left-right li{
+            margin-left: 21px;
+            background: #cccccc;
+            float: left;
+        }
+
+
+    </style>
+</head>
+<body>
+<div>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ul id="left-right">
+        <li id="left">左</li>
+        <li id="right">右</li>
+    </ul>
+</div>
+<script src="../../jslib.js"></script>
+ <script>
+     var oLeft = document.getElementById('left');
+     var oRight = document.getElementById('right');
+     var oList = document.getElementById('list');
+     var aLi = oList.getElementsByTagName('li');
+        var sp = oList.offsetLeft;
+        var time;
+        var timer;
+     oRight.onclick = function () {
+         sp = '-oList.offsetWidth*0.5';
+         oList.style.left = sp+'px';
+         clearInterval(timer);
+         clearInterval(time);
+         f();
+
+     }
+     oLeft.onclick = function () {
+         clearInterval(timer);
+         clearInterval(time);
+         play();
+     };
+      play();
+       function play() {
+       timer = setInterval(function () {
+          if(sp>-oList.offsetWidth*0.5){
+            sp = sp - 5;
+            oList.style.left = sp+ 'px';
+          }
+          else {
+              sp= 0;
+          }
+      }, 50)}
+           function f() {
+       time=  setInterval(function () {
+              if(sp<=0){
+                  sp= sp +5;
+                  oList.style.left = sp + 'px';
+              }else{
+                  sp = -oList.offsetWidth*0.5;
+                  oList.style.left = left + 'sp';
+              }
+
+          },50)
+           }
+     
+ </script>
+</body>
+</html>
