@@ -89,6 +89,7 @@
         aI[i].index = i;
         aI[i].zIndex = aI.length-i;
         aI[i].onclick = function (e) {
+            nowindex = this.index;
             for (var j=0;j<aI.length;j++) {
                 aI[j].className='';
                 aU[j].className = '';
@@ -96,17 +97,16 @@
            this.className= 'selected';
             aU[this.index].className = 'li-ul';
             aU[this.index].style.opacity = '0'
-            animate( ,opacity)
-
-            e.preventDefault();
+            animate( aU[this.index],{opacity:100});
             return false;
         }
     }
-    setInterval(function () {
+    setInterval(function (e) {
         for(var i=0; i<aI.length;i++) {
             for (var j = 0; j < aI.length; j++) {
                 aI[j].className = '';
                 aU[j].className = '';
+                return false;
             }
             aI[i].className = 'selected';
             aU[i].className = 'li-ul';}

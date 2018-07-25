@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 書 </title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        #content{
+            width: 500px;
+            height:400px;
+            margin:200px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #content div{
+            width:2000px ;
+            height: 400px;
+            position: absolute;
+
+        }
+        img{
+            width: 500px;
+            height: 400px;
+            float: left;
+        }
+
+        li{
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: #000;
+            color: white;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+
+        }
+        #order{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+
+        }
+        #content ul:last-child{
+            bottom: 10px;
+            left: 10px;
+        }
+        #content .organe{
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <div id="img-div">
+        <img src="../image/book1.jpg" class="selected" alt="">
+        <img src="../image/book2.jpg" alt="">
+        <img src="../image/book3jpg.jpg" alt="">
+        <img src="../image/book4.jpg" alt="">
+    </div>
+    <ul id="order"style="z-index: 999999999;">
+        <li class="organe">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ul style="z-index: 999999999;">
+        <li id="pre">&lt</li>
+        <li id="next">&gt</li>
+    </ul>
+</div>
+<script src="../../jslib.js"></script>
+<script>
+    var oD = document.getElementById('content')
+    var aUl = document.getElementById('order');
+    var aLi = aUl.getElementsByTagName('li');
+    var aImg = document.getElementsByTagName('img');
+    var oNext = document.getElementById('pre');
+    var oPre = document.getElementById('next');
+    var  oImgDiv = document.getElementById('img-div');
+    var index = 0;
+    var zIndex=4;
+    for (var i=0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover = function () {
+            index=this.index;
+            Img(this.index);}
+        aLi[i].style.zIndex = aLi.length-i;
+    }
+
+    oNext.onclick = function () {
+        index--;
+        if(index==-1){
+            index=aImg.length-1
+        }
+        Img(index);
+    }
+    oPre.onclick = function () {
+        index++;
+        if(index==aImg.length){
+            index=0;
+        }
+        Img(index);
+    }
+    function Img(index) {
+        for(var j=0;j<aLi.length;j++){
+            aImg[j].className ='';
+            aLi[j].className = '';
+        }
+        animate(oImgDiv,{left: -aImg[0].offsetWidth*index})
+    }
+    play();
+    function play(){
+        Timer = setInterval(function () {
+            oPre.onclick();
+        },5000)
+    }
+    oD.onmouseover = function () {
+        clearInterval(Timer);
+    }
+    oD.onmouseout = function () {
+        play();
+    }
+
+</script>
+</body>
+</html>
