@@ -40,7 +40,7 @@
             width: 100%;
             text-align: center;
         }
-       .selected a{
+      #contain .selected a{
            color: #a71d5d;
        }
         #li-im ul {
@@ -79,38 +79,36 @@
            
        </div>
    </div>
+   <script src="../../jslib.js"></script>
    <script>
     var aL = document.getElementById('food');
     var aI = aL.getElementsByTagName('li');
     var aD = document.getElementById('li-im');
     var aU = aD.getElementsByTagName('ul');
     var nowindex=0;
+    var time;
+    var zIndex = 4;
     for(var i=0; i<aI.length;i++){
-        aI[i].index = i;
-        aI[i].zIndex = aI.length-i;
-        aI[i].onclick = function (e) {
+           aI[i].index = i;
+           aI[i].style.zIndex = aI.length-i;
+           aI[i].onclick = function () {
             nowindex = this.index;
             for (var j=0;j<aI.length;j++) {
                 aI[j].className='';
                 aU[j].className = '';
             }
            this.className= 'selected';
-            aU[this.index].className = 'li-ul';
-            aU[this.index].style.opacity = '0'
-            animate( aU[this.index],{opacity:100});
-            return false;
-        }
-    }
-    setInterval(function (e) {
-        for(var i=0; i<aI.length;i++) {
-            for (var j = 0; j < aI.length; j++) {
-                aI[j].className = '';
-                aU[j].className = '';
-                return false;
+            play(nowindex);
             }
-            aI[i].className = 'selected';
-            aU[i].className = 'li-ul';}
-        },5000)
+            }
+            function play(index) {
+            time = setInterval(function (index) {
+            aU[index].style.zIndex= ++zIndex;
+            aU[index].style.opacity = 0;
+            animate( aU[index],{opacity:100});
+           },50)
+
+           }
 
             </script>
 </body>

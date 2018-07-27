@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div-img1{
+           width: 400px;
+            height: 400px;
+            position: absolute;
+        }
+        #img1{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+        }
+        #div-img1 div{
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            opacity: .5;
+            position: absolute;
+            display: none;
+        }
+        #div-img2{
+            width: 400px;
+            height: 400px;
+            margin-left: 410px;
+            overflow: hidden;
+            display: none;
+        }
+        #img2{
+            width: 800px;
+            height: 800px;
+        }
+
+
+    </style>
+</head>
+<body>
+ <div id="div-img1">
+     <img id="img1"   src="../image/1.jpg" alt="">
+    <div id="big">
+    </div>
+ </div>
+ <div id="div-img2">
+     <img id="img2" src="../image/2.jpg" alt="">
+ </div>
+<script>
+    var oDiv = document.getElementById('big');
+    var oDimg1 = document.getElementById('div-img1')
+    var oDimg2 = document.getElementById('div-img2')
+    oDimg1.onmouseover = function (e) {
+        var mLeft = e.clientX-100;
+        var mTop = e.clientY -100;
+        if(e.clientX<100){
+            mLeft=0;
+            var mTop = e.clientY -100;
+        }
+        else if(e.clientX>oDimg1-oDiv.offsetWidth/2){
+            mLeft = 200px;
+        }
+
+
+    }
+        oDimg1.onmouseout = function () {
+            oDimg2.style.display = 'none'
+        oDiv.style.display = 'none'
+      }
+
+</script>
+</body>
+</html>

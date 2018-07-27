@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 600px;
+            height: 600px;
+            margin: 100px auto;
+            position: relative;
+        }
+        img{
+            width: 600px;
+            height: 600px;
+            position: absolute;
+        }
+        #l-r li{
+            width: 10px;
+            height: 10px;
+            color: #cccccc;
+            position: absolute;
+            list-style: none;
+            font-size: 30px;
+            cursor: cell;
+            z-index: 99999999999999;
+        }
+        #next{
+            right: 10px;
+            top: 350px;
+        }
+        #pre{
+            left: 10px;
+            top: 350px;
+        }
+
+        .order li{
+            width: 20px;
+            height: 20px;
+            background: black;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+            line-height: 20px;
+            margin-left: 5px;
+            float: left;
+            list-style: none;
+            cursor:wait;
+        }
+        .order{
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+            z-index: 9999999;
+        }
+        .order .selected{
+            background: #795da3;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <img src="image/張一山.jpg" alt="" class="selected">
+    <img src="image/白.jpg" alt="">
+    <img src="image/鄭爽.jpg" alt="">
+    <img src="image/張韶涵.jpg" alt="">
+    <ul id="l-r">
+        <li id="next">&gt</li>
+        <li id="pre">&lt</li>
+    </ul>
+    <ul class="order">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+<script src="../jslib.js"></script>
+<script>
+    var lNext = document.getElementById('next');
+    var lPre  = document.getElementById('pre');
+    var aImg  = document.getElementsByTagName('img');
+    var aOrder= document.getElementsByClassName('order')[0];
+    var aLi   = aOrder.getElementsByTagName('li');
+    var time;
+    var zIndex=4;
+    var oDiv  = document.getElementsByTagName('div')[0];
+    nowindex=0;
+    for(var i; i<aImg.length;i++){
+        aImg[i].style.zIndex = aImg.length - i;
+    }
+    for (var i=0; i<aLi.length;i++){
+        aLi[i].index=i;
+        aLi[i].onclick = function (){
+            for (var j=0;j<aImg.length;j++) {
+                aImg[j].className = '';
+                aLi[j].className = '';
+            }
+            aImg[this.index].style.zIndex = ++zIndex;
+            this.className = 'selected';
+            aImg[this.index].style.opacity = '0';
+            animate( aImg[this.index],{opacity:100});
+            nowindex = this.index;
+        }
+        lNext.onclick = function () {
+            for (var j=0;j<aImg.length;j++) {
+                aImg[j].className = '';
+                aLi[j].className = '';
+            }
+            if (nowindex==aImg.length){
+                nowindex = -1;
+            }
+            nowindex++;
+            aImg[nowindex].style.zIndex= ++zIndex;
+            aLi[nowindex].className = 'selected';
+            aImg[nowindex].style.opacity = 0;
+            animate( aImg[nowindex],{opacity:100});
+        }
+        lPre.onclick = function () {
+            for (var j=0;j<aImg.length;j++) {
+                aImg[j].className = '';
+                aLi[j].className = '';
+            }
+            if (nowindex == 0){
+                nowindex = 4;
+            }
+            nowindex--;
+            aImg[nowindex].style.zIndex = ++zIndex;
+            aLi[nowindex].className = 'selected';
+            aImg[nowindex].style.opacity = '0';
+            animate( aImg[nowindex],{opacity:100});
+        }
+    }
+    f();
+    function f() {
+        time = setInterval(function () {
+            lNext.onclick();               //若沒有左右兩個鍵綁定什麽
+        },500)
+    }
+    oDiv.onmouseover = function () {
+        clearInterval(time);
+        console.log('1111')
+    }
+    oDiv.onmouseout = function () {
+        f();
+    }
+
+</script>
+</body>
+</html>
