@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <div id="div">
+       11111
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <button>add</button>
+   </div>
+</body>
+ <script>
+    var uL1 = document.getElementById('ul1');
+    var but = document.getElementsByTagName('button')[0]
+    var aLi = document.getElementsByTagName("li")
+    var oDiv = document.getElementById('div')
+    // for(var i=0;i<aLi.length;i++){
+    // aLi[i].onclick = function(){
+    //     console.log(this.innerHTML)
+    // }}
+    uL1.onclick = function(e){
+        console.log(e.target.innerText)
+        e.stopPropagation();
+    }
+     but.onclick = function () {
+        var Li = document. createElement('li');
+         uL1.appendChild(Li)
+         Li.innerHTML = Math.random();
+     }
+     oDiv.onclick = function () {
+         console.log('aaaaaa')
+     }
+
+ </script>
+</html>
