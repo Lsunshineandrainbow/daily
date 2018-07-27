@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 600px;
+            height: 600px;
+            margin: 100px auto;
+            position: relative;
+        }
+        img{
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            display: none;
+        }
+        li{
+            width: 10px;
+            height: 10px;
+            color: #cccccc;
+            position: absolute;
+            list-style: none;
+            font-size: 30px;
+            cursor: cell;
+        }
+        #next{
+            right: 10px;
+            top: 350px;
+        }
+        #pre{
+            left: 10px;
+            top: 350px;
+        }
+         .selected{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+     <div>
+         <img src="image/張一山.jpg" alt="" class="selected">
+         <img src="image/白.jpg" alt="">
+         <img src="image/鄭爽.jpg" alt="">
+         <img src="image/張韶涵.jpg" alt="">
+         <ul>
+             <li id="next">&gt</li>
+             <li id="pre">&lt</li>
+         </ul>
+     </div>
+ <script>
+     var lNext = document.getElementById('next');
+     var lPre  = document.getElementById('pre');
+     var aImg  = document.getElementsByTagName('img');
+     nowindex=0;
+     for (var i=0; i<aImg.length;i++){
+         lNext.onclick = function () {
+             for (var j=0;j<aImg.length;j++) {
+                 aImg[j].className = '';
+             }
+             if (nowindex==3){
+                 nowindex = -1;
+             }
+         nowindex++;
+         aImg[nowindex].className = 'selected';
+         }
+         lPre.onclick = function () {
+             for (var j=0;j<aImg.length;j++) {
+                 aImg[j].className = '';
+             }
+             if (nowindex == 0){
+                 nowindex = 4;
+             }
+             nowindex--;
+             aImg[nowindex].className = 'selected';
+         }
+     }
+ </script>
+</body>
+</html>
