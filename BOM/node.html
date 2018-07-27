@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <div id="div1">
+    <div> 111111</div>
+ </div>
+ <script>
+    var odiv =  document.getElementById('div1')
+     console.log(odiv.nodeName);
+    var p = document.createElement("p")   //創建一個p標簽；
+    odiv.appendChild(p);  // 把p標簽放在odiv標簽中最後一個；
+    p.innerText = '1213465';
+    console.log(odiv.firstChild)
+    console.log(odiv.lastChild)
+    console.log(first(odiv))
+    var uL = document.createElement('ul')
+    uL.innerHTML = '我是html';
+    odiv.insertBefore(uL,first(odiv));
+     function first(elem) {
+         if(elem.firstChild.nodeType!=1){
+               return next(elem.firstChild);
+         }
+         else{
+             return elem.firstChild;
+         }
+     }
+     function  next(elem) {
+         do{
+             elem = elem.nextSibling;
+         }while (elem.nodeType!=1)
+         return elem;
+     }
+ </script>
+</body>
+</html>
