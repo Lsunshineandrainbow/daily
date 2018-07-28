@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         body{
+             background: bisque;
+         }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        img{
+            width: 800px;
+            height: 700px;
+            float: left;
+        }
+        .div1{
+            top: 200px;
+            left: 200px;
+            width:800px ;
+            height: 700px;
+            overflow: hidden;
+            position: absolute;
+        }
+        .div2{
+            width:4000px;
+            position: absolute;
+            left: 0;
+        }
+        li{
+            padding: 0;
+            width: 40px;
+            /*height: 0;*/
+            border: 2px solid #ccc ;
+            float: left;
+            margin-left: 60px;
+            list-style: none;
+        }
+        ul{ width: 500px;
+            position: absolute;
+            left: 200px;
+            bottom: 5px;
+        }
+        #tex{
+            height: 130px;
+            width: 500px;
+            margin: 0 auto;
+        }
+        #tex1{
+            margin-top: 100px;
+            width: 50px;
+            height: 50px;
+        }
+        #tex2{
+            margin-top: 60px;
+            width: 50px;
+            height: 50px;
+        }
+        #tex3{
+            margin-top: 60px;
+            width: 50px;
+            height: 50px;
+        }
+        #tex4{
+            margin-top: 100px;
+            width: 50px;
+            height: 50px;
+        }
+        #tex div{
+            float: left;
+            margin-right: 75px;
+            color: plum;
+            font-weight: 400;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+ <div id="tex">
+  <div id="tex1">小姐姐</div>
+  <div id="tex2">可愛</div>
+  <div id="tex3">甜美</div>
+  <div id="tex4">撒浪嘿</div>
+  </div>
+ <div class="div1">
+     <div class="div2">
+    <img src="../image/滑動1.jpg" alt="">
+    <img src="../image/滑動2.jpg" alt="">
+    <img src="../image/滑動3.jpg" alt="">
+    <img src="../image/花東.jpg" alt="">
+     </div>
+     <ul>
+         <li class="line"></li>
+         <li></li>
+         <li></li>
+         <li></li>
+     </ul>
+ </div>
+ <script src="../../jslib.js"></script>
+ <script>
+     var aDiv2 = document.getElementsByClassName('div2')[0];
+     var aLi   = document.getElementsByTagName('li');
+     var aImg  = document.getElementsByTagName('img')
+     for(var i=0;i<aLi.length;i++){
+         aLi[i].index = i;
+         aLi[i].onmouseover = function () {
+           var  aL = aImg[0].offsetWidth * this.index;
+             // aDiv2.style.left =-aL + 'px';
+             animate(aDiv2,{left:-aL});
+         }
+         }
+     //     play();
+     // function play() {
+     //           setInterval(function () {
+     //         var aL = aImg[0].offsetWidth * this.index;
+     //         // aDiv2.style.left =-aL + 'px';
+     //         animate(aDiv2, {left: -aL});
+     //
+     //     }, 10)
+     //
+     //     }
+
+ </script>
+</body>
+</html>
