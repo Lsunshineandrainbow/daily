@@ -57,6 +57,7 @@
             margin-top: 60px;
             width: 50px;
             height: 50px;
+
         }
         #tex3{
             margin-top: 60px;
@@ -75,6 +76,24 @@
             font-weight: 400;
             font-size: 20px;
         }
+        /*#dec{*/
+            /*position: fixed;*/
+            /*left: 10px;*/
+            /*bottom: 40px;*/
+        /*}*/
+        #dec img{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 10px;
+            bottom: 40px;
+        }
+       #tex span{
+            font-weight: 100;
+            margin-left: 178px;
+            font-size: 1px;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -83,6 +102,7 @@
   <div id="tex2">可愛</div>
   <div id="tex3">甜美</div>
   <div id="tex4">撒浪嘿</div>
+     <span>我宣你</span>
   </div>
  <div class="div1">
      <div class="div2">
@@ -98,11 +118,15 @@
          <li></li>
      </ul>
  </div>
- <script src="../../jslib.js"></script>
- <script>
+   <div id="dec"><img id="heart" src="../image/心動.jpg" alt="">
+         💗
+   </div>
+   <script src="../../jslib.js"></script>
+   <script>
      var aDiv2 = document.getElementsByClassName('div2')[0];
      var aLi   = document.getElementsByTagName('li');
-     var aImg  = document.getElementsByTagName('img')
+     var aImg  = aDiv2.getElementsByTagName('img');
+     var oMove = document.getElementById('heart');
      for(var i=0;i<aLi.length;i++){
          aLi[i].index = i;
          aLi[i].onmouseover = function () {
@@ -119,8 +143,32 @@
      //         animate(aDiv2, {left: -aL});
      //
      //     }, 10)
-     //
-     //     }
+     oMove.onmousedown= function (e) {
+         var mouseX = e.clientX-oMove.offsetLeft;
+         var mouseY = e.clientY-oMove.offsetTop;
+         var l =  document.documentElement.offsetWidth-oMove.offsetWidth;
+         var t =  document.documentElement.offsetTop-oMove.offsetTop;
+         document.onmousemove = function (e) {
+             if(e.clientX-mouseX> l){
+                oMove.style.left  =l + 'px';
+              }
+            else  if(e.clientX-mouseX<0){
+                 oMove.style.left = 0;
+              }
+             if(e.clientY-mouseY<0){
+                 oMove.style.top = 0;
+             }
+             else if (e.clientY-mouseY>t){
+                 oMove.style.top = t +'px';
+             }
+
+             oMove.style.left = e.clientX- mouseX+ 'px';
+             oMove.style.top = e.clientY - mouseY+ 'px';
+             }
+             }
+             oMove.onmouseup = function () {
+                document.onmousemove = null;
+             }
 
  </script>
 </body>
