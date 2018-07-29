@@ -85,9 +85,9 @@
     var aI = aL.getElementsByTagName('li');
     var aD = document.getElementById('li-im');
     var aU = aD.getElementsByTagName('ul');
-    var  nowindex=0;
+     var nowindex=0;
     var zIndex=4 ;
-    var time;
+    var timer;
 
     for(var i=0; i<aI.length;i++){
            aI[i].index = i;
@@ -105,14 +105,22 @@
             }
 
     function play(index) {
-        console.log(index)
-
-        time = setInterval(function () {
-            aU[index].style.zIndex= ++zIndex;
-            aU[index].style.opacity = 0;
-            animate( aU[index],{opacity:100});
-        },1000)}
-
+        aU[index].style.zIndex = ++zIndex;
+        aU[index].style.opacity = 0;
+        animate(aU[index], {opacity: 100});
+    }
+    function show() {
+        timer = setInterval(function () {
+            if(nowindex<2){
+                ++nowindex;
+            }else{
+                nowindex=0;
+            }
+            console.log(nowindex);
+            aI[nowindex].onclick();
+        },500)
+    };
+    show();
             </script>
 </body>
 </html>
