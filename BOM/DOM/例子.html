@@ -102,7 +102,14 @@
             play(nowindex);
                return false;
             }
-            }
+        aU[i].onmouseover = function(){
+            clearInterval(timer);
+        }
+        aU[i].onmouseout= function(){
+               show();
+        }
+
+    }
 
     function play(index) {
         aU[index].style.zIndex = ++zIndex;
@@ -120,6 +127,7 @@
             aI[nowindex].onclick();
         },500)
     };
+
     show();
             </script>
 </body>
