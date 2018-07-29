@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<button></button>
+<input type="text">
+<input type="button" value="提交">
+<select name="" id="">
+    <option value="">中國農大</option>
+    <option value="">東北農大</option>
+    <option value="">四川農大</option>
+    <option value="" checked="checked">西林農大</option>
+</select>
+<input type="checkbox" checked="checked">
+</body>
+ <script src="jquery-1.12.4.js"></script>
+  <script>
+      $('li:eq(0)').css('background','pink')
+      $('li:gt(2)').css('color','blue')
+      $(':button').css('width','50px')
+      $('input:checkbox').css('width','70px')
+      $('option:checked').css('color','red')
+  </script>
+</html>

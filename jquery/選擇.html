@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> 你喜歡的城市  </h1>
+<input type="checkbox">大理
+<input type="checkbox">首爾
+<input type="checkbox">紐約
+<input type="checkbox">上海
+<input type="checkbox">北京
+<br/>
+<button id="all">全選</button>
+<button id="re">反選</button>
+<button id="no">全不選</button>
+<button id="other">其他</button>
+<select>
+    <option>北京"></option>
+    <option>四川"></option>
+    <option>青島"></option>
+    <option>巴西"></option>
+    <option>里約熱内盧"></option>
+    <option>意大利"></option>
+    <option>英國"></option>
+    <option>巴黎"></option>
+    <option> 澳大利亞"></option>
+    <option>莫斯科"></option>
+</select>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $('#all').on('click',function () {
+               $('input') .prop('checked',true)
+        })
+        $('#no').on('click',function () {
+            $('input') .prop('checked',false)
+        })
+        $('#re').on('click',function (){
+            $('input').each(function (index,elem) {
+                elem.checked =!elem.checked;
+            })
+            $('')
+        })
+        $('#other').on('click',function () {
+            $('select').css('display','block')
+    })
+    $('select').css('display','none')
+    })
+</script>
+</body>
+</html>
