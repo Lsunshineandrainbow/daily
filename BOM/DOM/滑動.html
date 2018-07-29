@@ -127,22 +127,25 @@
      var aLi   = document.getElementsByTagName('li');
      var aImg  = aDiv2.getElementsByTagName('img');
      var oMove = document.getElementById('heart');
+     nowindex=0;
      for(var i=0;i<aLi.length;i++){
          aLi[i].index = i;
          aLi[i].onmouseover = function () {
+             nowindex = this.index;
+         }
            var  aL = aImg[0].offsetWidth * this.index;
              // aDiv2.style.left =-aL + 'px';
              animate(aDiv2,{left:-aL});
          }
-         }
-     //     play();
-     // function play() {
-     //           setInterval(function () {
-     //         var aL = aImg[0].offsetWidth * this.index;
-     //         // aDiv2.style.left =-aL + 'px';
-     //         animate(aDiv2, {left: -aL});
-     //
-     //     }, 10)
+         play();
+     function play() {
+               setInterval(function () {
+                   ++nowindex;
+             var aL = aImg[0].offsetWidth * nowindex;
+             // aDiv2.style.left =-aL + 'px';
+             animate(aDiv2, {left: -aL});
+
+         }, 10)}
      oMove.onmousedown= function (e) {
          var mouseX = e.clientX-oMove.offsetLeft;
          var mouseY = e.clientY-oMove.offsetTop;

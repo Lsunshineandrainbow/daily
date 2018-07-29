@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 400px;
+            height: 200px;
+            background: #fffdef;
+            color: #795da3;
+        }
+    </style>
+<body>
+ <div id="div1"  class="’foo">
+    34545657
+ </div>
+ <input type="button" value="提交">
+ <script src="jquery-1.12.4.js"></script>
+ <script>
+     $('input:eq(0)').removeAttr('value')  ;       //移除屬性
+     $('input').eq(0).val('提交');                //設置屬性value值
+     console.log( $('input').eq(0).val());        //獲取屬性值
+     $('#div1').css('width',function () {
+         var a = 100;
+         var b= 5;
+         return a*b;
+     });
+     console.log( $('#div1').css('background'))
+     console.log( $('body').hasClass('foo'))        //body
+ </script>
+</body>
+</html>
