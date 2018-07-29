@@ -4,18 +4,37 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        body{
+            position: relative;
+        }
         div{
             width: 400px;
             height: 200px;
             background: #fffdef;
             color: #795da3;
+            padding: 100px;
+            border: 40px solid;
+            margin-top: 100px;
+
         }
     </style>
 <body>
  <div id="div1"  class="’foo">
     34545657
+     <a>hello</a>
+     <a>world</a>
  </div>
  <input type="button" value="提交">
+ <button>111111</button>
+ <span></span>
+ <h4>!!!!</h4>
+ <ul>
+     <li>6</li>
+     <li>7</li>
+     <li>8</li>
+ </ul>
+ <s>我是自定義標簽</s>
+ <s>我是s2</s>
  <script src="jquery-1.12.4.js"></script>
  <script>
      $('input:eq(0)').removeAttr('value')  ;       //移除屬性
@@ -26,8 +45,39 @@
          var b= 5;
          return a*b;
      });
-     console.log( $('#div1').css('background'))
-     console.log( $('body').hasClass('foo'))        //body
+
+     console.log( $('#div1').css('background'));
+     console.log( $('body').hasClass('foo'));        //確定body是否有fool的屬性
+     $(':button').innerHeight(50);                  //對height進行設定
+     console.log( $(':button').innerHeight());
+     console.log($('#div1').innerHeight()) ;         //獲取height包括padding不包括border
+     console.log($('#div1').outerHeight());          //一定包括padding和border，選擇性包括margin
+     console.log($('#div1').offset());               //不是距離body;而是距離瀏覽器
+     console.log($('#div1').offsetParent());         //可以找到離div1最近的已定位的祖先元素，輸出其信息
+     $('#div1').offsetParent().css('background','blue');    //可以找到離div1最近的已定位的祖先元素,對其進行設置
+     $(":button").clone().appendTo($("#div1"));           //克隆帶有button的標簽加入到#div1中,button標簽中内容也會被複製
+     $(':button:eq(0)').wrap("<p></p>");                  //在:button:eq(0)，外面加一個<p></p>標簽
+     $('#div1').append("<h1>!~</h1>");                    //在#div1的裏面元素末尾加<h1>!~</h1>
+     $('<h2>love</h2>').appendTo($(":button"));          //在每個：button後面都加一個<h2>love</h2>
+     console.log($('#div1').html());                  //輸出#div1的内容；
+     $('#div1').html('666')   ;                        //將div1的内容設置爲666
+     $('#div1').prepend("<h1>加在内部的前面</h1>");      //加在div1内部子元素的最前面
+     $('span').text('我是span');                         //在選中中加入或者設置文本内容
+     $('<h1>我是innerBefore</h1>').insertBefore($(":button"));   //在選中中的集合中每一個元素都加<h1>我是innerBefore</h1>
+     $('h4').detach();                                        //刪除h4
+     $(':button').filter(':even').css('color','red')    //過濾
+     $('li').first().css('background','red')
+     console.log($(':button').map(function () {
+         return $(this).text();
+     }).get().join());
+     $("li").slice(0,2).css({       //從0開始不包括2，
+         background :'#577',
+         color:'#549'});
+     $('li').add('s').css('background-color', 'pink');      //li和s都執行後面的屬性
+     console.log($('s').contents());        //獲得標簽中内容，以jquery形式出現
+     $('s').filter(event).end().css('font-size',50)   //終止當前過濾操作，對前面的元素進行執行
+     
+
  </script>
 </body>
 </html>
