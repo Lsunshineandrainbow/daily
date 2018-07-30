@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        #big{
+            margin-bottom: 20px;
+        }
          body{
              background: bisque;
          }
@@ -93,6 +96,7 @@
             margin-left: 178px;
             font-size: 1px;
             color: white;
+
         }
     </style>
 </head>
@@ -119,10 +123,11 @@
      </ul>
  </div>
    <div id="dec"><img id="heart" src="../image/心動.jpg" alt="">
-         💗
+         💗       ❤
    </div>
  <div id="big">
  </div>
+ <div id="bigger"></div>
 
    <script src="../../jslib.js"></script>
   <script src="../../jquery/jquery-1.12.4.js"></script>
@@ -195,10 +200,26 @@
              oMove.onmouseup = function () {
                 document.onmousemove = null;
              };
-       $("#big").offset({top:1000,button:20,}).height(200).css({
-           background:'url("../image/信.jpg") norepeat',
+       $("#big").offset({top:1000,bottom:30}).height(200).width(200).css({
+           background:'url("../image/信.jpg") ',
+          "background-repeat":'no-repeat',
+           'font-size':1,
+           color:'#000',
+           "text-align":'center',
+           'line-height':2,
+           "font-weight":100,
+       }).offset({
+           left :300,}).text(
+           '职业：演员、模特\n' +
+           '\n' +
+           '生日：1990年8月10日\n' +
+           '\n' +
+           '个人信息：175cm/狮子座/B型\n' +
+           '\n' +
+           '代表作品：女王之花、奶酪陷阱、Doctors、举重妖精金福珠\n' +
+           '\n' +
+           '简介：李圣经，1990年8月10日出生于韩国，韩国女演员、模特')
 
-       })
  </script>
 </body>
 </html>

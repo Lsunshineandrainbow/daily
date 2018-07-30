@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        #small,#small img{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+       #contain{
+           width: 200px;
+           height: 200px;
+           overflow: hidden;
+           position: absolute;
+           top: 0;
+           left: 210px;
+           display: none;
+       }
+        #big,#big img {
+            width: 400px;
+            height: 400px;
+        }
+       #turn {
+           width:100px;
+           height: 100px;
+           background: #ccc;
+           opacity: .5;
+           position: absolute;
+           display: none;
+        }
+
+    </style>
+</head>
+<body>
+  <div id="small">
+      <img src="../image/放大鏡.jpg" alt="">
+      <div id="turn"></div>
+  </div>
+  <div id="contain">
+      <div id="big">
+          <img src="../image/放大鏡.jpg" alt="">
+      </div>
+  </div>
+  <script>
+      var small = document.getElementById('small');
+      var bg = document.getElementById('turn');
+      var Contain = document.getElementById('contain')
+      small.onmouseover = function () {
+            bg.style.display='block';
+            Contain.style.display = 'block';
+      }
+      small.onmouseout = function () {
+          bg.style.display = 'none';
+          Contain.style.display = 'none'
+      }
+  </script>
+</body>
+</html>
