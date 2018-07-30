@@ -121,7 +121,11 @@
    <div id="dec"><img id="heart" src="../image/心動.jpg" alt="">
          💗
    </div>
+ <div id="big">
+ </div>
+
    <script src="../../jslib.js"></script>
+  <script src="../../jquery/jquery-1.12.4.js"></script>
    <script>
      var aDiv2 = document.getElementsByClassName('div2')[0];
      var aLi   = document.getElementsByTagName('li');
@@ -190,8 +194,11 @@
              }
              oMove.onmouseup = function () {
                 document.onmousemove = null;
-             }
+             };
+       $("#big").offset({top:1000,button:20,}).height(200).css({
+           background:'url("../image/信.jpg") norepeat',
 
+       })
  </script>
 </body>
 </html>

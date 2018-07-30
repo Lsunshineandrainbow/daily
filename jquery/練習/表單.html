@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .fouce{
+            outline: none;
+            border: 1px solid red;
+            background: #795da3;
+
+        }
+    </style>
+</head>
+<body>
+   姓名  <input type="text">
+   密碼<input type="password">
+   詳細信息 <input type="text">
+</body>
+     <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $('input').focus(function () {
+                $(this).addClass("fouce").blur(
+
+            function () { $(this).removeClass("fouce")
+
+            })
+            })
+
+    </script>
+</html>
