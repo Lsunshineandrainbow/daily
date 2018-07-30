@@ -16,7 +16,7 @@
             height: 700px;
             float: left;
         }
-        .div1{
+        #div1{
             top: 200px;
             left: 200px;
             width:800px ;
@@ -104,7 +104,7 @@
   <div id="tex4">撒浪嘿</div>
      <span>我宣你</span>
   </div>
- <div class="div1">
+ <div id="div1">
      <div class="div2">
     <img src="../image/滑動1.jpg" alt="">
     <img src="../image/滑動2.jpg" alt="">
@@ -127,25 +127,44 @@
      var aLi   = document.getElementsByTagName('li');
      var aImg  = aDiv2.getElementsByTagName('img');
      var oMove = document.getElementById('heart');
+     var oDiv1 = document.getElementById('div1');
      nowindex=0;
+     var time;
      for(var i=0;i<aLi.length;i++){
          aLi[i].index = i;
          aLi[i].onmouseover = function () {
              nowindex = this.index;
-         }
-           var  aL = aImg[0].offsetWidth * this.index;
-             // aDiv2.style.left =-aL + 'px';
-             animate(aDiv2,{left:-aL});
-         }
-         play();
-     function play() {
-               setInterval(function () {
-                   ++nowindex;
-             var aL = aImg[0].offsetWidth * nowindex;
-             // aDiv2.style.left =-aL + 'px';
-             animate(aDiv2, {left: -aL});
+             var  aL = aImg[0].offsetWidth * this.index;
 
-         }, 10)}
+             animate(aDiv2,{left:-aL});
+
+         }
+         }
+         oDiv1.onmouseover = function(){
+         clearInterval(time);
+         };
+     oDiv1.onmouseout = function(){
+         play();
+     }
+
+     play();
+     function play() {
+            time = setInterval(function () {
+                   if(nowindex<3) {
+                       nowindex++;}
+                   else {
+                       for (var k=0; k < aImg.length-1;k++) {
+                           nowindex--;
+                           var  aL = aImg[0].offsetWidth * nowindex;
+                           animate(aDiv2,{left:-aL});
+                       }
+
+                       }
+
+                var  aL = aImg[0].offsetWidth * nowindex;
+                animate(aDiv2,{left:-aL});
+
+         }, 1000)}
      oMove.onmousedown= function (e) {
          var mouseX = e.clientX-oMove.offsetLeft;
          var mouseY = e.clientY-oMove.offsetTop;
