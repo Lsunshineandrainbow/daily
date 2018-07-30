@@ -55,10 +55,10 @@
      console.log($('#div1').offset());               //不是距離body;而是距離瀏覽器
      console.log($('#div1').offsetParent());         //可以找到離div1最近的已定位的祖先元素，輸出其信息
      $('#div1').offsetParent().css('background','blue');    //可以找到離div1最近的已定位的祖先元素,對其進行設置
-     $(":button").clone().appendTo($("#div1"));           //克隆帶有button的標簽加入到#div1中,button標簽中内容也會被複製
+     $(":button").clone().appendTo("#div1");           //克隆帶有button的標簽加入到#div1中,button標簽中内容也會被複製
      $(':button:eq(0)').wrap("<p></p>");                  //在:button:eq(0)，外面加一個<p></p>標簽
      $('#div1').append("<h1>!~</h1>");                    //在#div1的裏面元素末尾加<h1>!~</h1>
-     $('<h2>love</h2>').appendTo($(":button"));          //在每個：button後面都加一個<h2>love</h2>
+     $('<h2>love</h2>').appendTo(":button");          //在每個：button後面都加一個<h2>love</h2>
      console.log($('#div1').html());                  //輸出#div1的内容；
      $('#div1').html('666')   ;                        //將div1的内容設置爲666
      $('#div1').prepend("<h1>加在内部的前面</h1>");      //加在div1内部子元素的最前面
