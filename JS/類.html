@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Happy(n){
+        this.day = n;
+        this.name = 'zs'
+        // this.wind = { win :'lalala' };
+    }
+    Happy.prototype.username = 'lisi';
+    Happy.prototype.age = function(){
+        console.log(this.name)
+        // this.wind = { win :'lalala' };
+    };
+    Happy.prototype.wind = { win :'lalala' };
+    //儅屬性在外面時，且裏面是對象時對一個對象的該屬性進行改變，則所有對象的該屬性發生改變
+    var Day = new Happy();
+    var Month = new Happy();
+    console.log(Month.name);
+    Month.name = 'flow';
+    console.log('我是月') ;   Month.age();
+    console.log('我是天') ;    Day.age();
+    console.log(Month.name);
+    console.log(Day.name)
+    Day.wind.win= 'wowowo';
+    console.log(Day.wind.win);
+    console.log(Month.wind.win);
+    Month.username = 'hhhh';
+    console.log(Month.username);
+    console.log(Day.username)
+
+</script>
+</body>
+</html>
