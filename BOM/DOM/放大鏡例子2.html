@@ -33,6 +33,10 @@
            opacity: .5;
            position: absolute;
            display: none;
+           cursor: move;
+        }
+        #big{
+            position: absolute;
         }
 
     </style>
@@ -50,10 +54,33 @@
   <script>
       var small = document.getElementById('small');
       var bg = document.getElementById('turn');
-      var Contain = document.getElementById('contain')
+      var Contain = document.getElementById('contain');
+      var bigImg = document.getElementById('big')
       small.onmouseover = function () {
             bg.style.display='block';
             Contain.style.display = 'block';
+            small.onmousemove = function (e) {
+                var mleft = e.clientX - bg.offsetWidth/2;
+                var mtop  = e.clientY - bg.offsetHeight/2;
+                var oleft =  small.offsetWidth - bg.offsetWidth;
+                var otop  =  small.offsetHeight - bg.offsetHeight;
+                if(mleft> oleft){
+                    mleft = oleft;
+                }
+                else  if(mleft < 0){
+                    mleft = 0;
+                }
+                if (mtop >otop){
+                    mtop  = otop;
+                }
+                else  if(mtop<0){
+                    mtop = 0
+                }
+                bg.style.left = mleft + 'px';
+                bg.style.top = mtop + 'px';
+                bigImg.style.left = -mleft*(Contain.offsetWidth/bg.offsetWidth) + 'px';
+                bigImg.style.top = -mtop*(Contain.offsetHeight/bg.offsetHeight) +'px';
+            }
       }
       small.onmouseout = function () {
           bg.style.display = 'none';
