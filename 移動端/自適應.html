@@ -20,9 +20,11 @@
             background: #f0f3ef;
             font-size: 16px;
         }
-        h1{
-            width: 1em;    //對應其父元素的fontsize
-            height: 1rem;   //對應html的fontsize
+        p{
+            width: 1em;
+        /*//對應其父元素的fontsize*/
+            height: 1rem;
+        /*//對應html的fontsize*/
             background: red;
         }
     </style>
@@ -31,15 +33,16 @@
 <div>
 </div>
   <ul>
-      <h1 id="h1">
-      </h1>
+      <p id="h1">
+      </p>
   </ul>
 <script>
-    var h1= document.getElementById('h1');
-    document.body.onresize = function () {      //改變瀏覽器大小；
+    var p= document.getElementById('h1');
+    document.body.onresize = function () {      //改變瀏覽器大小；給body綁了一個事件，改變瀏覽器大小
       var w = document.body.clientWidth;       //獲得html的寬
-        document.documentElement.style.fontSize = w/2 +'px'               //獲取 html的的屬性
-        console.log();
+        document.documentElement.style.fontSize = w/2 +'px'      ;         //獲取 html的的屬性,并將字體設爲body寬的1/2
+        console.log(document.documentElement.style.fontSize);
+        console.log(p.style.height)
     }
 </script>
 </body>
