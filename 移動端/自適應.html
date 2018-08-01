@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <!--&lt;!&ndash;meta:vp 后加Tab鍵&ndash;&gt;      initial-scale   初始比例      minimum-scale     最小比例   maximum-scale   最大比例-->
+    <!--<title>Title</title>-->
+    <style>
+        div{
+            background:pink ;
+            width: 200px;
+            height: 200px;
+        }
+        *{
+            margin: 0;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            background: #f0f3ef;
+            font-size: 16px;
+        }
+        h1{
+            width: 1em;    //對應其父元素的fontsize
+            height: 1rem;   //對應html的fontsize
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+</div>
+  <ul>
+      <h1 id="h1">
+      </h1>
+  </ul>
+<script>
+    var h1= document.getElementById('h1');
+    document.body.onresize = function () {      //改變瀏覽器大小；
+      var w = document.body.clientWidth;       //獲得html的寬
+        document.documentElement.style.fontSize = w/2 +'px'               //獲取 html的的屬性
+        console.log();
+    }
+</script>
+</body>
+</html>

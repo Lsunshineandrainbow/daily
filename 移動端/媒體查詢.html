@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0}
+        #header,#title,#footer{
+            width: 960px;
+            height: 100px;
+            margin:  0 auto;
+            background: #ccc;
+            text-align: center;
+            line-height: 100px;
+
+        }
+        #header{
+            margin-bottom: 10px;
+        }
+         #img{
+             width: 960px;
+             margin:  0 auto;
+         }
+        img{
+            width: 100%;
+        }
+        #contain{
+            width: 960px;
+            /*height: 100px;*/
+        /*//不能加高否則儅儅款不夠時#reight想下來時會因高不夠而溢出隱藏，所以不用設高，讓其自適應*/
+            margin: 0 auto;
+            /*clear: both;*/
+            overflow: hidden;      //清除浮動對它的影響
+
+        }
+        #left{
+            width: 600px;
+            background: plum;
+            margin-right: 30px;
+            float: left;
+            height: 100px;           //必須設高，否則背景不會鋪滿整個想要空間
+        }
+        #right{
+            width: 330px;
+            background: lavenderblush;
+            float: left;
+            height: 100px;
+        }
+        @media (max-width: 960px) {
+            #header,#title,#footer,#img,#contain{
+                width: 100%;
+            }
+            #left{
+                width: 60%;
+                margin-right: 3%;
+            }
+            #right{
+                width: 37%;
+            }
+        }
+        @media (max-width:792px)  {
+             #left{
+                 width: 100%;
+                 margin-right: 0;
+
+             }
+            #right{
+                width: 100%;
+
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="header">
+    <h2>首頁</h2>
+</div>
+<div id="title">
+    <h2>標題</h2>
+</div>
+<div id="img">
+    <img src="image/滑動1.jpg" alt="">
+</div>
+<div id="contain">
+    <div id="left">
+        lk kd jfdg g klhoji ouo p i u io jiuykf j fer i ot uo  eutj ood u w u itr 8q9 eiy w8q27 oewy8q27et7r7w8oroqjwlfbhwegff
+    </div>
+    <div id="right">
+        lkk djf dg gf klh oji ouo piuioj iuy kfj fe ri otuo eutjo od uew uit r8 q9 eiy w8q 27o ewy8q27et7r7w8oroqjwlfbhwegff
+    </div>
+</div>
+<div id="footer">
+    <h2>頁尾</h2>
+</div>
+</body>
+</html>
