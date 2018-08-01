@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.warpper{
+    width: 100%;
+    margin: 0 auto;
+}
+#contain {
+    background:#e2dbe4 ;
+    opacity: .5;
+}
+
+#index{
+    width: 100%;
+    padding-top:700px;
+    background: url("../images/index.jpg") no-repeat;
+    background-size:cover;
+
+}
+@media (max-width: 1000px) {
+    #index{
+        width: 100%;
+        padding-top:70% ;
+    }
+
+}
