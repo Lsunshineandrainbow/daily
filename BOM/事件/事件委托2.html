@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>11111</li>
+    <li>2222</li>
+    <li>3333</li>
+    <li>4444</li>
+</ul>
+<button id="But"></button>
+</body>
+<script>
+    var aLi = document.getElementsByTagName('li');
+    var But = document.getElementById('But');
+    var aUl = document.getElementsByTagName('ul')[0];
+   aUl.onclick =function(e){
+       //事件委托，或者可以叫做事件代理，將要綁定事件的放在其父元素中，通過事件冒泡來輸出子元素中内容
+       // 事件委托：解決的問題：後加元素的輸出或者說對其事件的綁定問題
+       //                       多次函數綁定浪費空間問題
+       console.log(e.target.innerHTML)
+   }
+    But.onclick = function () {
+        var aNew = document.createElement('li');
+        aUl.appendChild(aNew);
+        aNew.innerHTML=Math.random();
+    }
+
+</script>
+</html>
