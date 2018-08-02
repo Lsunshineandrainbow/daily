@@ -14,12 +14,38 @@
                       <li>to</li>
                       <li>my</li>
                       <li>world</li>
-                      <li>🎈</li>
                   </ul>
+                  <span id="ballon">🎈</span>
+                  <a>Hi~  I'm  李晶</a>
               </div>
           </div>
       </div>
+      <script src="../jquery/jquery-1.12.4.js"></script>
 <script>
+    $('body').mouseover(function () {
+        $('#index ul li').eq(0) .css('display','block')
+        setTimeout(function () {
+            $('#index ul li').eq(1) .css('display','block')
+        },300)
+        setTimeout(function () {
+            $('#index ul li').eq(2) .css('display','block')
+        },800)
+        setTimeout(function () {
+            $('#index ul li').eq(3) .css('display','block')
+        },1200)
+       $('#index span').css({display:'block'}).animate({
+           bottom:370,
+           left:120
+       },2000,function () {
+       })
+        $('#index span').setInterval(function () { if()
+            'font-size':'+=5'                                     //讓這幾個字漸變出現后一直浮動
+        }
+
+        })
+    })
+
+
 
 </script>
 </body>

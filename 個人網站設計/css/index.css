@@ -16,6 +16,7 @@
     padding-top:700px;
     background: url("../images/index.jpg") no-repeat;
     background-size:cover;
+    text-align: center;
 
 }
 @media (max-width: 1000px) {
@@ -23,5 +24,28 @@
         width: 100%;
         padding-top:70% ;
     }
+
+}
+#index ul li{
+    display: none;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+}
+#index ul {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+}
+#index span{
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    display:none;
+    font-size: xx-large;
+}
+#index a{
+    position: absolute;
+    bottom: 130px;
 
 }
