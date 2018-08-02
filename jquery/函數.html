@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    li{
+        display: none;
+    }
+    body{
+        width: 100%;
+        height: 700px;
+    }
+</style>
 <body>
 <ul>
     <li>2</li>
@@ -15,7 +24,13 @@
 <script src="jquery-1.12.4.js"></script>
 <script>
     $('body').mouseover(function () {
+          $('li').each(function () {
+              setTimeout(function () {
+                  document.write(this.html)
+              },2000)
+          })
+              
+          })
 
-    })
 </script>
 </html>

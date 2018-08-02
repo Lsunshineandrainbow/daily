@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class User {
+        constructor(x,y,z){        //是一個方法
+           this.aa=x;
+           this.bb=y;
+           this.cc=z;
+    }
+    ave(x,y,z){              //是另一個方法  兩個方法不相同，參數故也不同
+      return x+y+z/3;
+    }
+    };
+    var u = new User;
+    console.log(u.ave(1,2,3));
+    var s = new User(1,4,5)
+    class Son extends User{
+        constructor(x,y,z){
+            super(x,y,z);
+    }
+    eating(){
+            var b,
+                b=this.x*this.y;
+         return b;
+    }
+    }
+    var o = new Son();
+    console.log(o.eating())
+
+</script>
+</html>

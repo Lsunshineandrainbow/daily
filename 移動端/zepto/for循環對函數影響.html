@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        *{margin: 0}
+        #contain{
+            width: 100%;
+        }
+        #contain img{
+            width: 25%;
+            height: 100px;
+            box-sizing:border-box;
+            border-bottom: 4px solid #000000;
+            border-right: 4px solid #000000;
+            float: left;
+        }
+        #big-img{
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: black;
+            background-position: center;
+            height: 100%;
+            display: none;
+        }
+        html,body{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="contain"></div>
+<div id="big-img"></div>
+</body>
+<script src="zepto.min.js"></script>
+<script src="touch.js"></script>
+<script>
+
+    $(function () {
+        var nowindex = 0;
+        var str = '';
+        for(var i=0;i<12;i++){
+            str +='<img src="../image/'+(i+1)+'.jpg">';
+            $('#contain').html(str);
+            $('#contain').on('tap','img',function () {
+                nowindex = $(this).index();
+                // 因爲是事件委托所以點的是img
+                $('#contain').hide();
+                $('#big-img').show();
+                $('#big-img').css('background-image',' url(../image/'+(nowindex+1)+'.jpg)');
+
+            })
+            $('#big-img').on('tap',function () {
+                $('#contain').show();
+                $('#big-img').hide();
+            })
+            $('#big-img').on('swipeRight',function () {   //上一張
+                if (nowindex==0)
+                {
+                    nowindex = 12;
+                }
+                nowindex--;
+                $('#big-img').css('background-image',' url(../image/'+(nowindex+1)+'.jpg)');
+            })
+            $('#big-img').on('swipeLeft',function () {    //下一張
+                if(nowindex==11){
+                    nowindex=-1
+                }
+                nowindex++;
+                $('#big-img').css('background-image',' url(../image/'+(nowindex+1)+'.jpg)');
+            })
+        }
+
+
+    })          //放在for循環裏面多次綁定函數會故不適用
+</script>
+</html>

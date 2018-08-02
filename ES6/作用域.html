@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">輸出</div>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+</body>
+<script>
+    var dliv1=  document.getElementById('div')
+    var Li = document.getElementsByTagName('li');
+    // div1.onclick = function () {
+    //     console.log(a);            //先輸出后復值，undefined，變量提升問題
+    //     var a=1;
+    // }
+
+    // div1.onclick = function () {
+    //     console.log(a);            //先輸出后復值，報錯，無變量變量提升特點
+    //     let a = 1;
+    // }
+
+    // div1.onclick = function () {
+    //     var a=1;
+    // }
+    // console.log(a)    //報錯  a沒被定義
+
+
+    // div1.onclick = function () {
+    //      var a=2
+    //     for(var a = 0; a<4;a++){
+    //         console.log(a);
+    //     }
+    //     console.log(a )     //輸出4 後面的a將被前面的a複值；
+    // }
+
+
+
+    // var a=1
+    // div1.onclick = function (){       //輸出3
+    //     let a=3;
+    //     console.log(a)
+    // }
+    //
+    // console.log(a)         //輸出1
+
+    // for(var i =0;i<Li.length;i++){
+    //     Li[i].onclick=function () {
+    //         console.log(i);          // i一直為4
+    //     }
+    // }
+    // for(let i =0;i<Li.length;i++){
+    //     Li[i].onclick=function () {
+    //         console.log(i);          // i為0，1，2，3 解決了越域問題
+    //     }
+    // }
+    // for(var i=0;i<Li.length;i++){                //立即執行    閉包
+    //     (function (index) {
+    //         Li[index].onclick=function(){
+    //             console.log(index)
+    //         }
+    //     })(i)
+    // }
+</script>
+</html>
