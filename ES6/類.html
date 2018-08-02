@@ -31,8 +31,38 @@
          return b;
     }
     }
-    var o = new Son();
-    console.log(o.eating())
+    class Person{
+        constructor(name,food){
+            this.name = 'ls';
+            this.food = 'apple';
+    }
+    eating(){
+            console.log(this.food);
+    }
+    }
+    class Men extends  Person{
+        constructor(name,food,drink){
+            super(name,food);
+            this.drink = 'water';
+        }
+        walk(){
+            console.log(this.name);
+            console.log(this.drink)
+        }
+    }
+       var man = new Person();
+       var man1 = new Men()
+        man.name='zs';
+        man.food='apple';
+    man1.name='zs';
+    man1.food='apple';
+    man1.drink='line'
+        man.drink='organe';
+        console.log(man.drink);
+        man1.walk();
+
+
+
 
 </script>
 </html>

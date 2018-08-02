@@ -67,5 +67,44 @@
     //         }
     //     })(i)
     // }
+
+
+    //      var a= 3;
+    // {      console.log(a);     //報錯，a未被定義    局部死區；let 所定義的區域中其他的變量都不可以進來
+    //                             // 局部死區問題
+    //        let a=4;
+    //
+    // }
+
+
+
+    // {let a = 2;
+    //     console.log(a)
+    // }
+    // console.log(a)    //a未被定義，對於let來説一個花括號就是一個作用域
+    //
+
+
+    // const NUM = 666;
+    // console.log(NUM);
+    // NUM = 100;        //報錯     數值不能更改，能更改的只有地址
+
+
+
+    // const NUM = { aa:11}
+    // console.log(NUM);         //{aa:11}     對象裏面的值可以更改
+    // NUM.aa = 400;
+    // console.log(NUM);        //{aa:400}
+    for(var i=0;i<5;i++){
+
+        function f() {
+            function f1() {
+                console.log(i)
+            }
+            f1();
+        }
+    }
+
+    f();
 </script>
 </html>
