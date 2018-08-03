@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+       //  var s = new Set();
+       //  s.add(123);
+       //  s.add(123);     //不能重複添加相同的元素
+       //  s.add('123');
+       //  s.add('lll');
+       //  console.log(s)         //Set(3) {123, "123", "lll"}
+       //  // s.delete(123)          //刪除（123）
+       //  console.log(s)         //Set(2) {"123", "lll"}
+       //  console.log(s.size)    // s.size 獲得s的集合的長度
+       //  for(var i of s){
+       //      console.log(i)
+       //  }
+       // var k = s.keys();       //key 是鍵是 屬性名
+       //  console.log(k);
+       //  var v= s.values();      //values是屬性值
+       //  console.log(v);
+       //
+
+
+
+
+
+
+//        數組去重
+// --------------------------------------------------------------------------------
+
+        // var arr = [1,2,34,5654,1,2,25];
+        // var newarr = [];
+        // for(var i=0;i<arr.length;i++){
+        //     if(newarr.indexOf(arr[i]) == -1){
+        //         newarr.push(arr[i]);
+        //     }
+        // }
+        //  console.log(newarr)
+
+
+
+        //
+        // var  arr = [11,33,22,11,22];
+        // var  obj = {};
+        // var  newarr = [];
+        // for(var i=0;i<arr.length;i++){
+        //     if(!obj[arr[i]]){                  //輸出對象裏未定義的屬性返回值為flase;
+        //         newarr.push(arr[i]);
+        //         obj[arr[i]] = true;           //輸出已有的屬性但未給賦值返回值為flase
+        //     }
+        // }
+        // console.log(newarr)
+
+
+        var  arr = [11,33,22,11,22];
+        var set = new Set(arr);
+        console.log(set)
+        console.log(Array.from(set))   //把類似數組的形式轉化為數組
+
+
+    </script>
+</body>
+</html>

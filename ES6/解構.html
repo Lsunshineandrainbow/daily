@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var a= [1,2,3,4]
+    // var [x,y,z,k] = a;
+    // console.log(x,y,z,k);      //1,2,3,4
+
+
+
+    // var a = [1,2]
+    // var [x,y,z,k] = a;
+    // console.log(x,y,z,k)          //1 2 undefined undefined
+    // //若給定的值少於變量的值則未給的變量輸出為undefined
+
+
+
+    // var a = [1,2]
+    // var [x,y=0]=a;
+    // console.log(x,y)               //1，2              有默認值但若賦值了後改變值
+
+
+
+    // var a=[1,2,4,[6,7]]
+    // var [x,y,z,k] =a;
+    // console.log(x,y,z,k);     //1,2,4,[6,7],將[6,7]賦給k
+
+    //
+    // var a=[1,2,4,[6,7]]
+    // var [x,y,z,[k,s]] =a;
+    // console.log(x,y,z,k,s);      //1,2,3,4,6,7      想要都賦值就必須要求形式一樣
+
+
+
+
+
+    // var obj={
+    //     a:6,
+    //     b:8
+    // }
+    // var {a,b} = obj;         // {a,b}相當於{a:a,b;b}
+    // console.log(a,b)        //6 8
+
+
+
+    // var obj={
+    //    a:6,
+    //    b:8
+    //  }
+    // var {x,y} = obj;
+    //  console.log(x,y)   //undefined undefined   x，y都未賦值    ，在 obj中找不到x,y兩個同名變量
+
+
+    // var obj={
+    //     a:6,
+    //     b:8
+    // }
+    // var {a:x,b:y} = obj;
+    // console.log(x,y)            //6,8     a到obj中找同名變量a賦值給x,b到obj中找同名變量b賦值給y
+
+
+    // var a= 6;
+    // var b=7;
+    // var [b,a] = [a,b];
+    // console.log(a,b)              //a,b的值交換；
+
+
+
+    // var a=6;
+    // var b=7;
+    // b=[a,a=b][0];
+    // console.log(a,b)                //a,b的值交換；
+
+
+
+
+
+    // var a=6;
+    // var b=5;
+    // a=a+b;
+    // b=a-b;
+    // a=a-b;
+    // console.log(a,b)             //a,b的值發生交換
+</script>
+</body>
+</html>
