@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            display: none;
+        }
+       html, body{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+</body>
+<script>
+   // var aLi = document.getElementsByTagName('li')
+   //  for(var i = 0;i< aLi.length;i++){
+   //     aLi[i].onclick =  function () {
+   //         setTimeout(function () {        //  setTimeout是window下的屬性，所以其中的this是window
+   //             console.log(this.innerHTML)     //輸出window下的對象
+   //         },1000)
+   //     }
+   //  }
+
+
+
+   //
+   // var aLi = document.getElementsByTagName('li')
+   //
+   //     document.onmouseover = function () {
+   //
+   //         setTimeout(function () {
+   //             for (let i=0;i<aLi.length;i++){
+   //             aLi[i].style.display='block';
+   //             console.log(i)
+   //             }
+   //                  },1000)
+   //         // console.log(i)
+   //
+   //
+   // }
+
+
+   // var fn=(...arr)=>{                      //獲取未知輸入值的長度后輸出
+   //     var aLi = arr.length;
+   //     for(var i=0;i<arr.length;i++) {
+   //         console.log(arr[i])
+   //     }
+   // }
+   // fn(1,4,6,8,9);
+
+
+    var a = [354,[4,4,56],22];
+    var b = [...a];
+    console.log(b);
+    var c= b.push(a);    //變成了改變後b的數組長度
+    console.log(c) ;          //4
+   console.log(b)
+
+
+
+
+
+   // var aLi = document.getElementsByTagName('li')
+   // for(var i = 0;i< aLi.length;i++){
+   //     aLi[i].onclick =  function () {
+   //         setTimeout(()=> {                 //此處使用箭頭函數，箭頭函數中沒有this所以向上頭找，this就指向aLi[i]
+   //             console.log(this.innerHTML)
+   //         },1000)
+   //     }
+   // }
+     
+   // function f() {
+   //     console.log(arguments[0])}              //未定義參數時，給出給賦值用arguments[0]
+   // f(1);
+   //
+   //  var f=()=> {
+   //     console.log(arguments[0])                  //箭頭函數沒有arguments函數故報錯
+   // }
+   // f(1);
+  // var fn = (...arr)=>{
+  //     console.log(arr[0])
+  // }
+  // fn(1,2,3)
+
+
+    // function Personal(){       //定義類
+    //     this.name='zs';
+    //     this.age = 12;
+    //     this.say = function (){
+    //         console.log(this.name)
+    //     }
+    // }
+    // var aa = new Personal();
+    // aa.say();                              //12
+
+
+   // function Personal(){       //定義類
+   //     this.name='zs';
+   //     this.age = 12;
+   //     this.say = ()=>{
+   //         console.log(this.name)
+   //     }
+   // }
+   // var aa = new Personal();
+   // aa.say();
+
+  // var  Personal=() =>{       //用箭頭函數定義類會將類直接變成普通函數，故不能new
+  //      this.name='zs';
+  //      this.age = 12;
+  //      this.say = ()=>{
+  //          console.log(this.name)
+  //      }
+  //  }
+  //  var aa = new Personal();
+   // aa.say();var
+
+
+
+
+
+   //  var obj={                           //定義對象
+   //      name:'zs',
+   //      age:12,
+   //      say:function () {
+   //          console.log(this.age)      //12
+   //      }
+   // }
+   //  obj.say();
+
+   // var obj={                           //定義對象
+   //     name:'zs',
+   //     age:12,
+   //     say:()=> {
+   //         console.log(this.age)      //this又指向window,故未定義
+   //     }
+   // }
+   // obj.say();
+
+</script>
+</html>
