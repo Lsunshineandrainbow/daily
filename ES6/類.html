@@ -61,8 +61,19 @@
         console.log(man.drink);
         man1.walk();
 
-
-
+         function Peolple() {
+             this.adress='NY'
+             this.name =  'lisi'
+         }
+         Peolple.prototype.say = function () {
+             console.log('111')
+         };
+    Peolple.prototype.eat = function () {
+        console.log('666')
+    };
+    var p = new Peolple();
+        p.say();
+        p.eat();
 
 </script>
 </html>
