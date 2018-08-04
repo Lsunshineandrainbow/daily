@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            font-size: 12px;
+        }
+    </style>
+</head>
+    <div id="div1">cnklkskljcderil</div>
+<body>
+<script src="../jquery/jquery-1.12.4.js"></script>
+    <script>
+//         console.log( parseInt($('div').css('font-size')))
+//         // 將該div的css屬性中的font-size屬性獲得，后轉化成數值型輸出
+// _________________________________________________________________________________________
+//         時間輸出     年月日
+//         var nowDay = new Date();
+//         console.log(nowDay.getDate())       //輸出當前天在所在月份的日，比如要是8月4號就返回4
+//         console.log(nowDay.getMonth());     //getMonth獲得月份0-11，所以輸出正常月份要+1
+//         console.log(nowDay.getFullYear());
+//         console.log(nowDay.getDay())       //輸出周幾
+
+
+           var  nowTime = new Date();
+           console.log(nowTime.getHours());
+           console.log(nowTime.getMinutes());
+           console.log(nowTime.getSeconds());
+           var h = nowTime.getHours();
+           var m = nowTime.getMinutes();
+           var s = nowTime.getSeconds();
+           document.getElementById('div1') .innerHTML= h +':'+m+':'+s;
+           m =checkTimer(m);
+           s =checkTimer(s);
+           var checkTimer = function (x) {
+               if(x<10){
+                   x = '0'+x;
+               }
+               return x;
+           }
+
+
+
+
+
+
+// ______________________________________________________________________________________
+
+        // var Div1 = document.getElementsByTagName('div')[0];
+        // var blank =document.createElement('text');
+        // var oa = document.createElement('a')
+        // blank.innerText = ' ';
+        // Div1.appendChild(blank)
+        // oa.innerText = '123'
+        // Div1.appendChild(oa)
+        // console.log(blank.innerText);
+
+    </script>
+</body>
+</html>

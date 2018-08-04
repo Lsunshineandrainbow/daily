@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            display: none;
+        }
+        html, body{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+</body>
+    <script>
+        var aLi = document.getElementsByTagName('li')
+
+        document.onmouseover = function () {
+            for (let i=0;i<aLi.length;i++){
+                setTimeout(function () {
+                    aLi[i].style.display='block';
+
+                },1000*i)                 //必須乘以個i否則雖然延遲出現但確實所有都延遲最後一起出現
+            }
+        }
+    </script>

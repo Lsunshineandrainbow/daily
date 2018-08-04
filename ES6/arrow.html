@@ -34,21 +34,17 @@
 
 
    //
-   // var aLi = document.getElementsByTagName('li')
-   //
-   //     document.onmouseover = function () {
-   // for (let i=0;i<aLi.length;i++){
-   //   setTimeout(function () {
-   //        aLi[i].style.display='block';
-   //             console.log(i)
-   //                  },1000)
-   //             aLi[i].style.display='block';
-   //             console.log(i)
-   //             }
-   //         setTimeout(function () {
-   //
-   //                  },1000)
-   //         // console.log(i)
+   var aLi = document.getElementsByTagName('li')
+
+       document.onmouseover = function () {
+            for (let i=0;i<aLi.length;i++){
+                 setTimeout(function () {
+                    aLi[i].style.display='block';
+
+                    },1000*i)
+            }
+        }
+
    //
    //
    // }
