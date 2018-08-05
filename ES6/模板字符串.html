@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div></div>
+    <script>
+    // var str = '<div><p>pppp</p></div>';     //<div><p>pppp</p></div>
+    //     console.log(str)
+
+    // var str = '<div>' +
+    //     '<p>pppp</p>' +
+    //     '</div>';
+    // console.log(str);                   //<div><p>pppp</p></div>    不會輸出回車
+
+        //
+        // var str = `<div>                   //輸出帶回車；    這連個引號是‘1’旁邊的那個；
+        //            <p>pppp</p>
+        //            </div>`;
+        // console.log(str);
+        //
+        // var str = 'abcdefg';
+        // var a= 1;
+        // var b=2;
+        // var str1 = `<div>${str + a + b }</div>`;
+        // console.log(str1);
+        // var str2 =  `${1+''+22}`
+        // console.log(str2)       //122
+
+
+        // var str = '寶寶心裏苦蛋寶寶再不説';
+        // console.log(str.includes('心裏苦'));      //true   有沒有心裏苦
+        // console.log(str.startsWith('苦',4));      //true    從4往後是不是以’苦‘開頭
+        // console.log(str.endsWith('苦',6));       //false     從自最后往前數6個，前面的是不是以’苦‘結尾；
+        var str3 = 'love';
+        console.log(str3.padStart(6,'1234')); //12love    要將字符串變成6個，從前面補，從1234中拿
+        console.log(str3.padEnd(10,'123'));   //love123123 從後面補齊到10個從123中拿拿一遍不夠就再遍歷一遍
+        console.log(str3.repeat(3));        //將字符串重複三遍
+
+
+
+
+    </script>
+</body>
+</html>

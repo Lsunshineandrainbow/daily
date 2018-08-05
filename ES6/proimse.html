@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>網易</button>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    var p = new Promise(function (resolve, reject) {//  resolve 成功   reject 失敗
+        setTimeout(function () {
+            console.log('我是p1');
+            reject(222)
+    })
+    },2000)
+    p.then(function (data) {
+      console.log(data);
+      return  new Promise(function (resolve, reject) {
+          setTimeout(function () {
+                 resolve(111)
+          },2000)
+      })
+    }).then(function (data) {
+          console.log(data);
+          return new Promise(function (resolve, reject) {
+              setTimeout(function () {
+                  resolve(333)
+              })
+          },2000)
+    }).catch(function () {
+        console.log('我失敗了')
+    })
+
+    var p1 = function () {
+        setTimeout(function () {
+            console.log(111);
+        },1000)
+
+    }
+    var p2 = function () {
+        setTimeout(function () {
+            console.log(222);
+        },1000)
+    }
+    var p3 = function () {
+        setTimeout(function () {
+            console.log(222);
+        },1000)
+    }
+    var p = new Promise.all([p1,p2,p3])
+    p.then({
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <script>
+         var arr0 = new Array(3);// 長度為3的數組
+         var arr1 = new Array(3,4);  //[3,4]
+         var arr2 = Array.of(3)
+         console.log(arr0,arr1,arr2)    //[3]
+         arr = [1,2,3,4,5]
+         var obj0 ={
+             a:1,
+             b:2,
+         }
+         var obj1 = {
+             1:1,
+             2:2,
+             length:2
+         }
+         var obj2 = {
+             0:1,
+             1:2,
+             4:5,
+             5:6,
+             length:10,
+         }
+         obj3 = {
+             0:1,
+             a:2,
+             2:3,
+             length:6,
+
+         }
+         console.log(Array.from(obj0))   //可以轉化爲數組 但是是數組元素為空的空數組
+         console.log(Array.from(obj1))   //[undefine,1]  當有length屬性時，其值數組長度，屬性名爲下標
+         console.log(Array.from(obj2))   //[1, 2, undefined, undefined,5, 6, undefined, undefined, undefined, undefined]
+         console.log((Array.from(obj3)))//[1, undefined, 3, undefined, undefined, undefined]
+         var s = new Set(arr);
+         console.log(s)    //Set(5) {1, 2, 3, 4, 5}
+         console.log(Array.from(s))  //(5) [1, 2, 3, 4, 5]
+         var m = new Map();
+         m.set(true,111);
+         m.set("a",3);
+         m.set(7,6);
+         console.log(m);   //Map(3) {true => 111, "a" => 3, 7 => 6}
+         console.log(Array.from(m))//[[true,111],["a",111],[7,6]]   map轉化為數組后變成二維數組le
+         var arr3 = Array(10).fill(2);   //// [2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 定義了有十個數組長度的數組，并用2填滿
+         console.log(arr3);
+         var arr4 =[1,2,3,4,5,6]
+          console.log(arr4.fill(3,2,5))   //(6) [1, 2, 3, 3, 3, 6]  從下標為2的開始到下表為4的結束
+         console.log(arr4)//[1,2,3,3,3,6]
+
+         var arr5 = [1,2,3,4,5,6];
+         arr5.forEach(function (xxx,index) {
+             console.log(xxx,index);
+             //輸出内容和下標      前面的是内容 後面的是下標
+         });
+         console.log(arr5.map(function (xx,index) {
+             console.log(xx,index);     //輸出内容和下標      前面的是内容 後面的是下標
+             return  xx+2
+         }))                            //(6) [3, 4, 5, 6, 7, 8]       將  每個元素+2輸出
+         console.log(arr5)              //[1,2,3,4,5,6]         經map遍歷后返回值變了但數組值沒變的
+          console.log(arr5.filter(function (xx,index) {
+              console.log(xx,index);
+              return xx>3;
+          }))                           //返回符合條件的數組的值，數組的值不會變
+         console.log(arr5)
+         var arr6 = [11,12,13,14,15,16];
+         console.log(arr6.reverse())    //反向；
+
+     </script>
+</body>
+</html>

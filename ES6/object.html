@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+      // var swx ='xxx';
+      // var food = 'apple';
+      // var str = 'my'
+      // var myName = 666;
+      // var obj = {
+      //     name,
+      //     age :12,
+      //     swx,
+      // };
+      //
+      // // console.log(obj.name);     //輸出’’，因爲window下有name屬性
+      // // console.log(obj,swx);      //報錯
+      // // console.log(obj.swx);          //xxx      當值定義屬性，未給值時，其值等於同名全局變量的值；
+      // // obj.bbb ='avb';                 //增加一個屬性，並賦值
+      // // console.log(obj.bbb);       //avb
+      // // console.log(obj[food]);            //undefined      動態屬性和同名複製不能同時用
+      // // obj[str+'Name']='888';
+      // // console.log(obj.myName)         //888
+      //
+      //   var arr = [1,2,3,4,5,6];
+      //   Array.prototype.io = function () {
+      //
+      //   }
+      //   console.log(Number.isNaN(NaN));   //true   是不是NaN
+      //   console.log(Number.isNaN(4));       //false
+      //   console.log(isNaN(2))             //false     是不是一個是非數字
+      //
+
+      // var obj = {
+      //     age:12,
+      //     name:"zs"
+      // }
+      // console.log(Object.assign(obj,{a:1,b:2,c:3},{d:6}))      //{age: 12, name: "zs", a: 1, b: 2, c: 3,d:6}
+      // console.log(obj)  //{age: 12, name: "zs", a: 1, b: 2, c: 3,d:6}   obj也已經發生改變了
+
+      var o1={
+          sex:'girl',
+      }
+      var obj={
+          age:12,
+          name:o1,
+      }
+      console.log(Object.assign(obj,{cc:66}))
+      obj.name.sex ='boy';      //對於對象來説改變屬性值所有的都改變
+      console.log(obj);
+      console.log(o1)
+  </script>
+</body>
+</html>
