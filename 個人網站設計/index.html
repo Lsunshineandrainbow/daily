@@ -63,9 +63,9 @@
     var indexTimer = indexCenter.getElementsByTagName('span')[0];
     blank.innerText = ' ';
     nowTimer.innerText = nowYear.getFullYear();           //爲甚麽2018和月份之間沒有空格；
-    nowTimer.append(blank);
-    nowTimer.append(nowYear.getMonth()+1);
-    nowTimer.append(blank);
+    nowTimer.append(`           `);                    //ES6 字符串拼接    ``   可以識別空格回車
+    nowTimer.append( + nowYear.getMonth()+1);
+    nowTimer.append(`              `);
     nowTimer.append(nowYear.getDate());
     var Timer = function () {
 

@@ -20,7 +20,7 @@
     //     name:'zs'
     //    }
     //    f.call(o)     //this指向改變，輸出 o
-
+    //
 
        // function f(a,b) {
        //     console.log(a,b)
@@ -42,20 +42,20 @@
        // }
        // f.apply(o,[1,6])      //1,6   o      必須先寫對象
 
-
-       var o= {
-           name: 'zs'
-       }
-       function f(a,b) {
-            console.log(a,b);
-            console.log(this)
-        }
-       var o={
-            name:'zs'
-       }
-     console.log( f.bind )      //會改變this指向但不會自動調用，返回的是改編後的函數
-    var fn = f.bind(o,34,77)
-     fn();                    //    34  77  o
+       //
+       // var o= {
+       //     name: 'zs'
+       // }
+       // function f(a,b) {
+       //      console.log(a,b);
+       //      console.log(this)
+       //  }
+    //    var o={
+    //         name:'zs'
+    //    }
+    //  console.log( f.bind );      //會改變this指向但不會自動調用，返回的是改編後的函數
+    // var fn = f.bind(o,34,77);
+    //  fn();                    //    34  77  o
 
 
 
