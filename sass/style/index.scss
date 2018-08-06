@@ -1,0 +1,58 @@
+$color:#f00;
+$bg:background;
+$gre:#dd6;
+$col:color;
+$text:text;      //
+/*我是scss*/
+//我是css
+#div{
+  background: $color;
+  color:$color
+}
+#div2{
+  font-size: 16px;
+  a{
+    width: 200px;
+    p{
+    #{$bg}:$gre;
+    }
+  }
+}
+#{$text}{
+  color:$gre ;
+}
+#div3{
+  background:{
+    image: url("");
+    position: center;
+    size: cover;
+  }
+}
+a{
+  border: {
+    width: 1px;
+    color: $gre;
+  };
+  text-decoration: none;
+  &:hover{
+    background: $color;
+  }
+  &-text{
+    background: $color;
+  }
+}
+@mixin xxx(){
+  #{$col}:$gre;
+  width: 10px;
+  height: 20px;
+}
+.div5{
+  @include xxx();
+}
+.div6{
+  @extend #div3;
+  height:20px ;
+}
+$red : rgb(000,250,250)
+#ul{ lighten($red,20%)  }'
+'

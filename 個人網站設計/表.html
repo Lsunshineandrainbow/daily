@@ -18,8 +18,41 @@
             height: 10px;
             background: #e62f2f;
             border-radius: 50%;
+            position: absolute;
             top: 10vw;
-            left: 10vw;
+            left: 9vw;
+            transform-origin: 10vw 9vw;
+        }
+        .h{
+            width: 12px;
+            height: 105px;
+            background: #000000;
+            border-radius: 54%;
+            position: absolute;
+            top: 10vw;
+            left: 9vw;
+            transform-origin: 10vw 9vw;
+        }
+        .m{
+            width: 12px;
+            height: 120px;
+            background: #000000;
+            border-radius: 54%;
+            position: absolute;
+            top: 10vw;
+            left: 9vw;
+            transform-origin: 10vw 9vw;
+
+        }
+        .s{
+            width: 10px;
+            height: 140px;
+            background: red;
+            border-radius: 54%;
+            position: absolute;
+            top: 10vw;
+            left: 9vw;
+            transform-origin: 10vw 9vw;
         }
     </style>
 </head>
@@ -32,6 +65,26 @@
 </div>
 </body>
 </html>
+<script src="jquery-1.12.4.js"></script>
 <script type="text/javascript">
+      var data = new Date();
+      var a = data.getHours();
+      var b = data.getMinutes()/60;
+      var c = data.getSeconds()/3600;
+      var H = document.getElementsByClassName('h')[0];
+      var str =(a+b+c)*30
+      // var str =`${ data.getHours()}${ data.getMinutes()/60}${data.getSeconds()/3600}${'deg'}`
+      // ;
+      // var num = parseInt(str)*30;
+      // console.log(num)
+      // setInterval(function () {
+      //     $('.h').css({
+      //     transform :'rotate(str)'
+      //     })
+      //     console.log('${num}${deg}')
+      //     },200)
+    setInterval(function () {
+        H.style.transform = 'rotate(’+str+‘deg)'
+    })
 
 </script>

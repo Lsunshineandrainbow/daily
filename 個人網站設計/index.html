@@ -62,11 +62,13 @@
     var indexCenter = document.getElementById('index-center');
     var indexTimer = indexCenter.getElementsByTagName('span')[0];
     blank.innerText = ' ';
-    nowTimer.innerText = nowYear.getFullYear();           //爲甚麽2018和月份之間沒有空格；
-    nowTimer.append(`           `);                    //ES6 字符串拼接    ``   可以識別空格回車
-    nowTimer.append( + nowYear.getMonth()+1);
-    nowTimer.append(`              `);
-    nowTimer.append(nowYear.getDate());
+    // nowTimer.innerText = nowYear.getFullYear();           //爲甚麽2018和月份之間沒有空格；
+    var str = `${nowYear.getFullYear()}&nbsp;&nbsp;&nbsp;&nbsp;${nowYear.getMonth()+1}&nbsp;&nbsp;&nbsp;&nbsp;${nowYear.getDate()} `;
+    // nowTimer.append(`<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>`));                    //ES6 字符串拼接    ``   可以識別空格回車
+    // nowTimer.append( + nowYear.getMonth()+1);
+    // nowTimer.append(`              `);
+    // nowTimer.append(nowYear.getDate());
+    $(nowTimer).html(str);
     var Timer = function () {
 
         var  nowTime = new Date();
@@ -74,7 +76,7 @@
         var m = nowTime.getMinutes();
         var s = nowTime.getSeconds();
         var checkTimer = function (x) {
-            var str = '' ;
+            var strs = '' ;
             if(x<10){
                 x = '0'+x;
             }
@@ -83,19 +85,19 @@
         m =checkTimer(m);
         s =checkTimer(s);
         if(h>1&&h<12){
-            str = 'Good morning';
+            strs = 'Good morning';
         }
         else if(h>12&&h<18&&m<30){
-            str = 'good afternoon'
+            strs = 'good afternoon'
         }
         else if(h>18&&m>30){
-            str = 'Good evening';
-        }
-        return str;
+            strs = 'Good evening';
+    }
+    return strs ;
     }
     indexTimer.innerText = Timer();
-
-
+    var centerSpan = indexCenter.getElementsByTagName('span');
+    centerSpan.innerText = checkTimer ()
 </script>
 </body>
 </html>
