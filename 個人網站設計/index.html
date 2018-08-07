@@ -25,6 +25,11 @@
               </div>
           </div>
       </div>
+      <div id="index-2">
+          <div class="warpper">
+              <video src="vido/smil.Ogg" loop = 'loop' autoplay = 'autoplay' width="1000" height="400"></video>
+          </div>
+      </div>
       <script src="../jquery/jquery-1.12.4.js"></script>
       <script src="jquery-1.12.4.js"></script>
 <script>
@@ -62,15 +67,9 @@
     var indexCenter = document.getElementById('index-center');
     var indexTimer = indexCenter.getElementsByTagName('span')[0];
     blank.innerText = ' ';
-    // nowTimer.innerText = nowYear.getFullYear();           //爲甚麽2018和月份之間沒有空格；
     var str = `${nowYear.getFullYear()}&nbsp;&nbsp;&nbsp;&nbsp;${nowYear.getMonth()+1}&nbsp;&nbsp;&nbsp;&nbsp;${nowYear.getDate()} `;
-    // nowTimer.append(`<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>`));                    //ES6 字符串拼接    ``   可以識別空格回車
-    // nowTimer.append( + nowYear.getMonth()+1);
-    // nowTimer.append(`              `);
-    // nowTimer.append(nowYear.getDate());
     $(nowTimer).html(str);
     var Timer = function () {
-
         var  nowTime = new Date();
         var h = nowTime.getHours();
         var m = nowTime.getMinutes();
@@ -96,8 +95,8 @@
     return strs ;
     }
     indexTimer.innerText = Timer();
-    var centerSpan = indexCenter.getElementsByTagName('span');
-    centerSpan.innerText = checkTimer ()
+    // var centerSpan = indexCenter.getElementsByTagName('span');
+    // centerSpan.innerText = checkTimer ()
 </script>
 </body>
 </html>

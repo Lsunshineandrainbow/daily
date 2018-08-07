@@ -67,12 +67,12 @@
 </html>
 <script src="jquery-1.12.4.js"></script>
 <script type="text/javascript">
-      var data = new Date();
-      var a = data.getHours();
-      var b = data.getMinutes()/60;
-      var c = data.getSeconds()/3600;
-      var H = document.getElementsByClassName('h')[0];
-      var str =(a+b+c)*30
+      // var data = new Date();
+      // var a = data.getHours();
+      // var b = data.getMinutes()/60;
+      // var c = data.getSeconds()/3600;
+      // var H = document.getElementsByClassName('h')[0];
+      // var str =(a+b+c)*30
       // var str =`${ data.getHours()}${ data.getMinutes()/60}${data.getSeconds()/3600}${'deg'}`
       // ;
       // var num = parseInt(str)*30;
@@ -84,7 +84,14 @@
       //     console.log('${num}${deg}')
       //     },200)
     setInterval(function () {
+        var data = new Date();
+        var a = data.getHours();
+        var b = data.getMinutes()/60;
+        var c = data.getSeconds()/3600;
+        var H = document.getElementsByClassName('h')[0];
+        var str =(a+b+c)*30;
+        console.log(str);
         H.style.transform = 'rotate(’+str+‘deg)'
-    })
+    },200)
 
 </script>
