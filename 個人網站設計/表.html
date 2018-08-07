@@ -41,7 +41,7 @@
             position: absolute;
             top: 10vw;
             left: 9vw;
-            transform-origin: 10vw 9vw;
+            transform-origin:0 0;
 
         }
         .s{
@@ -86,12 +86,13 @@
     setInterval(function () {
         var data = new Date();
         var a = data.getHours();
-        var b = data.getMinutes()/60;
-        var c = data.getSeconds()/3600;
+        var b = data.getMinutes();
+        var c = data.getSeconds();
         var H = document.getElementsByClassName('h')[0];
-        var str =(a+b+c)*30;
-        console.log(str);
-        H.style.transform = 'rotate(’+str+‘deg)'
+        console.log(a*30+b/2+c/120);
+        H.style.transform ='rotate('+a*30+b/2+c/120+'deg)';
+        // H.style.transform = 'rotate(30deg)'
+
     },200)
 
 </script>
