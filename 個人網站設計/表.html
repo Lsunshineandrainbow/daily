@@ -14,14 +14,14 @@
           position: relative;
       }
         .center{
-            width: 10px;
-            height: 10px;
+            width: 20px;
+            height: 20px;
             background: #e62f2f;
             border-radius: 50%;
             position: absolute;
-            top: 10vw;
-            left: 9vw;
-            transform-origin: 10vw 9vw;
+            top: 162px;
+            left: 150px;
+            transform-origin: bottom;
         }
         .h{
             width: 12px;
@@ -29,9 +29,9 @@
             background: #000000;
             border-radius: 54%;
             position: absolute;
-            top: 10vw;
+            top: 4vw;
             left: 9vw;
-            transform-origin: 10vw 9vw;
+            transform-origin:bottom;
         }
         .m{
             width: 12px;
@@ -39,9 +39,9 @@
             background: #000000;
             border-radius: 54%;
             position: absolute;
-            top: 10vw;
+            top: 3vw;
             left: 9vw;
-            transform-origin:0 0;
+            transform-origin: bottom;
 
         }
         .s{
@@ -50,9 +50,9 @@
             background: red;
             border-radius: 54%;
             position: absolute;
-            top: 10vw;
+            top: 2vw;
             left: 9vw;
-            transform-origin: 10vw 9vw;
+            transform-origin: bottom;
         }
     </style>
 </head>
@@ -89,10 +89,15 @@
         var b = data.getMinutes();
         var c = data.getSeconds();
         var H = document.getElementsByClassName('h')[0];
-        console.log(a*30+b/2+c/120);
-        H.style.transform ='rotate('+a*30+b/2+c/120+'deg)';
-        // H.style.transform = 'rotate(30deg)'
+        var M = document.getElementsByClassName('m')[0];
+        var S = document.getElementsByClassName('s')[0];
 
-    },200)
+        console.log(a*30+b/2+c/120);
+        H.style.transform ='rotate('+a*30+'deg)';
+        // H.style.transform = 'rotate(30deg)'
+        M.style.transform ='rotate('+b*6+'deg)';
+        S.style.transform ='rotate('+c*6+'deg)';
+
+    },20)
 
 </script>
