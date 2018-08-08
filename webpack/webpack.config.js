@@ -1,6 +1,12 @@
 const  path = require('path');
 const  webpack = require('webpack');
 const  HtmlPlugin = require('html-webpack-plugin');
+const  ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const glob = require('glob');
+const PurifyCSSPlugin = require('purifycss-webpack');
+// const entry={
+//     entry:'./src/entry.js'
+// };
 module.exports = {
     mode :'development',
     entry: {
@@ -12,11 +18,14 @@ module.exports = {
         filename: "[name].js"
     },
     plugins: [
+        new PurifyCSSPlugin({
+            paths:glob.sync(path.join(__dirname,'src/*.html'))
+        }),
         new webpack.HotModuleReplacementPlugin(),
+        new ExtractTextWebpackPlugin('./css/index.css'),
         new HtmlPlugin({
             filename:'a.html',
-            title:"index1",
-            chunks:['index11'],
+            chunks:['index'],      //想讓chunks引入哪個js
             minfiy:{
                 removeAttributeQuotes:true
             },
@@ -24,9 +33,8 @@ module.exports = {
             template:'./src/index.html'
         }),
         new HtmlPlugin({
-            chunks:['index11'],
+            chunks:['index2'],
             filename:'b.html',
-            title:"index2",
             minfiy:{
                 removeAttributeQuotes:true
             },
@@ -38,16 +46,56 @@ module.exports = {
         contentBase:path.resolve(__dirname,'dist'),
         host:"localhost",
         compress:true,
-        port:8081,
+        port:8080,
         hot:true,
         open:true
     },
     module: {
         rules: [
             {
+
                 test:/\.css$/,
                 use:['style-loader','css-loader']
-            }
+                // use:ExtractTextWebpackPlugin.extract({
+                //     fallback: "style-loader",
+                //     use: [{
+                //         loader:"css-loader",
+                //         options:{
+                //             importLoaders:1
+                //         }
+                //     },"postcss-loader"]
+                // })
+            },
+            {
+
+                test:/\.scss/,
+                // use:['style-loader','css-loader','sass-loader']
+                use:ExtractTextWebpackPlugin.extract(
+                    {
+                        use:[{
+                                loader:'css-loader'
+                            },{
+                                loader:'sass-loader'
+                             }
+                        ],
+                        fallback:'style-loader'
+}
+                )
+            },
+            // {
+            //              test:/\.(jsx|js)$/,
+            //     use: {
+            //         loader: "babel-loader",
+            //         options: {
+            //             presets:[
+            //                 'es2015'
+            //             ]
+            //         }
+            //     },
+            //    exclude:/node_modules/
+            // },
+            // new webpack.BannerPlugin('東農')
+
         ]
     }
 

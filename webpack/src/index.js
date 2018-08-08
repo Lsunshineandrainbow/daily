@@ -1,3 +1,4 @@
-
+import css from './css/index.css';
+import sass from './css/comm.scss'
 var odiv = document.getElementById('div1');
-odiv.innerHTML = '11dfwefte11111111111111111111111111111111111111111'
+odiv.innerHTML = 'rrpiofdsfewfsdsdioit'

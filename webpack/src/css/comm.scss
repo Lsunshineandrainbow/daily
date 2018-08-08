@@ -1,0 +1,10 @@
+$color:color;
+$ccc:#0ff;
+#ul1{
+  #{$color}:red;
+  width: 100px;
+  height: 100px;
+}
+#div1{
+  color: $ccc;
+}
