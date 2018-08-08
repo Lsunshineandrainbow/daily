@@ -7,11 +7,13 @@
         div{
             font-size: 12px;
         }
+
     </style>
 </head>
     <div id="div1">cnklkskljcderil</div>
 <video src="vido/void.Ogg" loop="loop" autoplay="autoplay">
 </video>
+<canvas id="mycanvas" width="500" height="300" style="border: 2px solid #FF6500"></canvas>
 <body>
 <script src="../jquery/jquery-1.12.4.js"></script>
     <script>
@@ -59,8 +61,24 @@
         // Div1.appendChild(oa)
         // console.log(blank.innerText);
 // ------------------------------------------------------------------------------------
+   var Canvas = document.getElementById('mycanvas');
+   var cxt = Canvas.getContext("2d");
+   cxt.fillStyle = '#0ff';
+   cxt.beginPath();
+   cxt.arc(250,150,75,0,Math.PI*2,true);
+   cxt.closePath();
+   cxt.fill();
+   cxt.lineWidth=0;
+   cxt.l
 
 
+if(!document.getElementById('mycanvas').getContext){
+    alert('不支持');
+}
+else {
+    alert('支持')
+}
+console.log(111)
     </script>
 </body>
 </html>

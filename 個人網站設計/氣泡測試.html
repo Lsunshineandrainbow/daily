@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!doctype html>
+<html lang="en">
+ <head>
+     <meta charset="UTF-8">
+    <!-- <meta name="Generator" content="EditPlus®">-->
+    <!-- <meta name="Author" content="">-->
+    <!-- <meta name="Keywords" content="">-->
+    <!-- <meta name="Description" content="">-->
+     <title>5多个小球往上运动</title>
+     <style>
+     </style>
+     </head>
+ <body>
+  <div id="d1">
+        <canvas id="canvas"></canvas>
+      </div>
+ </body>
+</html>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var context=canvas.getContext("2d");
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+    function Circle(){
+        this.x=Math.random()*canvas.width;
+        this.y=canvas.height;
+        this.r=Math.random()*10;
+        //绘制圆形
+        this.paint=function(){
+            context.beginPath();
+            context.arc(this.x,this.y,this.r,0,Math.PI*2);
+            context.fillStyle="white";
+            context.globalAlpha = 0.5;
+            context.fill();
+        }
+        //控制圆形移动
+        this.step=function(){
+            this.y--;
+        }
+    }
+    var circles=[];
+    function createCircles(){
+        var circle=new Circle();//??????
+        circles[circles.length]=circle;
+    }
+
+    function paintCircles(){
+        for(var i=0;i<circles.length;i++){
+            circles[i].paint();
+        }
+    }
+    function stepCircles(){
+        for(var i=0;i<circles.length;i++){
+            circles[i].step();
+        }
+    }
+    var myimg=new Image();
+    myimg.src="images/個人網站2.jpg";
+    var timer="";
+    setInterval(function(){
+        context.drawImage(myimg,0,0);
+        timer++;
+        if(timer%20==0){
+            createCircles();
+        }
+        paintCircles();
+        stepCircles();
+    },10);
+</script>
+</html>
