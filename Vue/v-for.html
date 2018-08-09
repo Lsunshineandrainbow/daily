@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul class="uL">
+        <li v-for="(val,index) in arr">
+            <!--//第一個數是值   第二個數是索引-->
+            {{val}} {{index}}
+        </li>
+        <!--<h1 v-for="val in arr1" v-text="val.name">                //v-text無效-->
+        <h6 v-for="(val,index) in sortarr">
+            <!--//arr1是數組但裏面是對象-->
+        學生姓名：{{val.name}}，學生年齡：{{val.age}}
+        </h6>
+        <h1 v-for="(val,key,index) in obj">        //對象 值  鍵  索引
+           屬性{{key}} 值{{val}} 序號{{index}}
+        </h1>
+    </ul>
+    <script src="vue.js"></script>
+    <script>
+       var vm = new Vue({
+           el:'.uL',
+           data: {
+               arr: [1, 2, 3, 4],
+               arr1: [{
+                   name: 'zs',
+                   age: 12,
+               }, {
+                   name: 'ls',
+                   age: 13
+               }, {
+                   name: 'ww',
+                   age: 20
+               }],
+               obj: {
+                   name: 'js',
+                   age: 21,
+               }},
+              computed :{
+               sortarr(){
+                   console.log(this);   //輸出vm這個Vue對象
+                   // console.log(vm);         //undefine    無法在其内部輸出其本身
+                   // console.log(arr1);       //  arr1未定義    報錯
+                   return this.arr1.sort(function (a,b) {
+                       return a.age-b.age
+                   })
+               }
+           }
+       })
+        console.log(vm)
+    </script>
+</body>
+</html>

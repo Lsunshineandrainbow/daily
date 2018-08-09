@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            background: red;
+            height: 200px;
+            width: 400px;
+        }
+        .font{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!--<div id="div1" v-bind:title="t" :style="{background:styleA,'font-size':styleB}">-->
+    <!--<div id="div1" :style="[style1,style2]">-->
+    <!--<div id="div1" :style="styleobj">-->
+    <!--<div id="div1" :class="{red:xxx,font:yyy}">    //若值爲真則加入前面的類，否則不加入-->
+    <!--<div id="div1" :class="[styleC,styleD]">-->
+    <div id='div1' :class="obj">
+        ppppppp
+    <input type="text" id="ptn" v-model="msg">
+        {{msg}}
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var rm = new Vue({
+            el:'#div1',
+            data:{
+                t:'xxx',
+                msg:0,
+                styleA:'red',
+                styleB:'40px',
+                style1:{
+                    background:"blue",
+                    height:100
+                },
+                style2:{
+                   'font-size':'40px'
+                },
+                styleobj:{
+                    background:'red',
+                    'font-size':'50px'
+                },
+                // xxx:'red',
+                // yyy:'font',
+                styleD:'red',
+                styleC:'font',
+                obj:{
+                    red:false,
+                    font:true
+                }
+            },
+        })
+    </script>
+</body>
+</html>

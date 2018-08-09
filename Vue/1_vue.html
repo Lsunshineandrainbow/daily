@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<div id="vue1">-->
+        <!--{{msg}}-->
+        <!--{{msg1}}-->
+    <!--</div>-->
+    <div id="vue1">
+        <p  v-if="msg">11111</p>
+        <!--//如果msg為true那麽p顯示，否則執行a中-->
+        <a v-else="msg2">2222</a>
+        <span>3333</span>
+    </div>
+    <div id="div1">
+        <template v-if="msg1">             //内容隱藏
+        <!--<template v-show="msg1">-->   //v-show對template無效裏面内容還是出來了
+            <p>zzzz</p>
+            <h>xxxx</h>
+            <a>vvvvv</a>
+        </template>
+    </div>
+
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#vue1",
+            data: {
+                msg :"1234",
+                msg1:"<h>1111</h> "   ,  //只會輸出1111標簽不輸出
+                msg2:1
+        }
+        });
+        var vm1 = new Vue({
+            el:"#div1",
+            data:{
+                msg1:0
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>

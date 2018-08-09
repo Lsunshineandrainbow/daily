@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #gree{
+            width:400px ;
+            height: 400px;
+            background: #55a532;
+        }
+        #red{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="gree" @click ="fun">
+        <button id="btn" v-on:click="fun2"></button>
+        {{msg}}
+        <div id="red" @click.stop ="fun1">
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vu = new Vue({
+            el:'#gree',
+            data:{
+                msg:0
+            },
+            methods:{
+                fun(){
+                    console.log(1111);
+                },
+                fun1(){
+                    console.log(222);
+                    // event.stopPropagation()    //組織事件冒泡
+                },
+
+                fun2(){
+                    this.msg+= 2
+                }
+            }
+        })
+    </script>
+</body>
+</html>
