@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <div id="div1">
+       是否需要額外付費設施<input  type="checkbox"  v-model="isshow" >
+       <ul>
+       <li v-for="val in arr" v-show="isshow">
+           {{val.name}}{{val.price}} <input type="checkbox" v-model="arr1" :value="val">    <!--  //複選框特點v-model變成true后能將vaule存入arr1中-->
+       </li>
+       </ul>
+        <span>訂單費用信息</span>
+            <li v-for="val in arr1 ">
+               {{val.name}}{{val.price}}
+            </li>
+       <a>總金額：</a>{{total}}
+   </div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el : '#div1',
+        data: {
+            isshow:'',
+            arr:[
+                {name:'沙發',price:(100),kind:'seft'},{name:'床',price:(200),kind:'ch'},{name:'wifi',age:(20),kind:'wi'}
+                ],
+            arr1:[
+                {name:"群裏花園豪華型",price:(400)}]
+        },
+        computed:{
+            total(){
+                var sum = 0;
+                this.arr1.forEach(function (x) {
+                    sum+=x.price
+                })
+                return sum
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            background: red;
+        }
+        li{
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+   <div id="div1">
+       <input type="text"  v-model="msg" @keyup="fun2()" >    <!--將輸入框内容和msg綁定-->
+       <button  @click="fun">按鈕</button>
+       <ul>
+           <li v-for="(obj,index) in setarr" @click.stop="fun1(obj)" :class="{red:obj.active}"  > {{obj.val}} <button @click="fun3(index)">del</button></li>
+       </ul>
+   </div>
+   <script src="vue.js"></script>
+   <script>
+        var rm = new Vue({
+            el:'#div1',
+            data:{
+               msg:'0',
+                arr:[],
+                showarr:[]
+            },
+            methods:{
+                fun() {
+                    this.arr.push({val:this.msg,active:false});
+                    this.msg = '';
+                    this.showarr = this.arr
+
+                },
+                fun1(obj){
+                    obj.active = !obj.active;
+
+                },
+                fun2(){
+                 var newArr =  this.arr.filter((elem,index)=> {
+                     // filter過濾後不會改變原本數組
+                        return elem.val.indexOf(this.msg)!=-1              //elem數組的每個元素，在這裏是一個對象
+                    });
+                 this.showarr = newArr
+                },
+                fun3(index){
+                    this.arr.splice(index)
+                }
+            },
+            computed:{
+                setarr(){                                                       /*setarr可以說是一個屬性即setarr：.....,是一個數組類似於data中的屬性*/
+                    return this.showarr.sort(function (a,b) {
+                            return a.val-b.val
+                    })
+                }
+            },
+
+        })
+   </script>
+</body>
+</html>

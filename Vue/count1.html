@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            width: 415px;
+            height: 50px;
+            margin: 30px;
+            list-style: none;
+            background: #55a532;
+            text-align: center;
+            line-height: 50px;
+            padding: 0 40px;
+        }
+        .red{
+            background: red;
+        }
+        #uL{
+            margin: 200px auto;
+            width: 600px;
+        }
+        .span1{
+            float: left;
+        }
+        .span2{
+            float: right;
+        }
+        #span1{
+            position: relative;
+            left:415px;
+        }
+
+    </style>
+</head>
+<body>
+<ul id="uL">
+    <!--<li v-for="(obj,index) in arr"  @click="fun(obj)" :class="{red:obj.station}">-->
+    <li v-for="(obj,index) in arr"  @click="fun(obj)" :class="{red:obj.station}">
+    <span class="span1"> {{obj.name}}</span> <span class="span2">{{obj.age}}</span>
+    </li>
+    <div>______________________________________________________________________________</div>
+    <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total<span id="span1">{{msg}}</span></a>
+</ul>
+    <script src="vue.js"></script>
+   <script>
+       var rm = new Vue({
+           el:'#uL',
+           data:{
+               msg:0,
+               arr:[
+                   {name:'aaa', age:234 ,station:false},
+                   {name:'bbb', age:927,station:false},
+                   {name:'ccc', age:247,station:false},
+                   {name:'ddd', age:316,station:false},
+                   {name:'eee', age:532,station:false}
+               ]
+           },
+           methods:{
+              fun(obj){
+                  obj.station = ! obj.station;
+                      // event.target.station = true;         //event.target是li而不是對象
+                            if(obj.station ){
+                              this.msg += obj.age;
+                      }
+                  else {
+                      this.msg -= obj.age
+                  }
+              }
+           }
+       })
+   </script>
+</body>
+</html>
