@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 300px;
+            margin: 200px auto;
+            text-align: center;
+        }
+        #div1 span{
+            font-size: 40px;
+        }
+
+        li{
+            width: 300px;
+            height: 50px;
+            list-style: none;
+            background: #795da3;
+            margin-top: 20px;
+
+        }
+        #left{
+            float: left;
+            margin: 13px;
+            font-size: 20px;
+        }
+        #right{
+            float:right;
+            margin: 13px;
+            font-size: 20px;
+        }
+        hr{
+            width: 400px;
+            color: black;
+        }
+        #total{
+            float: left;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+        #total1{
+            float: right;
+            margin-right: 20px;
+            font-size: 20px;
+        }
+        .pink{
+            background: #79a2e6;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <span>services</span>
+        <li v-for="(val,index) in arr"  @click="fun(index)" :class="{pink:val.statue}">
+        <!--&lt;!&ndash;<li v-for="val in arr" @click="fun(val)" :style="{background:val.statue}">&ndash;&gt;     //用style可以做嗎該怎莫做-->
+           <a id="left">{{val.name}}</a>  <a id="right">{{val.value}}</a>
+        </li>
+        <hr>
+        <a id="total">total:</a>   <a id="total1">{{total}}</a>
+    </div>
+<script src="vue.js"></script>
+<script>
+    var rm = new Vue({
+        el :'#div1',        //必須寫el，規定
+        data:{
+            arr:[
+                {name:'A',value:100,statue:false},
+                {name:'B',value:100,statue:false},
+                {name:'C',value:100,statue:false},
+                {name:'D',value:100,statue:false},
+                {name:'E',value:100,statue:false}],
+            sum:0,
+        },
+        methods:{
+                // fun(val){
+                //     val.statue = !val.statue;
+                //     // this.arr.forEach((elem)=> {         //匿名函數的this指向是window
+                //        if(val.statue) {
+                //           this.sum += val.value;
+                //        }else {
+                //            this.sum -= val.value;
+                //        }
+                // }
+            fun(index){
+                this.arr[index].statue = ! this.arr[index].statue;
+               if(this.arr[index].statue) {
+                   this.sum += this.arr[index].value
+               }else {
+                   this.sum -= this.arr[index].value
+               }
+            }
+        },
+        computed:{
+            total(){
+                var sum1 = 0
+                this.arr.forEach((elem)=>{
+                    if(elem.statue){
+                        sum1 += elem.value}
+                })
+                return sum1       //寫在 computed和methods的區別
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

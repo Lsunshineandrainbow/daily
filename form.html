@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<input type="text">  -->
+    <!--&lt;!&ndash;//文本框&ndash;&gt;-->
+    <!--<input type="checkbox">-->
+    <!--&lt;!&ndash;//複選框&ndash;&gt;-->
+    <!--<input type="radio">-->
+    <!--&lt;!&ndash;//單選框&ndash;&gt;-->
+    <!--<input type="password">-->
+    <!--&lt;!&ndash;//密碼框&ndash;&gt;-->
+   <div id="div1">
+       <input type="checkbox"  v-model="msg" value="香蜜">
+       <input type="checkbox" v-model="msg" value="沉沉">
+       <input type="checkbox" v-model="msg" value="燼如煇">
+       <input type="radio" v-model="sex" value="nv">        //對於單選框來説一組也就是v-model值相同的的只要value值不同就可以達到複選框的效果
+       <input type="radio" v-model="sex" value="nan">
+   </div>
+<script src="Vue/vue.js"></script>
+<script>
+    var rm = new Vue({              //對於複選框來説，分組是要將v-model的的值和一個空數組綁定就能達到一個一個選中的效果了
+        el:'#div1',
+        data:{
+            // msg:'香蜜'
+            msg:[],
+            sex:'nv'
+
+        }
+    })
+
+</script>
+</body>
+</html>
