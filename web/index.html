@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+</head>
+<body>
+<div id="contain">
+    <div class="warpper">
+        <div id="list">
+        <ul>
+            <li>home</li>
+            <li>person</li>
+            <li>work</li>
+            <li>contact</li>
+        </ul>
+        </div>
+         <div id="index">
+             <div id="greet"></div>
+             <div>welcome to my website</div>
+             <div id="h"><h4>I'm Lj</h4>
+                 <h4>A front end Engineer</h4>
+             </div>
+         </div>
+    </div>
+</div>
+<div id="index-2">
+    <div class="warpper">
+        <h1>Person</h1>
+        <ul>
+            <li><h1><i class="iconfont icon-qianbi"></i></h1><button></button></li>
+            <li><h1><i class="iconfont icon-jingli"></i></h1><button></button></li>
+            <li><h1><i class="iconfont icon-aihao"></i></h1><button></button></li>
+            <li><h1><i class="iconfont icon-xiguan"></i></h1><button></button></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="index.js"></script>
+<script>
+     var Greet = document.getElementById('greet');
+     var Timer = function () {
+         var  nowTime = new Date();
+         var h = nowTime.getHours();
+         var m = nowTime.getMinutes();
+         var s = nowTime.getSeconds();
+         var checkTimer = function (x) {
+             var strs = '' ;
+             if(x<10){
+                 x = '0'+x;
+             }
+             return x;
+         }
+         m =checkTimer(m);
+         s =checkTimer(s);
+         if(h>1&&h<12){
+             strs = 'Good morning';
+         }
+         else if(((h>12)||(h=12))&&(h<18)){
+             strs = 'good afternoon'
+         }
+         else if((h>18)||(h=18)){
+             strs = 'Good evening';
+         }
+         return strs ;
+     }
+     Greet.innerText = Timer();
+
+
+</script>
+</html>

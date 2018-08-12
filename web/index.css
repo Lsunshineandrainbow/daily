@@ -1,0 +1,69 @@
+#contain .warpper{
+    background: url("image/chad-madden-774312-unsplash.jpg");
+    height: 850px;
+    overflow: hidden;
+}
+#index{
+    width: 337px;
+    height: 285px;
+    background: rgba(255, 255, 255, 0.6);
+    margin: 200px auto;
+    position: relative;
+    overflow: hidden;
+
+}
+#contain .warpper #index #greet{
+    width: 100px;
+    height: 70px;
+    font-size: 20px;
+    font-style: italic;
+    position: absolute;
+    top: 40px;
+    left:98px;
+}
+#contain .warpper #index div{
+   position: absolute;
+    top: 115px;
+    left: 50px;
+    text-align: center;
+    font-style: italic;
+}
+#contain .warpper #index #h{
+    position: absolute;
+    top: 160px;
+}
+#contain .warpper #list{
+    width: 100%;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.6);
+    position: fixed;
+}
+#contain .warpper  #list li {
+    float:left ;
+    margin: 30px;
+}
+#contain .warpper  #list ul{
+    float: right;
+}
+#contain .warpper  #list li:hover{
+    color: #56adb8;
+}
+#index-2 .warpper{
+    height: 100px;
+}
+#index-2 .warpper h1{
+    text-align: center;
+    margin-top: 28px;
+}
+#index-2 .warpper ul li{
+    width: 360px;
+    height: 255px;
+    margin:30px 44px;
+    background: #d2cccb;
+    float: left ;
+    position: relative;
+}
+#index-2 .warpper ul li i{
+    font-size: 40px;
+}
+
