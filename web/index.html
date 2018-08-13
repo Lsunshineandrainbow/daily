@@ -30,16 +30,54 @@
 <div id="index-2">
     <div class="warpper">
         <h1>Person</h1>
-        <ul>
-            <li><h1><i class="iconfont icon-qianbi"></i></h1><button></button></li>
-            <li><h1><i class="iconfont icon-jingli"></i></h1><button></button></li>
-            <li><h1><i class="iconfont icon-aihao"></i></h1><button></button></li>
-            <li><h1><i class="iconfont icon-xiguan"></i></h1><button></button></li>
+        <ul id="content">
+            <li>
+                <h1>
+                <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-qianbi"></use></svg>
+            </h1>
+                <ul class="Language">
+                    <li class="selected1">English</li>
+                    <li>한국어</li>
+                    <li>Portugal</li>
+                </ul>
+                <p style="margin: 14px 28px" class="selected2">I am a student and I am currently studying software engineering
+                    at Northeast Agricultural University in Heilongjiang Province.</p>
+                <p style="margin: 14px 20px">저는 학생이고 현재 흑룡강 성 동북 농업 대학에서 소프트웨어 공학을 전공하고 있습니다.</p>
+                <p style="margin: 14px 20px">Eu sou estudante e atualmente estou estudando engenharia de software na Northeast Agricultural University na Província de Heilongjiang.</p>
+            </li>
+            <li>
+                <h1>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-xiguan"></use></svg>
+                </h1>
+                <p>I am a girl who especially likes to laugh and love life. I like sports, I like reading books, I like to watch the rising sun, I like positive life.
+                </p>
+                <div class="button"></div>
+            </li>
+            <li>
+                <h1>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-jingli"></use></svg>
+                </h1>
+                <div class="button"></div>
+            </li>
+            <li>
+                <h1>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-aihao"></use></svg>
+                </h1>
+                <div class="button"></div>
+            </li>
+
+
         </ul>
     </div>
 </div>
 </body>
 <script src="index.js"></script>
+<script src="font/iconfont.js"></script>
+
 <script>
      var Greet = document.getElementById('greet');
      var Timer = function () {
@@ -68,7 +106,22 @@
          return strs ;
      }
      Greet.innerText = Timer();
-
+      var Lau = document.getElementsByClassName('Language')[0];
+      var lauLi = Lau.getElementsByTagName('li');
+      var Content = document.getElementById('content');
+      var ContentLi =  Content.getElementsByTagName('li')[0];
+      var ContentP =  ContentLi.getElementsByTagName('p');
+      for(var i =0; i<lauLi.length;i++){
+          lauLi[i].index=i;
+          lauLi[i].onclick=function () {
+              for(var j =0; j<lauLi.length;j++){
+                  ContentP[j].className='';
+                  lauLi[j].className=''
+              }
+              this.className = 'selected1'
+              ContentP[this.index].className='selected2';
+          }
+      }
 
 </script>
 </html>
