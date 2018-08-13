@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <demo></demo>
+    <demo1 a-a="666" bb="發發發"></demo1>
+    <demo1 :a-a="msg1" :bb="msg2"></demo1>
+</div>
+<!--<div id="div2">-->
+    <!--<demo1></demo1>-->
+    <!--<demo></demo>-->
+    <!--<explem></explem>-->
+<!--</div>-->
+<div id="div3">
+    <show :a-b-cd="msg">             //將aBCd作爲一個屬性，并將msg賦值給它
+        <p>pppp</p>
+        <p slot="p1">p1p1p1p1</p>    //把同名的slot標簽替換掉
+        <h1>我把未命名的替換了</h1>    //把未命名的slot標簽替換掉
+    </show>
+</div>
+<script src="vue.js"></script>
+<script type="text/x-template" id="tem1">
+    <div>
+       <a>'我是div3'</a>
+        <slot name="p2">"我是默認的p2"</slot>
+        <h1>{{aBCd}}</h1>                <!--//將msg放在了<h1></h1>標簽中-->
+        <slot></slot>
+        <slot>"我要被替換"</slot>
+        <slot name="p1">"我是默認的p1"</slot>
+    </div>
+</script>
+<script>
+    Vue.component('demo',{
+        template:'<h1>111</h1>',
+
+    })
+    var rm = new Vue({
+        el:'#div1',
+        data:{
+            msg1:'紅紅',
+            msg2:'火火'
+
+        },
+        components:{
+            demo1:{
+                template:"<div>lll<h1>{{AA}}<a>{{bb}}</a></h1>llllll</div>",
+                props:['AA','bb']
+            }
+        }
+    })
+    // var rm1 = new Vue({
+    //     el:'#div2',
+    //     data:{
+    //         arr:[1,2,3,4,5]
+    // },
+    //     components:{
+    //         explem:{
+    //             template:'<li v-for="val in arr">{{val}}</li>'
+    //         }
+    //
+    //     }
+    // })
+    new Vue({
+        el:'#div3',
+       data:{
+           msg:'闖九州',
+       },
+        components:{
+            show:{
+                template:'#tem1',
+                props:['aBCd']
+            }
+
+        }
+
+    })
+</script>
+</body>
+</html>

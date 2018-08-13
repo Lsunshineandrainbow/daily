@@ -45,11 +45,11 @@
                  var newArr =  this.arr.filter((elem,index)=> {
                      // filter過濾後不會改變原本數組
                         return elem.val.indexOf(this.msg)!=-1              //elem數組的每個元素，在這裏是一個對象
-                    });
+                });
                  this.showarr = newArr
                 },
                 fun3(index){
-                    this.arr.splice(index)
+                    this.arr.splice(index,1)
                 }
             },
             computed:{

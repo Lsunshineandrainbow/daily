@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #content{
+            width: 250px;
+            margin: 0 auto;
+        }
+        a{
+            float: right;
+        }
+        input{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+ <div id="app">
+     <button @click="fun1">登陸</button>
+     <button @click="fun2">注冊</button>
+     <!--<div id="content">-->
+         <!--<h1>-->
+         <!--<span>登陸</span>-->
+         <!--<a>X</a>-->
+         <!--</h1>-->
+         <!--用戶名：<input type="text">-->
+         <!--<br>-->
+         <!--密碼 是：<input type="text">-->
+     <!--</div>-->
+         <show title="登陸" v-show="isshow" @fclose="close">
+             用戶名：<input type="text">
+             <br>
+             密碼 是：<input type="text">
+             <input type="submit">
+         </show>
+     <show title="注冊" v-show="isshow2" @fclose="close">
+         用戶名：<input type="text">
+         <br>
+         密碼 是：<input type="text">
+         <br>
+         確認密碼：<input type="text">
+         <input type="submit">
+     </show>
+
+ </div>
+<script src="vue.js"></script>
+<script type="=text/template" id="tem">
+    <div id="content">
+        <h1>
+
+            <span>{{title}}</span>
+            <a @click="$emit('fclose')">X</a>
+        </h1>
+        <slot>
+            用戶名：<input type="text">
+            <br>
+            密碼 是：<input type="text">
+        </slot>
+    </div>
+</script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            isshow:false,
+            isshow2:false
+        },
+        components:{
+            show:{
+                template:'#tem',
+                props:['title']
+            }
+        },
+        methods:{
+            close(){
+                this.isshow=false;
+                this.isshow2=false;
+            },
+            fun1(){
+                this.isshow=true;
+                this.isshow2=false
+            },
+            fun2(){
+                this.isshow2=true;
+                this.isshow=false
+            }
+        }
+    })
+</script>
+</body>
+</html>
