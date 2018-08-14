@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #content{
+            margin: 0 auto;
+            width: 960px;
+            background: #ccc;
+        }
+        *{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="content" >
+     <show :show1="title1" :show1="msg1" :show2="msg2"  :show3="msg3" imag="image"></show>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script src="axios.min.js"></script>
+ <script type="text/x-handlebars-template" id="contain">
+     <div>
+         <h1>{{show1}}</h1>
+         <h6>{{show2}}</h6>
+         <p>{{show3}}</p>
+         <p>{{show4}}</p>
+         <img src="{{imag}}" alt="">
+     </div>
+
+ </script>
+ <script>
+     var rm = new Vue({
+         el:"#content",
+         data:{
+             title1:'电影版爱情公寓观后感影评',
+             msg1:'我是h6',
+             msg2:'p1',
+             msg3:'p2',
+             image:'image/love.jpg'
+         },
+         components:{
+             show:{
+                 template:"#contain",
+                 props:["show1","show2","show3","show4",'imag']
+             }
+         },
+         method:{
+             send(){
+                 axios({
+                     method:'get'
+                 })
+             }
+         }
+     })
+ </script>
+</html>
