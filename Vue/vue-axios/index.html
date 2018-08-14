@@ -16,18 +16,19 @@
 </head>
 <body>
     <div id="content" >
+        <button @click="send()"></button>
      <show :show1="title1" :show1="msg1" :show2="msg2"  :show3="msg3" imag="image"></show>
     </div>
 </body>
 <script src="vue.js"></script>
 <script src="axios.min.js"></script>
- <script type="text/x-handlebars-template" id="contain">
+ <script type="text/xtemplate" id="contain">
      <div>
          <h1>{{show1}}</h1>
          <h6>{{show2}}</h6>
          <p>{{show3}}</p>
          <p>{{show4}}</p>
-         <img src="{{imag}}" alt="">
+         <!--<img src="{{imag}}" alt="">-->
      </div>
 
  </script>
@@ -44,14 +45,20 @@
          components:{
              show:{
                  template:"#contain",
-                 props:["show1","show2","show3","show4",'imag']
+                 props:["show1","show2","show3","show4"]
              }
          },
-         method:{
+         methods:{
              send(){
-                 axios({
-                     method:'get'
+                 axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters").then(function (data) {
+                     this.title1 = data.data.title;
+                     console.log(data);
+                     console.log(data.data.title)
+                     console.log(this.title1 )
+                 }) .catch(function (error) {
+                     console.log(222)
                  })
+                 console.log(111)
              }
          }
      })

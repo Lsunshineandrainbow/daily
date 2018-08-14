@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <button @click="count++">add</button>
+    <button @click="destroy">destroy</button>
+    <input type="text" id="ipt">{{count}}
+</div>
+<script src="../Vue/vue.js"></script>
+<script>
+    var rm =new Vue({
+        el:'#div1',
+        data:{
+            count:0,
+            timer:0,
+        },
+        beforeCreate(){
+            console.log('beforeCreate');
+        },
+        created(){                      //不識別
+            console.log('created');
+
+           timer = setInterval( () =>{
+                this.count++;
+                console.log(1111)
+            },500)
+        },
+        methods:{
+            destroy(){
+                this.$destroy()
+            }
+        },
+        beforeMount(){
+            console.log('beforeMount');
+
+        },
+        mounted(){
+            console.log('mounted');
+            document.getElementById('ipt').focus();
+            // 給加讓文本框已進入頁面就有焦點
+        },
+        beforeUpdate(){
+            console.log('beforeUpdate')
+        },
+        update(){
+            console.log('update')
+        },
+        beforeDestroy(){
+            console.log('beforeDestroy') ;
+        },
+        destroyed(){
+            console.log('destroyed');
+            clearInterval(timer);
+
+        }
+    })
+</script>
+</body>
+</html>
