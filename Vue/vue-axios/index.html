@@ -16,7 +16,8 @@
 </head>
 <body>
     <div id="content" >
-        <button @click="send()"></button>
+
+        <button @click="send()">獲取文章</button>
      <show :show1="title1" :show1="msg1" :show2="msg2"  :show3="msg3" imag="image"></show>
     </div>
 </body>
@@ -50,11 +51,9 @@
          },
          methods:{
              send(){
-                 axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters").then(function (data) {
+                 axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters").then( (data) =>{
                      this.title1 = data.data.title;
                      console.log(data);
-                     console.log(data.data.title)
-                     console.log(this.title1 )
                  }) .catch(function (error) {
                      console.log(222)
                  })
