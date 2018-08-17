@@ -1,5 +1,6 @@
 <template>
-<div class="header" :style="{background:indexBg}">
+<!--<div class="header" :style="{background:indexBg}">-->
+    <div class="header" :style="{background:Bgcolor}">
     <span>首頁</span>
     <h1 class="header-title">{{title}}</h1>
 </div>
@@ -8,6 +9,7 @@
     import {mapState} from 'vuex';
 export default {
     computed:mapState(['indexBg','title']),
+    props:['Bgcolor'],
 }
 </script>
 <style lang="scss">

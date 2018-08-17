@@ -1,7 +1,7 @@
 <template>
     <div class="about">
         <ul class="movielist">
-           <MList v-for="val in movie"  :moviemenu="val"></MList>
+           <MList v-for="val in movie"  :moviemenu="val" @click.native="moviedetail(val)"></MList>
         </ul>
         <div>
             <img src="./img/load.jpg" alt="" class="load" v-show="isshow">
@@ -44,12 +44,15 @@
                     var arr=res.data.ms.slice(this.movie.length,this.movie.length+5);
                     this.movie = [...this.movie,...arr] ;
                     this.isshow=false;
-                    console.log(arr.length)
+                    console.log(res.data)
                     console.log(this.movie)
                     if(arr.length<5){
                         this.issEnd = true
                     }
                 });
+            },
+            moviedetail(val){
+                this.$router.push('/moviedetail/'+ val.id)
             }
         }
     }

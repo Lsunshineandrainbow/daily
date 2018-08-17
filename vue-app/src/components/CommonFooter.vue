@@ -1,7 +1,7 @@
 <template>
 <!--<div class="footer"></div>-->
     <!--<ul class="footer" :style="{background:indexBg}">-->
-        <ul class="footer" :style="{background:'BgCloro'}">
+        <ul class="footer" :style="{background:BgColor}">
         <li v-for="menu in menuList">
             <!--<router-link :to="menu.path" @click.native="changeBg(menu)">{{menu.name}}</router-link>-->
 
@@ -23,7 +23,7 @@
             // },
 
             changeBg(menu){
-                this.BgCloro = menu.color;
+                this.BgColor= menu.color;
                this.$emit('xxx',menu)
             }
     } ,
