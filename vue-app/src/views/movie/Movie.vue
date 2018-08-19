@@ -38,6 +38,9 @@
             }
 
         },
+        // destroyed(){
+        //     window.onscroll = null
+        // },
         methods:{
             getData(){
                 Axios.get('https://bird.ioliu.cn/v1?url=https://api-m.mtime.cn/Showtime/LocationMovies.api?locationId=290').then((res)=>{

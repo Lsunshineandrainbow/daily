@@ -8,8 +8,8 @@
 <script>
     import {mapState} from 'vuex';
 export default {
-    computed:mapState(['indexBg','title']),
-    props:['Bgcolor'],
+    // computed:mapState(['indexBg','title']),
+    props:['Bgcolor','title'],
 }
 </script>
 <style lang="scss">
