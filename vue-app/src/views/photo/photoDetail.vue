@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="backimg" :style="{'background-image':'url('+photoDetail[index].src+')'}" ></div>
+    <div class="bigimage">
+        <div class="backimg" :style="{'background-image':'url('+photoDetail[index].src+')'}"></div>
     </div>
 </template>
 <script>
@@ -11,7 +11,7 @@
                 index:this.$route.params.index
             }
         },
-        computed:mapState['photoDetail'],
+        computed:mapState(['photoDetail']),
     }
 </script>
 <style lang="scss" scoped>
@@ -27,6 +27,8 @@
           bottom:0;
           left:0;
           right:0;
+
+
 
 
 
