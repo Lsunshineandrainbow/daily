@@ -1,7 +1,7 @@
 <template>
     <div>
         <router-link v-for = '(address,index) in arr' :to="'/photodetail/'+index">
-        <img  :src="address.src"><img/>
+        <img  :src="address.src">
         </router-link>
     </div>
 </template>
@@ -20,7 +20,7 @@
         created(){
             Axios.get('data/photodata.json').then((res)=> {
                 this.arr = res.data.photoData;
-                this.$store.dispatch('changebig',this.arr);
+                this.$store.dispatch('setPhoto',this.arr);
             });
             console.log(1111)
         }
@@ -28,8 +28,12 @@
 
 </script>
 <style lang="scss" scoped>
-    img{
-        width: 22%;
-        margin: 5px 5px
-    }
+     img{
+         width: 22%;
+         border:2px solid #000 ;
+         margin-bottom: 5px ;
+         margin-left:5px;
+     }
+
+
 </style>
