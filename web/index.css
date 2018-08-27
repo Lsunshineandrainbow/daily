@@ -79,15 +79,25 @@
     height: 23px;
     margin: 9px auto;
 }
-#index-2 .warpper #content li:first-child p{
+#index-2 .warpper #content li p{
     display: none;
 }
 
 #index-2 .warpper ul .Language .selected1{
     background:#faed6f;
 }
-#index-2 .warpper #content li:first-child .selected2{
+#index-2 .warpper #content li .selected2{
     display: block;
 }
+#index-2 .warpper #content p{
+    margin: 14px 28px;
+}
+#index-3 .warpper #techology li{
+    float: left;
+    margin: 50px 130px;
+}
+#index-3 .warpper #techology li div{
+    width: 500px;
 
+}
 

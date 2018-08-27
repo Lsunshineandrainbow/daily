@@ -41,8 +41,7 @@
                     <li>한국어</li>
                     <li>Portugal</li>
                 </ul>
-                <p style="margin: 14px 28px" class="selected2">I am a student and I am currently studying software engineering
-                    at Northeast Agricultural University in Heilongjiang Province.</p>
+                <p style="margin: 14px 28px" class="selected2">I am a student and I am currently studying software engineering at Northeast Agricultural University in Heilongjiang Province.</p>
                 <p style="margin: 14px 20px">저는 학생이고 현재 흑룡강 성 동북 농업 대학에서 소프트웨어 공학을 전공하고 있습니다.</p>
                 <p style="margin: 14px 20px">Eu sou estudante e atualmente estou estudando engenharia de software na Northeast Agricultural University na Província de Heilongjiang.</p>
             </li>
@@ -51,77 +50,62 @@
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-xiguan"></use></svg>
                 </h1>
-                <p>I am a girl who especially likes to laugh and love life. I like sports, I like reading books, I like to watch the rising sun, I like positive life.
-                </p>
-                <div class="button"></div>
+                <ul class="Language">
+                    <li class="selected1">English</li>
+                    <li>한국어</li>
+                    <li>Portugal</li>
+                </ul>
+                <p class="selected2" >I am a girl who especially likes to laugh and love life. I like sports, I like reading books, I like to watch the rising sun, I like positive life.</p>
+                <p>나는 특히 여자를 사랑하고 웃으며 인생을 사랑하는 스포츠, 나는 책을 읽고, 나는 떠오르는 태양을보고 싶고, 나는 긍정적 인 삶을 좋아합니다.</p>
+                <p>Eu gosto de uma garota que goste especialmente de rir e amar a vida, gosto de esportes, gosto de ler livros, gosto de ver o sol nascente, gosto de vida positiva.</p>
             </li>
             <li>
                 <h1>
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-jingli"></use></svg>
                 </h1>
-                <div class="button"></div>
+                <ul class="Language">
+                    <li class="selected1">English</li>
+                    <li>한국어</li>
+                    <li>Portugal</li>
+                </ul>
+                <p class="selected2">I grew up with my grandparents. When I was very young, I went out to school alone, so I formed an independent personality.</p>
+                <p>나는 조부모님과 함께 자랐다. 어렸을 때 혼자 학교에 다녔다. 그래서 나는 독립적 인 인격체를 형성했다.</p>
+                <p>Eu cresci com meus avós.Quando eu era muito jovem, saí para a escola sozinho, então formei uma personalidade independente.</p>
+
             </li>
             <li>
                 <h1>
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-aihao"></use></svg>
                 </h1>
-                <div class="button"></div>
+                <ul class="Language">
+                    <li class="selected1">English</li>
+                    <li>한국어</li>
+                    <li>Portugal</li>
+                </ul>
+                <p class="selected2">In fact, I don't have much hobbies. I like them a few things. The favorite thing is - chasing drama, I like reading, running.</p>
+                <p>사실 나는 취미가별로 없기 때문에 몇 가지를 좋아합니다. 가장 좋아하는 것은 - 드라마를 쫓고, 나는 독서를 좋아합니다.</p>
+                <p>Na verdade, eu não tenho muitos hobbies, eu gosto de algumas coisas, a coisa favorita é - perseguir o drama, gosto de ler, correr.</p>
             </li>
-
-
         </ul>
+    </div>
+</div>
+<div id="index-3">
+    <div class="warpper">
+     <ul id="techology">
+         <li><svg class="icon" aria-hidden="true" style="font-size: 110px">
+             <use xlink:href="#icon-zhishiku"></use>
+         </svg>
+             <div >杨紫，1992年11月6日出生于北京市，毕业于北京电影学院2010级表演系本科班，中国内地影视女演员、流行乐歌手。2002年，因出演古装历史情感剧《孝庄秘史》开始崭露头角。2004年，凭借青春校园喜剧片《女生日记》提名第12届中国电影童牛奖优秀儿童演员；随后，因主演情景喜剧《家有儿女》被观众熟知。2012年，凭借惊悚片《守株人》获得第14届中国电影表演艺术学会金凤凰奖新人奖。2013年，加盟青春励志偶像剧《花非花雾非雾》。2014年，主演战争题材偶像剧 《战长沙》。2016年，凭借都市 ... >>></div>
+         </li>
+         <li><svg class="icon" aria-hidden="true" style="font-size: 110px">
+             <use xlink:href="#icon-jineng"></use>
+         </svg></li>
+     </ul>
     </div>
 </div>
 </body>
 <script src="index.js"></script>
 <script src="font/iconfont.js"></script>
-
-<script>
-     var Greet = document.getElementById('greet');
-     var Timer = function () {
-         var  nowTime = new Date();
-         var h = nowTime.getHours();
-         var m = nowTime.getMinutes();
-         var s = nowTime.getSeconds();
-         var checkTimer = function (x) {
-             var strs = '' ;
-             if(x<10){
-                 x = '0'+x;
-             }
-             return x;
-         }
-         m =checkTimer(m);
-         s =checkTimer(s);
-         if(h>1&&h<12){
-             strs = 'Good morning';
-         }
-         else if(((h>12)||(h=12))&&(h<18)){
-             strs = 'good afternoon'
-         }
-         else if((h>18)||(h=18)){
-             strs = 'Good evening';
-         }
-         return strs ;
-     }
-     Greet.innerText = Timer();
-      var Lau = document.getElementsByClassName('Language')[0];
-      var lauLi = Lau.getElementsByTagName('li');
-      var Content = document.getElementById('content');
-      var ContentLi =  Content.getElementsByTagName('li')[0];
-      var ContentP =  ContentLi.getElementsByTagName('p');
-      for(var i =0; i<lauLi.length;i++){
-          lauLi[i].index=i;
-          lauLi[i].onclick=function () {
-              for(var j =0; j<lauLi.length;j++){
-                  ContentP[j].className='';
-                  lauLi[j].className=''
-              }
-              this.className = 'selected1'
-              ContentP[this.index].className='selected2';
-          }
-      }
-
-</script>
 </html>
