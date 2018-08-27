@@ -12,7 +12,7 @@ export default {
     props:['Bgcolor','title'],
 }
 </script>
-<style lang="scss">
+<style lang="scss" >
     .header{
         height: 1rem;
         background:rgb(33, 150, 243);

@@ -1,7 +1,11 @@
 <template>
-    <div class="bigimage">
-        <div class="backimg" :style="{'background-image':'url('+photoDetail[index].src+')'}"></div>
-    </div>
+    <router-link to="/picture">
+        <div class="bigimage">
+        <v-touch class="backimg" :style="{'background-image':'url('+photoDetail[index].src+')'}"
+                 @swipeleft="left" @swiperight="right"></v-touch>
+        </div>
+    </router-link>
+
 </template>
 <script>
     import {mapState} from 'vuex';
@@ -11,7 +15,17 @@
                 index:this.$route.params.index
             }
         },
+        methods:{
+            left(){
+                this.index--;
+                console.log(222)
+            },
+            right(){
+                this.index++;
+            }
+        },
         computed:mapState(['photoDetail']),
+
     }
 </script>
 <style lang="scss" scoped>
@@ -27,10 +41,5 @@
           bottom:0;
           left:0;
           right:0;
-
-
-
-
-
   }
 </style>

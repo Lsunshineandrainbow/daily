@@ -30,7 +30,7 @@
         computed:mapState(['indexBg'])
     }
 </script>
-<style lang="scss">
+<style lang="scss" >
     .footer{
         height: 1rem;
         background:rgb(33, 150, 243);
