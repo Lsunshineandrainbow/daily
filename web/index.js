@@ -92,4 +92,44 @@ for(var i =0; i<lauLi.length;i++){
         ContentP3[this.index].className='selected2';
     }
 }
+var ConvasHtml = document.getElementById('html5');
+var ConvasCss = document.getElementById('css');
+var ConvasPHP = document.getElementById('php');
+var ConvasJS = document.getElementById('js');
+var cxtHtml = ConvasHtml.getContext('2d');
+var cxtCss = ConvasCss.getContext('2d');
+var cxtPHP = ConvasPHP.getContext('2d');
+var cxtJS = ConvasJS.getContext('2d');
+cxtHtml.beginPath();
+cxtHtml.arc(120,120,100,0,2*Math.PI,true);
+cxtHtml.strokeStyle='#fefefe';
+cxtHtml.stroke();
+cxtHtml.beginPath();
+cxtHtml.arc(120,120,100,-Math.PI/2,-2.3*Math.PI,true);
+cxtHtml.strokeStyle='#31c7ad';
+cxtHtml.stroke();
+cxtCss.beginPath();
+cxtCss.arc(120,120,100,0,2*Math.PI,true);
+cxtCss.strokeStyle='#fefefe';
+cxtCss.stroke();
+cxtCss.beginPath();
+cxtCss.arc(120,120,100,-Math.PI/2,-2*Math.PI,true);
+cxtCss.strokeStyle='#9721c9';
+cxtCss.stroke();
+cxtPHP.beginPath();
+cxtPHP.arc(120,120,100,0,2*Math.PI,true);
+cxtPHP.strokeStyle='#fefefe';
+cxtPHP.stroke();
+cxtPHP.beginPath();
+cxtPHP.arc(120,120,100,-Math.PI/2,-1.8*Math.PI,true);
+cxtPHP.strokeStyle='#1875b2';
+cxtPHP.stroke();
+cxtJS.beginPath();
+cxtJS.arc(120,120,100,0,2*Math.PI,true);
+cxtJS.strokeStyle='#fefefe';
+cxtJS.stroke();
+cxtJS.beginPath();
+cxtJS.arc(120,120,100,-Math.PI/2,-1.8*Math.PI,true);
+cxtJS.strokeStyle='#e4941f';
+cxtJS.stroke();
 
