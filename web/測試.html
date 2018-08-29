@@ -4,21 +4,98 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    img{
+        width: 200px;
+        margin-right: 40px;
+        height: 300px;
+    }
+    #Img{
+        width: 2200px;
+        position: absolute;
+        left: 0px;
+    }
+    #content{
+        width: 720px;
+        height: 400px;
+        overflow: hidden;
+        margin: 200px auto;
+        position: relative;
+    }
+    #content span{
+        display: block;
+        float: left;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #cccccc;
+        margin: 10px 20px;
+    }
+    #content p{
+        position: absolute;
+        bottom: 20px;
+    }
+    #content .selected{
+        background-color: #63a35c;
+        width: 23px;
+        height: 23px;
+        margin-top: 7px;
+    }
+    #content #contain{
+        width: 220px;
+        margin: 20px 240px;
+    }
+
+</style>
 <body>
-    <div>
-        <canvas width="400px" height="400px"></canvas>
+    <!--<div>-->
+        <!--<canvas width="400px" height="400px"></canvas>-->
+    <!--</div>-->
+    <div id="content">
+        <div id="Img">
+            <img src="../移動端/image/1.jpg" alt="">
+            <img src="../移動端/image/2.jpg" alt="">
+            <img src="../移動端/image/3.jpg" alt="">
+            <img src="../移動端/image/4.jpg" alt="">
+            <img src="../移動端/image/5.jpg" alt="">
+            <img src="../移動端/image/6.jpg" alt="">
+            <img src="../移動端/image/7.jpg" alt="">
+            <img src="../移動端/image/8.jpg" alt="">
+            <img src="../移動端/image/9.jpg" alt="">
+        </div>
+      <p id="contain"> <span class="selected" style="left: 10px"></span><span style="left: 40px"></span><span style="left: 50px"></span></p>
     </div>
 </body>
+<script src="../jslib.js"></script>
 <script>
-    var Circle = document.getElementsByTagName('canvas')[0];
-    var c = Circle.getContext('2d');     //創建對象c
-    c.beginPath();
-    c.arc(100,100,100,0,Math.PI,false);
-    c.strokeStyle='#ccc';
-    c.stroke();
-   c.beginPath()
-    c.arc(100,100,100,0,Math.PI/2,true);
-    c.strokeStyle='#9f61b9';
-    c.stroke();
+   //  var Circle = document.getElementsByTagName('canvas')[0];
+   //  var c = Circle.getContext('2d');     //創建對象c
+   //  c.beginPath();
+   //  c.arc(100,100,100,0,Math.PI,false);
+   //  c.strokeStyle='#ccc';
+   //  c.stroke();
+   // c.beginPath()
+   //  c.arc(100,100,100,0,Math.PI/2,true);
+   //  c.strokeStyle='#9f61b9';
+   //  c.stroke();
+    var aSpan = document.getElementsByTagName('span');
+    var Img = document.getElementById('Img');
+    var Content = document.getElementById('content').offsetWidth;
+    var w = Img.offsetLeft;
+   for (var i=0;i<aSpan.length;i++){
+        aSpan[i].index = i;
+        aSpan[i].onclick=function () {
+            w = Content*this.index;
+            for(var j=0;j<aSpan.length;j++){
+                aSpan[j].className='';
+            }
+            this.className='selected';
+            animate(Img,{left:-w})
+            // Img.style.left=-w+'px';
+            // console.log(w);
+            // this.style.backgroundColor='#99b9e8'
+        }
+    }
+
 </script>
 </html>

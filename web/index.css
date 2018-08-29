@@ -136,3 +136,12 @@
 #index-3 .warpper #techology canvas{
     margin:40px;
 }
+#my-works .warpper{
+    clear: both;
+}
+#my-works .warpper p{
+    text-align: center;
+    font-size: 50px;
+    color: #37475d;
+    font-weight: 400;
+}
