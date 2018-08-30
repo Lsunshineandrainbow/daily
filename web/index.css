@@ -139,9 +139,92 @@
 #my-works .warpper{
     clear: both;
 }
-#my-works .warpper p{
+#my-works .warpper #works-title{
     text-align: center;
     font-size: 50px;
     color: #37475d;
     font-weight: 400;
+}
+#my-works .warpper #catalog{
+    width: 400px;
+    margin-top: 60px;
+    float: left;
+}
+#my-works .warpper #catalog h5{
+    height: 280px;
+    background-color: #2f5e62;
+    overflow: hidden;
+}
+#my-works .warpper #catalog #nav{
+    width: 173px;
+    text-align: center;
+    margin: 40px auto;
+    padding: 80px;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid white;
+    color: white;
+}
+#my-works .warpper #catalog ul{
+    height: 585px;
+    background-color: #251e1f;
+    color: white;
+    overflow: hidden;
+}
+#my-works .warpper #catalog #catalogList li div{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: white;
+    float: left;
+    margin-right: 40px;
+}
+#my-works .warpper #catalog #catalogList li{
+    width:300px;
+    margin: 100px auto;
+    padding-left: 40px;
+}
+#my-works .warpper #natural h1{
+    margin-bottom: 20px;
+    color: #242425;
+    font-weight: 200;
+    font-size: 40px;
+    padding-left: 480px;
+}
+#my-works .warpper #natural #cover img {
+    width:400px;
+    height: 435px;
+    margin-left: 28px;
+}
+#my-works .warpper #natural #naturalImg{
+    margin-left: 425px;
+    width: 1310px;
+    height: 470px;
+    overflow: hidden;
+    position: relative;
+}
+#my-works .warpper #natural #naturalImg #cover{
+    width:3900px ;
+    position: absolute;
+    left: 0;
+}
+#my-works .warpper #natural #naturalImg #dot span{
+    display: block;
+    float: left;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    margin: 10px 20px;
+}
+#my-works .warpper #natural #naturalImg #dot{
+    width: 220px;
+    height: 15px;
+    margin-left: 590px;
+    margin-top: 440px;
+}
+#my-works .warpper #natural #naturalImg #dot .selected{
+    background-color: #305e61;
 }
