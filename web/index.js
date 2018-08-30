@@ -1,4 +1,4 @@
-
+document.write("<script language=javascript src='../jslib.js'></script>");
 var Greet = document.getElementById('greet');
 var Timer = function () {
     var  nowTime = new Date();
@@ -140,4 +140,28 @@ cxtJS.beginPath();
 cxtJS.arc(120,120,100,-Math.PI/2,-1.8*Math.PI,true);
 cxtJS.strokeStyle='#e4941f';
 cxtJS.stroke();
+var natural = document.getElementById('naturalImg');
+var Cover = document.getElementById('cover');
+var aNatural = Cover.getElementsByTagName('img');
+var Dot = document.getElementById('dot');
+var dotSpan = Dot.getElementsByTagName('span')
+var leftNatural = Cover.offsetLeft;
+var widthNatural = naturalImg.offsetWidth;
+for(var i = 0;i<dotSpan.length;i++){
+    dotSpan[i].index = i;
+    console.log(i)
+    slide();
+    function slide(){
+        dotSpan[i].onclick = function () {
+            for(var j=0;j<dotSpan.length;j++){
+            dotSpan[j].className = '';
+            }
+        this.className='selected';
+        animate(Cover,{left: -(widthNatural*this.index)});
+        }
+    }
+}
+// timer = setInterval(function () {
+//     slide();
+// },100);
 
