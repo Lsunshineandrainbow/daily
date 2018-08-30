@@ -9,6 +9,8 @@
         width: 200px;
         margin-right: 40px;
         height: 300px;
+        position: relative;
+        cursor: move;
     }
     #Img{
         width: 2200px;
@@ -80,21 +82,50 @@
    //  c.stroke();
     var aSpan = document.getElementsByTagName('span');
     var Img = document.getElementById('Img');
+    var aImg = document.getElementsByTagName('img');
     var Content = document.getElementById('content').offsetWidth;
-    var w = Img.offsetLeft;
+    var L = Img.offsetLeft;
+    var w =  aImg[0].offsetWidth;
    for (var i=0;i<aSpan.length;i++){
         aSpan[i].index = i;
         aSpan[i].onclick=function () {
-            w = Content*this.index;
+            L = Content*this.index;
             for(var j=0;j<aSpan.length;j++){
                 aSpan[j].className='';
             }
             this.className='selected';
-            animate(Img,{left:-w})
-            // Img.style.left=-w+'px';
-            // console.log(w);
+            animate(Img,{left:-L})
+            // Img.style.left=-L+'px';
+            // console.log(L);
             // this.style.backgroundColor='#99b9e8'
         }
+    }
+    for(var i=0;i<aImg.length;i++){
+       aImg[i].onmousedown=function (e) {
+            var mL = e.clientX;
+            this.onmousemove = function (e) {
+                var mLchange = e.clientX;
+                console.log(111)
+                console.log(mL,mLchange)
+                if (mL-mLchange>30){
+                    animate(Img,{left:-w})
+                }
+                else if(mL-mLchange<-30){
+                    animate(Img,{left:w})
+                }
+
+            };
+            e.preventDefault();
+           this.onselectstart = function () {
+               return false;
+           };
+           this.onmouseup=function () {
+               console.log(this)
+               this.onmousedown = null;
+               this.onmousemove = null;
+           }
+       };
+
     }
 
 </script>
