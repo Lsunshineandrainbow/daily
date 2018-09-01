@@ -22,7 +22,7 @@
     left:98px;
 }
 #contain .warpper #index div{
-   position: absolute;
+    position: absolute;
     top: 115px;
     left: 50px;
     text-align: center;
@@ -168,7 +168,8 @@
     color: white;
 }
 #my-works .warpper #catalog ul{
-    height: 585px;
+    height: 1392px;
+    /*height: 800px;*/
     background-color: #251e1f;
     color: white;
     overflow: hidden;
@@ -230,6 +231,7 @@
 }
 #my-works .warpper  #travel{
     position: relative;
+    height: 1148px;
 }
 #my-works .warpper  #travel h1{
     position: absolute;
@@ -249,4 +251,77 @@
     position: absolute;
     top: 30px;
     left: 692px;
+}
+#my-works .warpper  #travel #travel-img{
+    position: absolute;
+    top: 146px;
+    left: 450px;
+    border-bottom:1px solid #ccc;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+#my-works .warpper  #travel #travel-img img:hover{
+    opacity: .5;
+}
+#my-works .warpper #Plant{
+    clear: both;
+}
+#my-works .warpper #Plant h1{
+    width: 200px;
+    margin-left: 440px;
+    font-style: normal;
+    font-weight: 700;
+    color: #45489a;
+    display: inline;
+}
+#my-works .warpper #Plant>p{
+    width: 443px;
+    float: right;
+    font-size: 20px;
+    line-height: 26px;
+    color: #343434;
+    margin-right: 700px;
+}
+#my-works .warpper #Plant #Plant-contain {
+    width: 1140px;
+    margin-left: 438px;
+    margin-top: 40px;
+}
+#my-works .warpper #Plant #Plant-title{
+    background: #305e61;
+    height: 100px;
+}
+
+#my-works .warpper #Plant #Plant-contain #Plant-title li{
+    float: left;
+    margin-left: 217px;
+    font-size: 35px;
+    color: white;
+    font-weight: 300;
+    line-height:100px;
+}
+#my-works .warpper #Plant #model{
+    padding: 15px;
+    background: #f4f4f4;
+}
+#my-works .warpper #Plant #model img{
+    width: 380px;
+    height: 260px;
+    margin-bottom: 10px;
+}
+#my-works .warpper #Plant #model p{
+    width: 670px;
+    float: right;
+    height: 250px;
+    font-size: 20px;
+    color: #7a7a7a;
+    line-height: 37px;
+}
+#my-works .warpper #Plant #model p span{
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 600;
+    color: #7a7a7a;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
 }
