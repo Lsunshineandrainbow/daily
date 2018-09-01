@@ -147,9 +147,9 @@ var Dot = document.getElementById('dot');
 var dotSpan = Dot.getElementsByTagName('span')
 var leftNatural = Cover.offsetLeft;
 var widthNatural = naturalImg.offsetWidth;
+ count = 0;
 for(var i = 0;i<dotSpan.length;i++){
     dotSpan[i].index = i;
-    console.log(i)
     slide();
     function slide(){
         dotSpan[i].onclick = function () {
@@ -161,7 +161,39 @@ for(var i = 0;i<dotSpan.length;i++){
         }
     }
 }
-// timer = setInterval(function () {
-//     slide();
-// },100);
+timer = setInterval(function () {
+   if(count<2){
+       count++;
+       animate(Cover,{left: -(widthNatural*count)});
+   }
+    else {
+     time =  setInterval(function () {
+         if(count!=-1){
+            animate(Cover,{left: -(widthNatural*count)});
+             count--;
+         }
+         else{
+             clearInterval(time);
+         }
 
+       },700);
+     }
+    },4000);
+// var myWorks = document.getElementById('my-works');
+// var Catalog = document.getElementById('catalog');
+// myWorks.onmouseover = function () {
+//     var sheight = document.documentElement.scrollTop;
+//     if(sheight>2440){
+//         Catalog.style.position='fixed';
+//         Catalog.style.top=10+'px';
+//     }
+//     // Catalog.style.position='fixed';
+//     // Catalog.style.top=40+'px';
+//     console.log(sheight);
+//
+//
+// };
+// myWorks.onmouseout=function () {
+//     Catalog.style.position='';
+//     Catalog.style.top='';
+// }
