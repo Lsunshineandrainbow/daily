@@ -300,14 +300,21 @@
     font-weight: 300;
     line-height:100px;
 }
-#my-works .warpper #Plant #model{
-    padding: 15px;
-    background: #f4f4f4;
+#my-works .warpper #Plant #model {
+    position: relative;
+    height: 860px;
+    background: #cccccc;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    animation: xxx 4s linear
 }
 #my-works .warpper #Plant #model img{
     width: 380px;
     height: 260px;
     margin-bottom: 10px;
+
 }
 #my-works .warpper #Plant #model p{
     width: 670px;
@@ -324,4 +331,28 @@
     color: #7a7a7a;
     letter-spacing: 0.5px;
     margin-bottom: 15px;
+}
+#my-works .warpper #Plant #model ul{
+    position: absolute;
+    background: #f4f4f4;
+    width: 1140px;
+    height: 830px;
+}
+#my-works .warpper #Plant #model ul:first-child{
+    transform: translateZ(570px);
+}
+#my-works .warpper #Plant #model ul:nth-child(2){
+    transform: translateX(-1140px)  rotateY(-90deg) translateZ(-570px);
+}
+#my-works .warpper #Plant #model ul:nth-child(3){
+    transform:translateX(1140px) rotateY(90deg)  translateZ(-570px);
+}
+@keyframes xxx {
+0%{}
+    50%{
+        transform: rotateY(90deg);
+    }
+    100%{
+        transform: rotateY(180deg);
+}
 }
