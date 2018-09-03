@@ -58,14 +58,11 @@ for(var i =0; i<lauLi.length;i++){
 }
 for(var i =0; i<lauLi1.length;i++){
     lauLi1[i].index=i;
-    console.log(ContentLi1)
-    console.log(ContentP1)
     lauLi1[i].onclick=function () {
         for(var j =0; j<lauLi1.length;j++){
             ContentP1[j].className='';
             lauLi1[j].className='';
         }
-        console.log(ContentP1)
         this.className = 'selected1';
         ContentP1[this.index].className='selected2';
     }
@@ -197,3 +194,39 @@ timer = setInterval(function () {
 //     Catalog.style.position='';
 //     Catalog.style.top='';
 // }
+var plantTitle =document.getElementById('Plant-title');
+var  model = document.getElementById('model');
+var aplantLi =  plantTitle.getElementsByTagName('li');
+for(var i = 0;i<aplantLi.length;i++){
+    aplantLi[i].index = i;
+    aplantLi[i].addEventListener('click',function(){
+        model.className = '';
+        for(var j = 0; j<aplantLi.length;j++){
+            aplantLi[j].className = '';
+        }
+        this.className = 'selected';
+    })
+    // aplantLi[i].onclick = function () {
+    //     console.log(this.index);
+    //     model.className = '';
+    //
+    //
+    //     for(var j = 0; j<aplantLi.length;j++){
+    //         aplantLi[j].className = '';
+    //     }
+    //
+    //     this.className = 'selected';
+    //     if(this.index = 0){
+    //
+    //     } else if(this.index = 1) {
+    //         model.className = 'anmant2';
+    //     } else if(this.index = 2) {
+    //         model.className = 'anmant2';
+    //     }
+    // }
+}
+function f() {
+
+}
+
+
