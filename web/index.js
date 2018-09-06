@@ -225,8 +225,6 @@ for(var i = 0;i<aplantLi.length;i++){
     //     }
     // }
 }
-function f() {
 
-}
 
 

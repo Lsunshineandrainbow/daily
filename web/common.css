@@ -13,3 +13,7 @@
     fill: currentColor;
     overflow: hidden;
 }
+body{
+    perspective: 68000000000px;
+    perspective-origin:center;
+}

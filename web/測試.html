@@ -98,34 +98,47 @@
             // Img.style.left=-L+'px';
             // console.log(L);
             // this.style.backgroundColor='#99b9e8'
+            console.log(i);
+
         }
     }
-    for(var i=0;i<aImg.length;i++){
-       aImg[i].onmousedown=function (e) {
-            var mL = e.clientX;
-            this.onmousemove = function (e) {
-                var mLchange = e.clientX;
-                console.log(111)
-                console.log(mL,mLchange)
-                if (mL-mLchange>30){
-                    animate(Img,{left:-w})
-                }
-                else if(mL-mLchange<-30){
-                    animate(Img,{left:w})
-                }
+    for(var k=0;k<aImg.length;k++){
+        aImg[k].index=k;
+        aImg[k].onmouseover=function(){
+            this.onmousedown=function (e) {
+                index=this.index;
+                var mL = e.clientX;
+                var l = Img.offsetLeft;
+                this.onmousemove = function (e) {
+                    var mLchange = e.clientX;
+                    if(l>-1500){
+                        if (mL-mLchange>30){
+                        animate(Img,{left:l-w})
+                    }
+                    else if(mL-mLchange<-30){
+                        animate(Img,{left:l+w})
+                    }
+
+                        }   else{
+                            if(mL-mLchange<-30){
+                                animate(Img,{left:l+w})
+                            }
+                };
+                    }
+
+                e.preventDefault();
+                this.onselectstart = function () {
+                    return false;
+                };
+                document.onmouseup=() =>{
+                    this.onmousemove = null;
+                };
 
             };
-            e.preventDefault();
-           this.onselectstart = function () {
-               return false;
-           };
-           this.onmouseup=function () {
-               console.log(this)
-               this.onmousedown = null;
-               this.onmousemove = null;
-           }
-       };
-
+        };
+        aImg[k].onmouseout = function () {
+            this.onmouseover = null
+        }
     }
 
 </script>
