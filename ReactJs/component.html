@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="rooter"></div>
+</body>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    // 函数的方式定义组件并使用
+    // let Conp = (props) =>{
+    //     return (
+    //         <div>
+    //             <h1>我是一个插件</h1>
+    //             <a>连接</a>
+    //             <h2>{props.xxx}</h2>
+    //             <p>{props.description}</p>
+    //             <h4>{props.children}</h4>
+    //         </div>
+    //     )
+    // };
+    // ReactDOM.render(
+    //     <Conp xxx="hello" description="我是description属性所带的文字">我是第二种引用方法</Conp>,
+    //     // <Conp xxx="hello" description="我是description属性所带的文字"/>,
+    //     document.getElementById('rooter'))
+
+
+    // ————————————————————————————————————————————————————
+    // 类的方式定义组件并使用
+    class Comp extends React.Component{
+        constructor(props){
+            super(props);
+            this.name='zs';
+            this.age='12';
+        };
+        render(){
+            return (
+                <div>
+                    <h1>1111</h1>
+                    <p>{this.age}</p>
+                    <a>{this.props.sex}</a>
+                    <p>{this.props.children}</p>
+                    <h3>{this.props.name1}</h3>
+                    {this.say()}
+                </div>
+            )
+        };
+        say(){
+            console.log('我是say方法');
+        };
+        eat(){
+            console.log('我是eat方法');
+        }
+    };
+    ReactDOM.render(
+        <div>
+            <Comp sex="女" school='农大'/>
+            <Comp name1="WW">我是引用插件的第二种方法</Comp>
+        </div>
+        ,
+        document.getElementById('rooter')
+    )
+</script>
+</html>

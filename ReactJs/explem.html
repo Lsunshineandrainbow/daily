@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Totale extends React.Component{
+        constructor(props) {
+            super(props);
+            this.state={
+                count1:1000,
+                count2:10,
+                count3:10,
+            }
+        };
+        add1(){
+            if(this.state.count1>0){
+                this.setState({
+                    count1:this.state.count1-10,
+                    count2:this.state.count2+10,
+                })}
+            else{
+                this.setState({
+                    count1:'没兵了',
+                })
+            }
+        };
+        add2(num){
+            if(this.state.count1>20){
+                this.setState({
+                    count1:this.state.count1-num,
+                    count3:this.state.count3+num,
+                })}
+                else{
+                    this.setState({
+                        count1:'没兵了',
+                    })
+                }
+            };
+        reduce(){
+            this.refs.red.style.background = 'red';
+            this.setState({
+                count2:this.state.count2-(Math.floor(Math.random()*10+1)),
+                count3:this.state.count3-(Math.floor(Math.random()*10+2))
+            })
+        }
+        render(){
+            return (
+                <div>
+                    <p>
+                        全部士兵数量：{this.state.count1}
+                        <button onClick={this.reduce.bind(this)} ref="red">打仗</button>
+                    </p>
+                    <PaterOne myadd={this.add1.bind(this)}  msg={this.state.count2}/>
+                    <PaterTwo myadd={this.add2.bind(this)} msg={this.state.count3}/>
+                </div>
+            )
+        }
+    }
+    class PaterOne extends React.Component{
+        constructor(props) {
+            super(props)
+        };
+        render(){
+            return (
+                <div>
+                    <p>将军a率领人数:{this.props.msg}</p>
+                    <button onClick={this.props.myadd}>调兵</button>
+                </div>
+            )
+        }
+    }
+    class PaterTwo extends React.Component{
+        constructor(props) {
+            super(props)
+        };
+        render(){
+            return (
+                <div>
+                    <p>将军b率领人数{this.props.msg}</p>
+                    <button onClick={()=>{this.props.myadd(20)}}>调兵</button>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Totale/>,
+        document.getElementById('root')
+    )
+    cons
+</script>
+</html>

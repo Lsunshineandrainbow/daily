@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+</div>
+</body>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Comm extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                msg:'评论'
+            }
+        };
+        change(num){
+            console.log(num)
+            this.setState({
+                msg:'good'
+            })
+        }
+        render(){
+            return(
+                <div>
+                    {this.state.msg}
+                    <Per mychange={this.change.bind(this)} msg="点赞"/>
+                    <Per msg="回复"/>
+                </div>
+
+
+            )
+        }
+    }
+    class Per extends React.Component{
+        constructor(props){
+            super(props)
+        };
+        render(){
+            return(
+                <div
+                   // onClick={this.props.mychange}
+                        onClick={()=>{this.props.mychange(123)}}
+                >{this.props.msg}</div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Comm/>,
+            document.getElementById('root')
+    )
+</script>
+</html>
