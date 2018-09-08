@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="rooter"></div>
+</body>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Welcome extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                count:0
+            }
+        };
+        add(){
+            console.log(this);   //通过bind方法改变了this指向，this为Welcome对象
+           this.setState({      //必须用setState({})来改变值
+               count:this.state.count+2
+           })
+        };
+        reduce(num,event){         //num必须放在前面
+            console.log(event.target);
+            console.log(this.refs.h);
+            console.log('num',num);
+            this.setState({
+                count:this.state.count-2
+            })
+        };
+      render(){
+          return(
+              <div>
+              总计：<a ref="h" >{this.state.count}</a>
+                  <br/>
+                  <button onClick={this.add.bind(this)}>按钮</button>
+                <button onClick={(event)=>{this.reduce(1,event)}}>reduce</button>
+                  <h1>{this.props.name}</h1>
+              </div>)
+      }
+    }
+    ReactDOM.render(
+        <Welcome name="zs"/>,
+        document.getElementById('rooter')
+    )
+</script>
+</html>
