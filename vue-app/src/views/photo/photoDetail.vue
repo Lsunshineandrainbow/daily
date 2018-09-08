@@ -31,7 +31,7 @@
 <style lang="scss" scoped>
   .backimg{
 
-          /*background-image: url('/img/1.jpg');*/
+          /*background-font: url('/img/1.jpg');*/
           background-repeat: no-repeat;
           background-size: contain;
           background-color: #000;

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
     <style type="text/css">
         .icon {
             width: 1em; height: 1em;
@@ -9,9 +11,6 @@
             overflow: hidden;
         }
     </style>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="font/iconfont.js"></script>
 </head>
 <body>
     <div id="root"></div>
@@ -19,6 +18,7 @@
 <script src="react.development.js"></script>
 <script src="react-dom.development.js"></script>
 <script src="browser.min.js"></script>
+<script src="font/iconfont.js"></script>
 <script type="text/babel">
     class Com extends React.Component{
         constructor(props){
@@ -26,27 +26,46 @@
             this.state={
                 count1:166,
                 count2:88,
+                xlinkHref:'#icon-dianzan',
+                stic:1,
             }
         };
         add(){
-            this.setState({
-                count2:this.state.count2+1,
-            });
-            event.target.style.color='#520'
+            if(this.state.stic){
+                this.setState({
+                    count2:this.state.count2+1,
+                    xlinkHref:'#icon-dianzan-copy'
+                });
+            }
+           else{
+                this.setState({
+                    count2:this.state.count2-1,
+                    xlinkHref:'#icon-dianzan',
+
+                });
+            };
+           this.setState({stic:!this.state.stic})
+        };
+        addCom(event){
+            console.log(event.keyCode);
+            console.log(event)
+            if(event.keyCode==13){
+                console.log(222)
+            }
         }
         render(){
             return (
                 <div>  
                     <div>{this.state.count1}条回复</div>
                     <div>热评
-                        <svg className="icon" aria-hidden="true">
-                            <use xlink:href="#icon-dianzan"></use>
+                        <svg className="icon" aria-hidden="true" onClick={this.add.bind(this)}>
+                            <use  xlinkHref={this.state.xlinkHref} ref="red" id="aaa"></use>
                         </svg>
                         {this.state.count2}</div>
-                    <Rev name="评论1"/>
+                    <Rev name="评论1" myclick={this.add}/>
                     <Rev name="评论2"/>
                     <Rev name="评论3"/>
-                    <Wir/>
+                    <Wir mykey={this.addCom}/>
                 </div>
             )}
     }
@@ -54,14 +73,18 @@
         constructor(props){
             super(props);
             this.state={
-                count:88,
+                count2:66,
+                xlinkHref:'#icon-dianzan',
+                stic:1,
             }
         };
 
         render(){
             return (
                 <div>
-                    {this.props.name}
+                    {this.props.name} <svg className="icon" aria-hidden="true" onClick={(event)=>{this.props.myclick(event)}}>
+                    <use  xlinkHref="#icon-dianzan"></use>
+                </svg>{this.state.count2}
                 </div>
             )}
     }
@@ -71,7 +94,7 @@ class Wir extends React.Component{
         }
         render(){
             return (
-                <div> <input type="text" placeholder="回复评论"/></div>
+                <div> <input type="text" placeholder="回复评论" onKeyUp={this.addCom} onKeyPress={this.props.mykey}/></div>
                     )
         }
 }
