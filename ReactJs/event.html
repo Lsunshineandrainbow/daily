@@ -1,10 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style type="text/css">
+        .icon {
+            width: 1em; height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="font/iconfont.js"></script>
 </head>
 <body>
-
+    <div id="root"></div>
 </body>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Com extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                count1:166,
+                count2:88,
+            }
+        };
+        add(){
+            this.setState({
+                count2:this.state.count2+1,
+            });
+            event.target.style.color='#520'
+        }
+        render(){
+            return (
+                <div>  
+                    <div>{this.state.count1}条回复</div>
+                    <div>热评
+                        <svg className="icon" aria-hidden="true">
+                            <use xlink:href="#icon-dianzan"></use>
+                        </svg>
+                        {this.state.count2}</div>
+                    <Rev name="评论1"/>
+                    <Rev name="评论2"/>
+                    <Rev name="评论3"/>
+                    <Wir/>
+                </div>
+            )}
+    }
+    class Rev extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                count:88,
+            }
+        };
+
+        render(){
+            return (
+                <div>
+                    {this.props.name}
+                </div>
+            )}
+    }
+class Wir extends React.Component{
+        constructor(props){
+            super(props)
+        }
+        render(){
+            return (
+                <div> <input type="text" placeholder="回复评论"/></div>
+                    )
+        }
+}
+    ReactDOM.render(
+               <Com/>,
+        document.getElementById('root')
+    )
+</script>
 </html>
