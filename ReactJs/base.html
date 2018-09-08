@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div{
+        background: #63a35c;
+    }
+    #h11{
+        color: yellow;
+    }
+</style>
+<body>
+<div id="div1">
+    <p>我是P</p>
+</div>
+</body>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    ReactDOM.render(
+        <div>
+            hello world!
+            <h1 id="h11">I Love NongDa</h1>
+        </div>,
+        document.getElementById('div1')
+    )
+</script>
+</html>
