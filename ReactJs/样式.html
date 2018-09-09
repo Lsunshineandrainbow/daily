@@ -3,14 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .content{
+            width: 400px;
+            margin: 200px auto;
+        }
+        #save{
+            border: none;
+            width: 100px;
+            height: 20px;
+            background: #795da3;
+        }
+        li{
+            list-style: none;
+            height: 40px;
+            width: 300px;
+            background: lavenderblush;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
+<div class="content">
+    <h1>todoList</h1>
     <div id="root"></div>
+</div>
 </body>
 <script src="react.development.js"></script>
 <script src="react-dom.development.js"></script>
 <script src="browser.min.js"></script>
 <script type="text/babel">
-    class Manin extends
+    class Main extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                task:[
+                    {name:'吃饭饭',
+
+                    },
+                    {name:'睡觉觉'
+                    },
+                    {name:'打豆豆'}
+                ],
+                succ:0,
+                all:3,
+                msg:{
+                    name:''
+                },
+            }
+        };
+        change(event){
+            this.setState({
+                    msg:{name:event.target.value}
+            });
+        }
+        add(){
+            if(this.state.msg.name!=''){
+                var arr = this.state.task;
+                arr.push(this.state.msg);
+                this.setState({
+                    task:arr
+                })
+            }
+
+        };
+        delete(index){
+            var arr = this.state.task;
+            arr.splice(index,1);
+            this.setState({
+                task:arr,
+            })
+            console.log(index)
+        }
+        render(){
+            return(
+                <div>
+                    <span>任务:</span> <input type="text" placeholder="开始你的任务吧" onChange={this.change.bind(this)}/><br/>
+                    <button onClick={this.add.bind(this)} id="save">保存任务</button>
+                    <Work mydelete={this.delete.bind(this)} mytask={this.state.task}></Work>
+                    <div>{this.state.succ}已完成/{this.state.all}全部</div>
+                </div>
+            )
+        }
+    }
+    class Work extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+            };
+        };
+        render(){
+            let style ={
+            float:'right',
+             marginRight:'6px',
+                marginTop:'10px'
+            }
+            let style1 ={
+              overflow:'hiden'
+            }
+            return(
+                <ul style={style1}>
+                    {this.props.mytask.map((ele,index)=>{
+                        return( <li key={index}><input type="checkbox" name={ele}/> {ele.name} <button onClick={()=>{this.props.mydelete(index)}} style={style}>删除</button></li>)
+                    })}
+                </ul>
+            )
+        }
+    }
+    ReactDOM.render(
+       <Main/>,document.getElementById('root')
+    )
 </script>
 </html>
