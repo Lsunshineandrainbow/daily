@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Main extends  React.Component{
+        constructor (props){
+            super(props);
+            this.state={
+                msg:''
+            };
+        };
+        change(event){
+            console.log(event.keyCode)
+            this.setState({
+                msg:event.target.value
+            })
+        };
+        render(){
+            return (
+                <div>
+                    <h1>{this.state.msg}</h1>
+                    <input defaultValue={this.state.msg} onKeyUp ={this.change.bind(this)}/>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Main/>,document.getElementById('root')
+    )
+</script>
+</html>
