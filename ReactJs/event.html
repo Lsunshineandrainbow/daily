@@ -47,10 +47,11 @@
            this.setState({stic:!this.state.stic})
         };
         addCom(event){
-            console.log(event.keyCode);
-            console.log(event)
             if(event.keyCode==13){
-                console.log(222)
+               var Rev = document.createElement('Rev');
+               Rev.appendChild(Com);
+               Rev.innerText = 'aaa'
+
             }
         }
         render(){
@@ -65,7 +66,7 @@
                     <Rev name="评论1" myclick={this.add}/>
                     <Rev name="评论2"/>
                     <Rev name="评论3"/>
-                    <Wir mykey={this.addCom}/>
+                    <Wir mykey={this.addCom.bind(this)}/>
                 </div>
             )}
     }
@@ -94,7 +95,7 @@ class Wir extends React.Component{
         }
         render(){
             return (
-                <div> <input type="text" placeholder="回复评论" onKeyUp={this.addCom} onKeyPress={this.props.mykey}/></div>
+                <div> <input type="text" placeholder="回复评论" onKeyUp={this.props.mykey}/></div>
                     )
         }
 }
