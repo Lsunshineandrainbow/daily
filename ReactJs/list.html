@@ -6,7 +6,13 @@
     <style>
         .content{
             width: 400px;
-            margin: 200px auto;
+            margin: 100px auto;
+        }
+        #contain{
+            width: 600px;
+            height: 400px;
+            background: #e8555d;
+            margin: 200px auto
         }
         #save{
             border: none;
@@ -31,13 +37,21 @@
         .iptcheck{
             background: #7b9dc2;
         }
+        h1{
+            text-align: center;
+            padding-top: 10px;
+            font-weight: 300;
+        }
     </style>
 </head>
 <body>
-<div class="content">
+<div id="contain">
+    <div class="content">
     <h1>todoList</h1>
     <div id="root"></div>
+    </div>
 </div>
+
 </body>
 <script src="react.development.js"></script>
 <script src="react-dom.development.js"></script>
@@ -116,7 +130,7 @@
                     <span>任务:</span> <input type="text" placeholder="开始你的任务吧" onChange={this.change.bind(this)} ref='ipt'/><br/>
                     <button onClick={this.add.bind(this)} id="save">保存任务</button>
                     <Work mydelete={this.delete.bind(this)} mytask={this.state.task} mychange={this.iptchange.bind(this)}></Work>
-                    <div className='div1'>{this.state.succ}已完成/{this.state.all}全部</div>
+                    <div className='div1'><a>&nbsp;&nbsp;&nbsp;</a>{this.state.succ}已完成/{this.state.all}全部</div>
                 </div>
             )
         }
@@ -141,6 +155,7 @@
               overflow:'hiden',
                 clear:'both',
                 padding:0,
+                marginBottom:0
             };
             return(
                 <ul style={style1}>
