@@ -10,16 +10,26 @@
         }
         #save{
             border: none;
-            width: 100px;
+            width: 80px;
             height: 20px;
-            background: #795da3;
+            background:#7a9cbb;
+            margin-top: 10px;
+            border-radius:6% 6%;
         }
-        li{
+        li,.div1{
             list-style: none;
             height: 40px;
             width: 300px;
-            background: lavenderblush;
+            background: #faeba0;
             margin-top: 5px;
+            line-height: 40px;
+            color: white;
+        }
+        .iptstyle{
+            text-decoration-line: line-through;
+        }
+        .iptcheck{
+            background: #7b9dc2;
         }
     </style>
 </head>
@@ -37,51 +47,76 @@
         constructor(props){
             super(props);
             this.state={
-                task:[
-                    {name:'吃饭饭',
+                task:[{
+                        name:'吃饭饭',
+                        ischecked:true,
 
-                    },
-                    {name:'睡觉觉'
-                    },
-                    {name:'打豆豆'}
+                    }, {
+                        name:'睡觉觉',
+                        ischecked:true,
+                    }, {
+                        name:'打豆豆',
+                        ischecked:true,
+                    }
                 ],
                 succ:0,
                 all:3,
                 msg:{
-                    name:''
+                    name:'',
+                    ischecked:true,
                 },
             }
         };
         change(event){
             this.setState({
-                    msg:{name:event.target.value}
+                    msg:{
+                        name:event.target.value,
+                        ischecked:true,
+                    }
             });
-        }
+        };
         add(){
             if(this.state.msg.name!=''){
                 var arr = this.state.task;
+                var num = 0;
                 arr.push(this.state.msg);
+                num = arr.length;
                 this.setState({
-                    task:arr
-                })
-            }
+                    task:arr,
+                    all:num,
 
+                });
+                this.refs.ipt.value=''
+            }
         };
         delete(index){
             var arr = this.state.task;
             arr.splice(index,1);
             this.setState({
                 task:arr,
+            });
+        };
+        iptchange(index){
+            var arr = this.state.task;
+            var numb = 0;
+            arr[index].ischecked=!arr[index].ischecked;
+            var linearr = arr.filter((elem,index1)=>{
+                return elem.ischecked?false:true;
+            });
+            console.log(linearr);
+            numb = linearr.length;
+            this.setState({
+                task:arr,
+                succ:numb,
             })
-            console.log(index)
         }
         render(){
             return(
                 <div>
-                    <span>任务:</span> <input type="text" placeholder="开始你的任务吧" onChange={this.change.bind(this)}/><br/>
+                    <span>任务:</span> <input type="text" placeholder="开始你的任务吧" onChange={this.change.bind(this)} ref='ipt'/><br/>
                     <button onClick={this.add.bind(this)} id="save">保存任务</button>
-                    <Work mydelete={this.delete.bind(this)} mytask={this.state.task}></Work>
-                    <div>{this.state.succ}已完成/{this.state.all}全部</div>
+                    <Work mydelete={this.delete.bind(this)} mytask={this.state.task} mychange={this.iptchange.bind(this)}></Work>
+                    <div className='div1'>{this.state.succ}已完成/{this.state.all}全部</div>
                 </div>
             )
         }
@@ -94,17 +129,23 @@
         };
         render(){
             let style ={
-            float:'right',
-             marginRight:'6px',
-                marginTop:'10px'
-            }
+                float:'right',
+                marginRight:'6px',
+                marginTop:'10px',
+                backgroundColor:'#93d6f7',
+                color: 'white',
+                borderRadius: '15%',
+                border: 'none',
+            };
             let style1 ={
-              overflow:'hiden'
-            }
+              overflow:'hiden',
+                clear:'both',
+                padding:0,
+            };
             return(
                 <ul style={style1}>
                     {this.props.mytask.map((ele,index)=>{
-                        return( <li key={index}><input type="checkbox" name={ele}/> {ele.name} <button onClick={()=>{this.props.mydelete(index)}} style={style}>删除</button></li>)
+                        return( <li key={index}><input type="checkbox" name={ele} onChange={()=>{this.props.mychange(index)}} className="iptcheck"/> <a className={ ele.ischecked?'aaa':'iptstyle'}>{ele.name}</a> <button onClick={()=>{this.props.mydelete(index)}} style={style}>删除</button></li>)
                     })}
                 </ul>
             )
