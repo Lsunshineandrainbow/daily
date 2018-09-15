@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Main extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                msg:'小猴子',
+                text:'香蜜'
+            };
+            console.log('Main------------------constructor');
+        };
+        change(){
+            this.setState({
+                msg:'走花路'
+            })
+        };
+        onchange(){
+            this.setState({
+                text:'沉沉'
+            })
+        };
+        render(){
+            console.log('Main------------------render');
+            return(
+                <div>
+                    <h1>{this.state.msg}</h1>
+                    <button onClick={this.change.bind(this)}>更改</button>
+                    <Work mywork={this.onchange.bind(this)} mytext={this.state.text}><a>小猴紫</a></Work>
+                    // 子组件
+                </div>
+            )
+        };
+        componentWillMount(){
+            console.log('Main------------------componentWillMount')
+        };
+        componentDidMount(){
+            console.log('Main------------------componentDidMount');
+        }
+    }
+    class Work extends React.Component{          //父组件
+        constructor(props){
+            super(props);
+            this.state={
+                mytext1:this.props.mytext,
+            }
+        };
+        render(){
+            return(
+            <div>
+                <h3>{this.state.mytext1}</h3>
+                <p>{this.props.children}</p>
+                <button onClick={this.props.mywork}>组件2</button>
+            </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Main/>,document.getElementById('root')
+    )
+</script>
+</body>
+</html>
