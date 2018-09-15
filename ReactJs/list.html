@@ -33,6 +33,7 @@
         }
         .iptstyle{
             text-decoration-line: line-through;
+            background: #63a35c;
         }
         .iptcheck{
             background: #7b9dc2;
@@ -62,19 +63,23 @@
             super(props);
             this.state={
                 task:[{
+                        id:'1230',
                         name:'吃饭饭',
                         ischecked:true,
 
                     }, {
+                        id:'1231',
                         name:'睡觉觉',
                         ischecked:true,
                     }, {
+                        id:'1232',
                         name:'打豆豆',
                         ischecked:true,
                     }
                 ],
                 succ:0,
                 all:3,
+                idcount:4,
                 msg:{
                     name:'',
                     ischecked:true,
@@ -82,10 +87,12 @@
             }
         };
         change(event){
+            this.state.idcount++;
             this.setState({
                     msg:{
                         name:event.target.value,
                         ischecked:true,
+                        id:'123'+this.state.idcount,
                     }
             });
         };
@@ -98,7 +105,6 @@
                 this.setState({
                     task:arr,
                     all:num,
-
                 });
                 this.refs.ipt.value=''
             }
@@ -106,8 +112,16 @@
         delete(index){
             var arr = this.state.task;
             arr.splice(index,1);
+            var num = 0;
+            num = arr.length;
+            var linearr = arr.filter((elem,index1)=>{
+                return !elem.ischecked;
+            });
+           var numb = linearr.length;
             this.setState({
                 task:arr,
+                all:num,
+                succ:numb,
             });
         };
         iptchange(index){
@@ -115,9 +129,8 @@
             var numb = 0;
             arr[index].ischecked=!arr[index].ischecked;
             var linearr = arr.filter((elem,index1)=>{
-                return elem.ischecked?false:true;
+                return !elem.ischecked;
             });
-            console.log(linearr);
             numb = linearr.length;
             this.setState({
                 task:arr,
@@ -130,12 +143,12 @@
                     <span>任务:</span> <input type="text" placeholder="开始你的任务吧" onChange={this.change.bind(this)} ref='ipt'/><br/>
                     <button onClick={this.add.bind(this)} id="save">保存任务</button>
                     <Work mydelete={this.delete.bind(this)} mytask={this.state.task} mychange={this.iptchange.bind(this)}></Work>
-                    <div className='div1'><a>&nbsp;&nbsp;&nbsp;</a>{this.state.succ}已完成/{this.state.all}全部</div>
+                    <div className='div1'><a>&nbsp;&nbsp;&nbsp;</a>{this.state.succ}已完成/{this.state.all}全部 <Fil></Fil></div>
                 </div>
             )
         }
     }
-    class Work extends React.Component{
+    class Work extends React.Component  {
         constructor(props){
             super(props);
             this.state={
@@ -160,11 +173,24 @@
             return(
                 <ul style={style1}>
                     {this.props.mytask.map((ele,index)=>{
-                        return( <li key={index}><input type="checkbox" name={ele} onChange={()=>{this.props.mychange(index)}} className="iptcheck"/> <a className={ ele.ischecked?'aaa':'iptstyle'}>{ele.name}</a> <button onClick={()=>{this.props.mydelete(index)}} style={style}>删除</button></li>)
+                        return( <li key={ele.id}  className={ ele.ischecked?'aaa':'iptstyle'}><input type="checkbox" name={ele} onChange={()=>{this.props.mychange(index)}} className="iptcheck"/> <a>{ele.name}</a> <button onClick={()=>{this.props.mydelete(index)}} style={style}>删除</button></li>)
                     })}
                 </ul>
             )
         }
+    }
+    class Fil extends React.Component{
+        constructor(){
+            super();
+            this.state={
+
+            };
+
+        } ;
+        render(){
+            return (
+                <span><button>未完成</button><a>&nbsp;&nbsp;</a><button>已完成</button></span>
+                        )}
     }
     ReactDOM.render(
        <Main/>,document.getElementById('root')
