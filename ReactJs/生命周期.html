@@ -27,6 +27,7 @@
             })
         };
         onchange(){
+            console.log(1111)
             this.setState({
                 text:'沉沉'
             })
@@ -38,7 +39,7 @@
                     <h1>{this.state.msg}</h1>
                     <button onClick={this.change.bind(this)}>更改</button>
                     <Work mywork={this.onchange.bind(this)} mytext={this.state.text}><a>小猴紫</a></Work>
-                    // 子组件
+                  // 子组件
                 </div>
             )
         };
@@ -59,7 +60,7 @@
         render(){
             return(
             <div>
-                <h3>{this.state.mytext1}</h3>
+                <h3>{this.props.mytext}</h3>
                 <p>{this.props.children}</p>
                 <button onClick={this.props.mywork}>组件2</button>
             </div>
