@@ -1,11 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import Header from './components/Header.vue';
+import Header from './views/Home/Header.vue';
 import Footer from './components/Footer.vue'
 import Mymusic from'@/views/Music/Mymusic.vue';
 import Radio from'@/views/Radio/Radio.vue';
 import Video from'@/views/Video/Video.vue';
+import Localmusic from '@/views/Music/Localmusic/Localmusic.vue';
+import Homepage from '@/views/Home/Homepage.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -38,6 +39,12 @@ export default new Router({
           path:'/video1',
           component:Video,
 
+      },{
+        path:'/localmusic',
+          component:Localmusic,
+      },{
+        path:'/homepage',
+          component:Homepage,
       }
   ],
 });
