@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+/*
+    Map对象就是简单的键值对映射。其中的键和值可以使任意值。（ps : 对象的键只能是字符串 ）
+*/
+   /*创建map实例*/
+  //《1》
+    let map = new Map()
+    map.set('one',1)
+    map.set('two',2)
+    map.set('three',3)
+    map.set('four',5)
+    map.set('three',4)   // 重新给'three’ 赋值
+    console.log(map)  // {'one'=>1,'two'=>2,'three'=>4}
+    for(var [key,value] of map){        // for (.....of ) 遍历
+        console.log(key+'--------'+value)
+    }
+    // 《2》
+   var _map = new Map([['one',1], ['two', 2], ['three', 3]]);
+    console.log(_map)  //{'one'=>1,'two'=>2,'three'=>3}
+    console.log(_map.delete('three'));  // 删除 ‘three'的键值对   删除成功返回true
+    console.log(_map)  //  {"one" => 1, "two" => 2}
+    console.log(_map.get("one"))   // 获取 "one" 的值   1
+    console.log(_map.keys())    // 返回新的对象，里面是每个键名  {"one", "two"}
+    console.log(_map.values());   // {1,2}
+    console.log(_map.size)   // 2  Map.size 返回个数
+    console.log(_map.has(1));    // 判断是否有1这个键
+    _map.clear()          // 清空 _map
+    console.log(_map)   //{}
+</script>

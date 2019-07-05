@@ -1,0 +1,8 @@
+ie6/7特有的cssbug
+<1>li边距无故增加  解决：设置ul的显示形式为*display:inline-block;即可，前面加*是只 针对IE6/IE7有效
+<2>ie6：不支持min-height，但他认为height就是最小高度
+<3>ie6不支持但其他浏览器都支持的!important
+<4>overflow：在ie6/7中，overflow：hidden正确无法隐藏有相对定位position:relative的子元素   解决：给父元素包上position:relative
+<5>border:none在ie6下不起作用 解决：写成border:0就可以了
+<6>当元素浮动时，ie6会错误的把浮动的方式的margin值双倍计算，给float的元素添加一个display:inline
+

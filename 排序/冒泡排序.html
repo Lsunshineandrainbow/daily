@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    //  冒泡排序：反复扫描待排序的序列，再扫描过程中一次比较相邻的两个元素大小，
+    //           若逆序就交换位置，第一趟从第一个数据开始，最后最大的一个数在末尾，然后扫描第二趟，只扫描前n-1个
+    //  稳定性：稳定排序
+    // 时间复杂度：O(n^2)
+    // 空间复杂度：O(1)
+    var array=[3,1,5,8,2]
+    function sort(arr) {
+        for(i=0;i<arr.length-1;i++){
+            for(j=i+1;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    var temp =arr[i]
+                    arr[i]=arr[j]
+                    arr[j]=temp
+                }
+            }
+        }
+    }
+    sort(array)
+    console.log(array)
+</script>

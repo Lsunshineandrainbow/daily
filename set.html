@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    /*Set是类似于数组形式的对象但其中不能有重复值  且对于Set来说 key=value*/
+    var set = new Set( [1,5,3,2,52,6])
+    set.add(7)    // 增加元素 重复的加不进去
+    console.log(set)   // set {1, 2, 3, 4, 5,6,7}
+    console.log(set.size)    // set 的长度
+    console.log(set.has(8))   //  判断8在不在set的值中   返回true或false
+    set.delete(5)     // 删除set中value=5的那个值
+    console.log(set)   // [1,3,2,52,6,7]
+    // set.clear()   //清空set的值 { }
+    // console.log(set)
+    // 遍历
+
+
+    /*<1>  set.keys()   返回键名*/
+    for(let i of set.keys()){
+        console.log(i);   // 1 3 2 52 6 7
+    }
+    /*<2>  set.values()   返回键值*/
+    for(let i of set.values()){
+        console.log(i)      // 1 3 2 52 6 7
+    }
+    /*<3> set.values() 返回键值对*/
+    for(let i of set.entries()){   //  返回[键，值] 对
+        console.log(i);   //  [1, 1] [3, 3] [2, 2] [52, 52] [6, 6] [7, 7]
+    }
+    /*<4>set.forEach(callback())遍历每个元素执行回掉函数*/
+    set.forEach(function (value,key,set) {
+
+    })
+
+    /*str*/
+    var setStr = new Set('我是es6的set')
+    console.log(setStr)   // {"我", "是", "e", "s", "6","的","s","e","t"}
+    setStr.add({a:1,b:2})   // 加入对象{a:1,b:2}
+    console.log(setStr)  //  {"我", "是", "e", "s", "6","的","s","e","t",{a:1,b:2}
+    for(let index of setStr.keys()){
+        console.log(index);   // 我 是 e s 6 的 set  {a: 1, b: 2}
+    }
+
+/*
+    Set和Array的转换
+*/
+   var setObject = new Set([1,2,3,4,5,6])
+    console.log(setObject)  // 对象  {1，2，3，4，5，6}
+    // var setArray = [...setObject]   // 方法一  解构
+    var setArray = Array.from(setObject)  // 方法二  Array.from()
+    console.log(setArray)    //  [1, 2, 3, 4, 5, 6]
+</script>

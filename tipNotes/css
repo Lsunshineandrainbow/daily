@@ -1,0 +1,55 @@
+1.BFC:内置盒子，每一个子元素都是一个盒子里面的不能影响外面的，外面也不能影响里面的                                                                                                                        https://www.cnblogs.com/lzbk/p/6057097.html
+          触发BFC:
+         1.设置除 float:none 以外的属性值（如：left | right）就会触发BFC
+
+  　　2.设置除 overflow: visible 以外的属性值（如： hidden | auto | scroll）就会触发BFC
+
+  　　3.设置 display属性值为: inline-block | flex | inline-flex | table-cell | table-caption 就会触发BFＣ
+
+  　　4.设置 position 属性值为：absolute | fixed 就会触发BFC
+
+  　　5.使用 fieldset 元素（可以给表单元素设置环绕边框的html元素）也会触发BFC
+  BFC解决问题：1.解决margin叠加问题
+                          2.用于布局
+                          3.用于清除浮动，计算BFC高度
+2.css  steps()动画      https://blog.csdn.net/LY_code/article/details/80209183
+         使用时宽和高要和图片的相对应，若有四个部分，则steps（3），动画中仅写为0-100%
+3. webp 的应用   https://blog.csdn.net/babulongbo/article/details/87904891
+        webp支持动态图画，有损无损东可，使用时注意兼容性问题
+            使用：
+             [data-webp=" 0"] .elem{   ........     .png}
+             [data-webp=" 1"] .elem{  ......... .webp}
+4..自适应    像素问题     https://segmentfault.com/a/1190000004878644?_ea=1089841                                                                https://blog.csdn.net/zhaokaiqiang1992/article/details/45419023
+         dp     dp 与 物理px 有一个关于 (160/screen density) 的正相关的关系：
+                 1dp = 1物理px （screen density = 160）        screen density  像素密度
+                 1dp = 2物理px （screen density = 320）        dp是虚拟像素，在不同的像素密度的设备上会自动适配
+                 1dp = 3物理px （screen density = 480）         计算公式:1dp*像素密度/160 = 实际像素数
+        屏幕像素密度是指每英寸上的像素点数，单位是dpi
+  sp：Scale-independent pixels，它是安卓的字体单位，以160PPI屏幕为标准，当字体大小为 100%时， 1sp=1px。
+5.position：absolute, left :50%   是父元素的50%,transform：translateX(50%)是自身的50%
+6.颜色渐变：background-image:-webkit-gradient()
+7.text-indent:50px     // 首行缩近50px
+8.animations
+   css动画保持在最后的摸样
+   animation-fill-mode : none | forwards | backwards | both;
+   值                 描述
+   none               不改变默认行为。
+   forwards           当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
+   backwards          在 animation-delay 所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）。
+   both               向前和向后填充模式都被应用。
+   CSS动画有一个animation-play-state属性
+     animation-play-state：paused|running  暂停/播放
+9.a标签有一个download属性 download 属性规定被下载的超链接目标。
+10.css 有一个filter（滤镜）属性
+   该属性提供了提供模糊和改变元素颜色的功能
+   grayscale 灰度               值为0-1之间的小数
+   sepia 褐色　　　　　　   值为0-1之间的小数
+   saturate 饱和度　　　　 值为num
+   hue-rotate 色相旋转　　值为angle
+   invert 反色　　　　　　  值为0-1之间的小数
+   opacity 透明度　　　　　值为0-1之间的小数
+   brightness 亮度　　　　 值为0-1之间的小数
+   contrast 对比度　　　　 值为num
+   blur 模糊　　　　　　     值为length
+   drop-shadow 阴影
+11.calc()  //css的calc（）函数可以计算宽度

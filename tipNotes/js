@@ -1,0 +1,39 @@
+1.if（udefined）报错
+    if(!undefined)  真
+    if（‘ ’） 真
+    if（null）假
+2.break:跳出一个循环或者结束一个循环
+  continue：结束本次循环，继续执行下一循环
+3.     1毫秒(ms)=0.001秒(s)
+4.  “时间戳是自 1970 年 1 月 1 日（00:00:00 GMT）至当前时间的总秒数”。
+5.trim()去空格
+6.arr.lastIndexOf //从后往前遍历
+  arr.indexOf  //从前往后遍历
+7.arr.reduce()   // 见‘除重复的数.html’
+8.let arr = [{},{},{}]
+        for(let i in arr){
+        cosnole.log(i)              // i->{}
+        }
+ 9.//1 使用 Object.keys()
+   var a = {a:1,b:2}
+   Object.keys(a) //(2) ["a", "b"]
+   var a = {a:1,b:2,c:{d:4,f:5}}
+   Object.keys(a) //(3) ["a", "b", "c"]
+ 10.Date.parse()
+ parse() 方法可解析一个日期时间字符串，并返回 1970/1/1 午夜距离该日期时间的毫秒数(时间戳)。
+11.arr.slice()
+   slice(start，end)
+   参数start是截取的开始数组索引，end参数等于你要取的最后一个字符的位置值加上1
+   slice(start)
+   如果只传入start，则将从参数一的索引位置开始截取，一直到数组尾
+ 12.fill()以0填充
+
+ 13.Array.from() 方法从一个类似数组或可迭代对象中创建一个新的数组实例。
+ const str ='foo'
+ const arr =[1,2,3]
+ ①Array.from(str)
+   //["f", "o", "o"]
+ ②Array.from({length:3}, e=> data.slice(0))
+    // [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]
+ ③Array.from([1, 2, 3], x => x + x)
+  //[2,4,6]

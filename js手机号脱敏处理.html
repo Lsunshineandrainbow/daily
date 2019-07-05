@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+            <div id="app">
+                <input type="text" v-model="message" v-on:keyup.13="fun(message)"/>
+                {{message}}
+            </div>
+</body>
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            message:'hello!'
+        },
+        methods:{
+            fun(message){
+                    var pat = /(\d{3})\d*(\d{4})/
+                var b = message.replace(pat,'$1******$2')
+                //replace(要替换的模式，一个字符串的值，替换文本或生成文本的函数)
+                //正则中$1表示第一个小括号的内容  \d 匹配数字   {3}匹配确定的3次数
+                this.message = b
+            }
+        }
+
+    })
+</script>

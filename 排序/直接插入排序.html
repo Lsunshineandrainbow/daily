@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 直接插入排序 将第i个插入到前i-1个中的适合位置
+    // 思想：取一个元素和他前面的元素比插入到合适的位置
+    // 稳定性：wending
+    // 空间复杂度：O(n^2)
+    // 时间复杂度：O(1)
+    var arry = [3,2,4,9,11,1,2,5]
+    function insertSort(arr) {
+        var len = arr.length;
+        var temp;
+        for (var i = 1;i < len;i++){
+            temp = arr[i]
+            for (var j = i;j > 0 && temp < arr[j-1];j--){
+                // 当前值和之前的每个值进行比较，发现有比当前值小的值就进行重新赋值
+                arr[j] = arr[j-1];
+            }
+            arr[j] = temp;
+        }
+        return arr;
+    }
+
+    insertSort(arry)
+    console.log(arry)
+</script>
+

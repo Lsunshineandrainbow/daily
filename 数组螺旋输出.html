@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // arr = [1,2,3,4,5,6,7,8,9]
+    // function sprialArray(n){
+    //     var m=0;
+    //     var a=1;
+    //     var arr=[];
+    //     for(var i=0;i<n;++i){
+    //         arr[i]=new Array();
+    //         for(var j=0;j<n;++j){
+    //             arr[i][j]=0;
+    //         }
+    //     }
+    //
+    //     while(m<n/2){
+    //         //向右赋值，当n为奇数时，最后一次循环为数组中间项赋值
+    //         for(var r=m;r<n-m;r++){
+    //             arr[m][r]=a++;
+    //
+    //         }
+    //         //向下
+    //         for(var d=m;d<n-m-1;d++){
+    //             arr[d+1][n-m-1]=a++;
+    //         }
+    //         //向左
+    //         for(var z=m;z<n-m-1;z++){
+    //             arr[n-m-1][n-1-(z+1)]=a++;
+    //
+    //         }
+    //         //向上
+    //         for(var u=m;u<n-m-2;u++){
+    //             arr[n-(u+1)-1][m]=a++;
+    //         }
+    //
+    //         m=m+1;//m=0时为最外圈赋值，每循环一次进行缩圈，则m+1
+    //
+    //     }
+    //     return arr;
+    // }
+    // var array = sprialArray(3)
+    // console.log(array)
+    function fn(n){
+        var arrs=[],num=1,i=0,j=0
+            for(var z=0;z<n;++z){
+                arrs[z]=new Array();
+                for(var p=0;j<n;++j){
+                    arrs[z][p]=0;
+                }
+            }
+            for(let k=0;k<= n/2;k++){
+                // debugger
+                for (j = k, i = k; j < n - k; j++) {
+                    arrs[i][j] = num;
+                    num++;
+                }
+                //赋值 右边 (控制好结束条件)
+                for (j = j - 1, i = i + 1; i < n - k; i++) {
+                    arrs[i][j] = num;
+                    num++;
+                }
+                //赋值下边(控制好结束条件)
+                for (j = j - 1, i = i - 1; j > k - 1; j--) {
+                    arrs[i][j] = num;
+                    num++;
+                }
+                //赋值左边(控制好结束条件)
+                for (j = j + 1, i = i - 1; i > k; i--) {
+                    arrs[i][j] = num;
+                    num++;
+                }
+            }
+            for (let k=0;k<n;k++){
+             var aa = arrs[k].reduce((total,value)=>{
+                    return  total+ ' '+value
+                })
+                console.log(aa);
+            }
+            return arrs
+    }
+    fn(4)
+</script>

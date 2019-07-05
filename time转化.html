@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    function filtertime (timestamp, format) {
+        format = format || 'yyyy-MM-dd hh:mm'
+        return new Date(timestamp * 1000).Format(format)
+    }
+    Date.prototype.Format = function (fmt) {
+        var o = {
+            'y+': this.getFullYear(),
+            'M+': this.getMonth() + 1,               // 月份
+            'd+': this.getDate(),                    // 日
+            'h+': this.getHours(),                   // 小时
+            'm+': this.getMinutes(),                 // 分
+            's+': this.getSeconds(),                 // 秒
+            'q+': Math.floor((this.getMonth() + 3) / 3), // 季度
+            'S+': this.getMilliseconds()             // 毫秒
+        }
+        for (var k in o) {
+            if (new RegExp('(' + k + ')').test(fmt)) {
+                if (k == 'y+') {
+                    fmt = fmt.replace(RegExp.$1, ('' + o[k]).substr(4 - RegExp.$1.length))
+                } else if (k == 'S+') {
+                    var lens = RegExp.$1.length
+                    lens = lens == 1 ? 3 : lens
+                    fmt = fmt.replace(RegExp.$1, ('00' + o[k]).substr(('' + o[k]).length - 1, lens))
+                } else {
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)))
+                }
+            }
+        }
+        return fmt
+    }
+     date1 = filtertime(1362441110,'yyyy-MM-dd')
+    var xxx= function (aaa){           //将2019\12\1改成2019年12月1日的形式
+        aaa=new Date(aaa)
+        var y=aaa.getFullYear()+"年"
+        var m=aaa.getMonth()+'月';
+        var d=aaa.getDate()+"日";
+       return y+m+d
+    }
+    console.log(xxx(date1))
+        // var timeT=1550043771000
+        // var date1=new Date(1550043771000)
+        // var date2=  Format(date1);
+    var date3 = new Date(1362441110000)
+    console.log(date3)
+
+</script>
+</html>

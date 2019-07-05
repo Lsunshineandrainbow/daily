@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    // 归并排序：基本思想分支策略，然后进行合并
+    //           首先将要排序的数组分成两个数组，再将这两个数组，重复划分操作，划分到最后一个数组里只有一个元素，在进行合并，
+    //           合并的过程是从两个子数组中选出最小的元素，然后吧这个元素放到合并的数组中，不断重复直到都合并完成
+    // 稳定性：稳定排序
+    // 时间复杂度：O(nlogn)
+    function merge(left, right) {
+        var result = [];
+        while(left.length > 0 && right.length > 0) {
+            if(left[0] < right[0]) {
+                result.push(left.shift());
+            }
+            else {
+                result.push(right.shift());
+            }
+        }
+        /* 当左右数组长度不等.将比较完后剩下的数组项链接起来即可 */
+        return result.concat(left).concat(right);
+    }
+    function mergeSort(arr){
+        if(arr.length==1) {return arr};
+        var mid=Math.floor(arr.length/2);
+        var left_arr=arr.slice(0,mid),right_arr=arr.slice(mid);
+        return merge(mergeSort(left_arr),mergeSort(right_arr));
+    }
+
+    var arr=[12,20,30,21,15,33,26,19,40,25];
+    document.write(mergeSort(arr));
+</script>

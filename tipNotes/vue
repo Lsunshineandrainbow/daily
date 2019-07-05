@@ -1,0 +1,29 @@
+1.<keep-alive>：该标签能使标签里面的东西进行缓存，一次点击后进入别的组件，再返回该组件时组件的状态不变即不会   重新刷新https://www.jianshu.com/p/4b55d312d297
+2.v-clock:防止加载时出现vuejs的变量名
+3.v-bind:is :能够实现动态组件 ，<component> 元素是vue 里面的一个内置组件。
+                    在<component>里面使用 v-bind: is，可以实现动态组件的效果。
+                     <component v-bind:is="componentType" ></component>
+4.function().{
+                      try {}catch{}      // {}中可以执行函数
+                   }
+5.背景渐变：background-image:linear-gradient(角度，起点颜色，终点颜色)   ，
+                                   如果想要字体颜色变成渐变：
+                                    ①字体颜色变透明：-webkit-text-fill-color：transparent
+                                    ②设置属性        -webkit-background-clip: text;   // - webkit-background-clip 规定背景的绘制区域
+                                    ③设置背景 background-image:linear-gradent()
+6.text-indent：首行缩进
+7.把字符串类型数字变成number类型：进行减法即可
+8.vue-router传参：this.$router.push({
+                                        path:'/xxx'
+                                        query:{params }
+                                    })                               // 使用： this.$route.query.params
+9.组件加载组件上必需加v-if然后判断是否为空
+10.vue不能监控数组和对象，如果想传数组和对象可以emit
+11.Vue组件中利用.sync修饰符实现对prop进行双向数据绑定   https://blog.csdn.net/lhjuejiang/article/details/81171768
+12.vue动态组件效果 <component> 元素是vue 里面的一个内置组件。在<component>里面使用 v-bind: is，可以实现动态组件的效果。
+13.v-for放在谁身上循环的是谁
+14.在data中设一个值xxx,点击后将点击的index,赋给xxx,用v-if，如果点击的index=xxx,则显示1样式，不等则显示，类2的样式
+15.map 有返回值 不改变原数组 返回一个新数组
+    for( in) 没有返回值 改变原数组
+16.8.v-if 有慢加载功效
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    var xhr = new XMLHttpRequest();
+  //  var xhr = new ActiveXObject() ie中使用
+    xhr.open("get,","http://10.9.188.25/qbank/php/select.php")
+    xhr.open("post","http://10.9.188.25/qbank/php/select.php")
+    //post提交必须设置响应头
+    xhr.setRequestHeader("content-Type","app lication/x-www-form-urlencoded")
+    xhr.send("content=面向对象&where=this的指向&idea=多练")
+    xhr.send()
+    console.log(xhr.readyState)
+    xhr.onreadystatechange=function () {
+        if(xhr.readyState==4&&xhr.status==200){
+            console.log(JSON.parse(xhr.responseText))
+        }else{
+
+        }
+    }
+</script>

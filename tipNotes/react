@@ -1,0 +1,30 @@
+react------https://segmentfault.com/a/1190000012921279#articleHeader5
+1.ErrorBoundary：错误边界，是一个组件
+2.<React.Fragment >:React 中一个常见模式是为一个组件返回多个元素。Fragments 可以让你聚合一个子元素列表，并且不在DOM中增加额外节点。类似template
+3.trim():去空格
+4.es6:同名赋值，如果本来没有这个值就是加一个这个属性及他对应的值
+5.高阶函数：接受函数作为输入，或者输出另一个函数的一类函数，被称为高阶组件
+  高阶组件（HOC）：通过包裹被传入的React组件，经过一系列的处理后，最终返回一个相对增强的React组件，供其他组件调用
+  https://segmentfault.com/a/1190000010371752#articleHeader14
+6.通过creact建立的react的app,webpack已经打包好了如果想配置，需执行npm run eject暴露webpack配置文件
+7.函数式组件：其本身是没有this的，所以props直接写为‘props.xxx'
+8.react-hooks: 就是让function组件也可以使用类似class组件的state和组件生命周期；而不需要在mixin、函数组建、HOC组件和render props之间来回切换，
+               使得函数组件的功能更加实在，更加方便我们在业务中实现业务逻辑代码的分离和组件的复用
+             hooks提供三个api： State Hooks  ,Effect Hooks    ,Custom Hooks(自定义的hooks)
+           1.State Hooks（useState）:      useState(初始state)返回一对变量    eg：const [count, setCount] = useState(0);
+           2.Effect Hooks（useHooks）：useEffect 可以传入第二个操作来避免性能的损耗，如果第二个参数数组中的成员变量没有变化则会跳过此次改变
+                                  effect 只会在组件 mount 和 unmount 时期执行。useEffect 中还可以通过让函数返回一个函数来进行一些取消兼容之类的清理操作
+           3.使用规则：不要在循环，条件判断，嵌套函数里面调用 Hooks
+                       只在 React 的函数里面调用 Hooks
+           4.学习地址：https://www.cnblogs.com/qcloud1001/p/9930781.html
+           之后可以去仔细学习一下他的原理
+9.react中的副作用：
+10.组件销毁意义：销毁组件要做的事情就是销毁和这个组件有关的状态、事件
+                    写单页应用的时候，需要销毁的场景很常见。
+                    比如：
+                    /path1 下的component，全局添加了事件处理器
+                    window.addEventListener( document.body , ‘click’ ， ()=>{console.log(1)} )
+                    如果跳转到路由/path2的话，你在当前页面点击，也会发现控制台输出1；这就不符合预期了，我想要的是，不同的页面，应该就像传统的不同页面不同的js脚本，事件绑定不互相影响。
+
+                     ，添加解绑的操作。
+11.setState({})是异步而console.log是同步,可能会拿不到数据，可以this.setState({color:colortemp},()=>{console.log()} ）输出使用

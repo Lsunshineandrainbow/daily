@@ -1,0 +1,24 @@
+1.react 文本编辑器     draft.js
+2.google 跨域工具 Moesif CORS   该工具只能实现get，不能实现post  post是服务器的拦截，而get跨域是浏览器的阻拦
+3.lodash:是一个著名的javascript原生库，不需要引入其他第三方依赖,就是很多方法lodash已经帮你写好了，直接调用就行，不用自己去写了，而且可以统一方法的一致性。Lodash使用了一个简单的 _ 符号,就像jquery
+4.JavaScript异步机制中的事件循环和任务队列 Qin1 Zhang 张秦
+   PPT: https://docs.google.com/presentation/d/1PgmfX1BzrFqnBOdYszQfCJyLogoOaYVPMFdRfIRIdw8/edit?usp=sharing
+5.css 变量
+   PPT: http://ghmagical.com/article/page/id/MOhfNo9O6bLn
+6.css动画 优雅降级https://waynecz.github.io/2016/02/01/CSS%E5%8A%A8%E7%94%BB%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E7%9A%84%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93/
+7.用CSS绘制最常见的40种形状和图形  https://mp.weixin.qq.com/s?__biz=MjM5MDA2MTI1MA==&mid=2649084269&idx=1&sn=a2ff163bfd00e0c8a6837f53ed0575b8&chksm=be5bf6c0892c7fd6e47e4e878ec81646728a3f32a248879596626c9055459d750aa6850775a6&mpshare=1&scene=23&srcid=1128A7pSyzwrpd3fRmF8k9tQ#rd
+8.编写模块化 CSS（第 1 部分） - BEM    https://mp.weixin.qq.com/s?__biz=MzA5NzkwNDk3MQ==&mid=2650585526&amp;idx=1&amp;sn=857550ccf2ffa720681e857f172f30c2&source=41#wechat_redirect
+9.函数式编程思维：https://docs.google.com/presentation/d/1oecGEfcEKc4ND6NZRCzwakAq7Ht2hNRWqV3nwUtViiU/edit#slide=id.p10
+10.Charles 是在 Mac 下常用的网络封包截取工具，在做
+   移动开发时，我们为了调试与服务器端的网络通讯协议，常常需要截取网络封包来分析。
+   Charles 主要的功能包括：
+
+   截取 Http 和 Https 网络封包。
+   支持重发网络请求，方便后端调试。
+   支持修改网络请求参数。
+   支持网络请求的截获并动态修改。
+   支持模拟慢速网络。
+   http://blog.devtang.com/2015/11/14/charles-introduction/
+11.将html转换为图片 html2canvas
+12.文本编辑器：react-draft-wysiwyg
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    // /*方法一*/
+    // function test (arr1,arr2){
+    //     let arr =[]
+    //     let newArr = arr1.concat(arr2)
+    //     newArr.forEach((element,i)=>{
+    //         if(newArr.indexOf(newArr[i])==newArr.lastIndexOf(newArr[i])){
+    //             arr.push(newArr[i]);
+    //         }
+    //     })
+    //     console.log(arr)
+    // }
+    // function geta(total,currentValue,currentIndex,arr){
+    //     console.log(total);
+    //     return  total-arr[currentIndex]
+    // }
+   /* ______________________________________________________________________________________________*/
+
+
+
+    /*方法二*/
+    /* 思路：根据reduce的特性其第一个参数result初始值为数组中第一个数的值，result是个数组，
+    * ① 当 result里面有这个元素时  ------》 duplicaton中加入这个元素  并且将这个元素拿出
+    * ② 当 result没有这个元素时   -------》 duplication中也没有这个元素  并将这个元素加入到result中
+    * */
+    // function unique(a, b) {
+    //     const duplication = new Set();
+    //     console.log([...a, ...b ].sort((v1, v2) => v1 - v2));
+    //     return [...a, ...b ].sort((v1, v2) => v1 - v2).reduce((result, value) => {     // reduce ()  会对数组中的每个元素调用一次callback回调函数  每次结果积累
+    //         console.log(result)
+    //         if (result.includes(value)) {    // 是否包含指定的值
+    //             duplication.add(value);
+    //             result.pop(value);
+    //         } else if (!duplication.has(value)){
+    //             result.push(value)
+    //         }
+    //         return result;
+    //     }, [])
+    // }
+    // var arr1 =[1,2,3,4,5]
+    // var arr2= [3,4,5,6,7,8,9]
+    // console.log(unique(arr1,arr2))
+   /* ————————————————————————————————————————————————*/
+    /*方法三*/
+    var arr = [1,2,3,4,4,4,5,5];
+    var m = new Map();
+    var delArr = [];
+    for(var i=0;i<arr.length;i++){
+        console.log(!m.get(arr[i]))
+        if(!m.get(arr[i]) && delArr.indexOf((arr[i])) == -1){     //  要并且delArr.indexOf((arr[i])) == -1的原因   ： 防止一个元素出现三次
+            m.set(arr[i],true);
+
+        }else{
+            m.delete(arr[i]);
+            delArr.push(arr[i])
+        }
+    }
+    console.log(Array.from(m.keys()));
+</script>

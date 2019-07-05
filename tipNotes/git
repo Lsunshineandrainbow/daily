@@ -1,0 +1,29 @@
+1.　git status //查看仓库状态,查看哪个文件发生冲突
+2.　git add ERADME.md //添加ERADME.md至暂存区，add后要commit一下  git add+详细内容，可用首字母，多次按下tab,自动补齐
+    git add src/member/assets/img/ *  上传img下所有文件
+3.git commit -m "hhh" //如果想要提交信息记录的更详细，请不要加 -m
+4.　git log --pretty=short //加--pretty=short 只显示提交信息的第一行
+5。git log ggg //ggg是指指定的文件或目录，用于查看指定的目录、文件的日志
+6.git diff //可以查看工作树，暂存区，最新提交之间的 差别
+7.git diff HEAD //查看工作树与最新提交的差别
+8.git pull origin  xxx拉取xxxx分支的内容，更新
+9.git fetch 查看冲突
+10. git push origin xxx 上传到xxx分支
+    在LJ分支上输入git merge demo 则是合并demo到LJ分支,merge后要push 一次，他人才能拉取到
+11.git branch -r  查看远程分支
+12.git 中按‘q’ 可以停止，退出git status 之类的状态
+13.git push之前要pull一下解决冲突问题
+16.上传要先git stauts 看看是否有要更改的，然后有要add 先add,再commit,再push
+17.git checkout -b dev     新建分支 dev
+18.git checkout xxx    切换到xxx分支
+20.git branch -a     查看所有分支
+
+
+注：《1》git 操作是一定要先add -> commit ->push
+          如果依赖webstorm自动会有些小问题
+     《2》进行git操作时尽量在git brash 中进行，在webstorm中会有一些指令不可用
+     《3》git的文本编辑器采用的是vim文本编辑器，是Linux系统的编辑器
+     <3>git切换分支，每个分支文件不同，工作目录的文件会发生变化
+     《4》 git基于哪个分支建立的分支则那个分支的文件也会与其父分支相同
+     《5》git 切换分支之前一定要把在目前分支的修改保存，commit了，再切换，下次就可以直接重新修改了
+

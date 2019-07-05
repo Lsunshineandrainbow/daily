@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    /*.contain{*/
+        /*width:100%;*/
+        /*height: 500px;*/
+        /*display: flex;*/
+    /*}*/
+    /*.left{*/
+        /*width:300px;*/
+        /*background:#ced5ff;*/
+        /*height: 500px;*/
+    /*}*/
+    /*.midd{*/
+        /*flex: 1;*/
+        /*height: 500px;*/
+        /*background:yellowgreen;*/
+    /*}*/
+    /*.right{*/
+        /*width: 400px;*/
+        /*height: 500px;*/
+        /*background:salmon ;*/
+    /*}*/
+    .contain{
+        width:100%;
+        height: 500px;
+    }
+    .left{
+        position: absolute;
+        width: 300px;
+        height: 500px;
+        left:0;
+        top: 0;
+        background:#ced5ff;
+    }
+    .right{
+        position: absolute;
+        width: 300px;
+        height: 500px;
+        right:0;
+        top: 0;
+        background:salmon
+    }
+    .midd{
+        height: 500px;
+        background: yellowgreen;
+    }
+</style>
+<body>
+   <div class="contain">
+       <div class="left">左侧固定</div>
+       <div class="midd">中间自适应</div>
+       <div class="right">右侧固定</div>
+\   </div>
+</body>
+</html>
